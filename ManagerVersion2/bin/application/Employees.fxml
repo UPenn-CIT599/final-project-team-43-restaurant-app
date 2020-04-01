@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <top>
+      <Label text="Employees" textAlignment="CENTER" textFill="#c60b0b" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <Button fx:id="btn2" mnemonicParsing="false" onAction="#handleButtonAction" text="BACK" underline="true" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="462.0" prefWidth="387.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView prefHeight="453.0" prefWidth="363.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <Slider layoutX="365.0" layoutY="44.0" orientation="VERTICAL" prefHeight="409.0" prefWidth="16.0" />
+         </children>
+      </AnchorPane>
+    </center>
+   <left>
+      <AnchorPane prefHeight="462.0" prefWidth="59.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="462.0" prefWidth="59.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="462.0" prefWidth="59.0">
+               <children>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
