@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CustomerHomePageController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
           <Button mnemonicParsing="false" text="About us" />
             <Button mnemonicParsing="false" text="View Menu" />
-            <Button mnemonicParsing="false" text="Reservations" />
+            <Button fx:id="btnCReservation" mnemonicParsing="false" onAction="#handleButtonAction" text="Reservations" />
             <Button mnemonicParsing="false" text="Order Delivery" />
             <Button mnemonicParsing="false" text="Order Pickup" />
         </items>

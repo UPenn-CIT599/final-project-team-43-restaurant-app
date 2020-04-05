@@ -2,13 +2,13 @@ package application;
 
 import java.util.ArrayList;
 
-public class Customer {
+/**
+ * This class monitors the customer aspect of the application
+ * 
+ * @author yangliu
+ */
 
-	/**
-	 * This class monitors the customer aspect of the application
-	 * 
-	 * @author yangliu
-	 */
+public class Customer {
 
 	private double availableFunds;
 	private ArrayList<Taco> tacoOrders; // All taco orders for the customer
@@ -74,24 +74,18 @@ public class Customer {
 		this.review = review;
 	}
 
-	
-	
-	
-	
 	/**
 	 * Adds items in the cart to the customer's order.
 	 * 
 	 * @param items the list of items to add
 	 */
-	public void addToOrder(ArrayList<Taco> tacosInCart, ArrayList<Drink> drinksInCart, ArrayList<SideDish> sideDishesInCart) {
+	public void addToOrder(ArrayList<Taco> tacosInCart, ArrayList<Drink> drinksInCart,
+			ArrayList<SideDish> sideDishesInCart) {
 		this.tacoOrders = tacosInCart;
 		this.drinkOrders = drinksInCart;
 		this.sideDishOrders = sideDishesInCart;
 	}
 
-	
-	
-	
 	/**
 	 * Saves the customer's review
 	 * 
