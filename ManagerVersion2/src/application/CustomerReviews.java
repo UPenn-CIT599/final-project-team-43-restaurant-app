@@ -2,6 +2,11 @@ package application;
 
 
 public class CustomerReviews {
+	/**
+	 * Class for customer reviews
+	 * 
+	 * @author yangliu
+	 */
 
 	private int scoreOutOfFive;
 	private String messageReview;
@@ -12,20 +17,6 @@ public class CustomerReviews {
 	public CustomerReviews() {
 	}
 
-	/**
-	 * Saves the customer's review
-	 * 
-	 * @param scoreOutOfFive Customer's review of 1-5
-	 * @param messageReview  Customer's message review
-	 */
-	public void giveReview(int scoreOutOfFive, String messageReview) {
-		
-		if (scoreOutOfFive <= 5 && scoreOutOfFive >= 1) {
-			this.scoreOutOfFive = scoreOutOfFive;
-			this.messageReview = messageReview;
-		}
-		
-	}
 
 	public int getScoreOutOfFive() {
 		return scoreOutOfFive;
