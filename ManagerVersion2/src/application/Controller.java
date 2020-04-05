@@ -24,7 +24,7 @@ public class Controller implements Initializable {
 	private Label lbl1, lbl2;
 	
 	@FXML
-	private Button btn1, btn2, btnTable, btnTransaction, btnEmployees, btnInventory;
+	private Button btn1, btn2, btnTable, btnTransaction, btnEmployees, btnInventory, btnL1;
 	
 	/**
 	 * This method defines all the button actions
@@ -36,7 +36,11 @@ public class Controller implements Initializable {
 		Stage stage;
 		Parent root;
 		
-		if(event.getSource() == btn1) {
+		if (event.getSource() == btnL1) {
+			stage = (Stage) btnL1.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+		}
+		else if(event.getSource() == btn1) {
 			stage = (Stage) btn1.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 		} else if(event.getSource() == btn2){
