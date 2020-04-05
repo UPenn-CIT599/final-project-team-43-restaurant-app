@@ -6,10 +6,15 @@ public class Customer {
 
 	/**
 	 * This class monitors the customer aspect of the application
+	 * 
+	 * @author yangliu
 	 */
 
 	private double availableFunds;
-	private ArrayList<String> Orders;
+	private ArrayList<Taco> tacoOrders; // All taco orders for the customer
+	private ArrayList<Drink> drinkOrders; // All drink orders for the customer
+	private ArrayList<SideDish> sideDishOrders; // All side dish orders for the customer
+	private CustomerReviews review;
 
 	/**
 	 * Constructor for the customer class. Customer is given a random amount of
@@ -37,33 +42,67 @@ public class Customer {
 		this.availableFunds = availableFunds;
 	}
 
+	public ArrayList<Taco> getTacoOrders() {
+		return tacoOrders;
+	}
+
+	public void setTacoOrders(ArrayList<Taco> tacoOrders) {
+		this.tacoOrders = tacoOrders;
+	}
+
+	public ArrayList<Drink> getDrinkOrders() {
+		return drinkOrders;
+	}
+
+	public void setDrinkOrders(ArrayList<Drink> drinkOrders) {
+		this.drinkOrders = drinkOrders;
+	}
+
+	public ArrayList<SideDish> getSideDishOrders() {
+		return sideDishOrders;
+	}
+
+	public void setSideDishOrders(ArrayList<SideDish> sideDishOrders) {
+		this.sideDishOrders = sideDishOrders;
+	}
+
+	public CustomerReviews getReview() {
+		return review;
+	}
+
+	public void setReview(CustomerReviews review) {
+		this.review = review;
+	}
+
+	
+	
+	
+	
 	/**
-	 * Returns the list of orders that the customer made
+	 * Adds items in the cart to the customer's order.
 	 * 
-	 * @return the list of orders that the customer made as an ArrayList
-	 */
-	public ArrayList<String> getOrders() {
-		return Orders;
-	}
-
-	public void setOrders(ArrayList<String> orders) {
-		Orders = orders;
-	}
-
-	/**
-	 * Adds items to the customer's order.
 	 * @param items the list of items to add
 	 */
-	public void addToOrder(ArrayList<String> items) {
-		for (String item : items) {
-			if (!Orders.contains(item)) {
-				Orders.add(item);
-			}
-		}
+	public void addToOrder(ArrayList<Taco> tacosInCart, ArrayList<Drink> drinksInCart, ArrayList<SideDish> sideDishesInCart) {
+		this.tacoOrders = tacosInCart;
+		this.drinkOrders = drinksInCart;
+		this.sideDishOrders = sideDishesInCart;
 	}
 
-	public String giveReview() {
-		// if order is delivered, prompt customer for a review in string format
+	
+	
+	
+	/**
+	 * Saves the customer's review
+	 * 
+	 * @param scoreOutOfFive Customer's review of 1-5
+	 * @param messageReview  Customer's message review
+	 */
+	public void giveReview(int scoreOutOfFive, String messageReview) {
+		if (scoreOutOfFive <= 5 && scoreOutOfFive >= 1) {
+			this.review.setScoreOutOfFive(scoreOutOfFive);
+			this.review.setMessageReview(messageReview);
+		}
 
 	}
 
