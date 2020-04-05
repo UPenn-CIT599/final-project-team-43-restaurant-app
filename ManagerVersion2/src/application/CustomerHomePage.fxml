@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
@@ -20,6 +19,7 @@
             <Button mnemonicParsing="false" text="View Menu" />
             <Button mnemonicParsing="false" text="Reservations" />
             <Button mnemonicParsing="false" text="Order Delivery" />
+            <Button mnemonicParsing="false" text="Order Pickup" />
         </items>
       </ToolBar>
       <TextArea prefHeight="353.0" prefWidth="640.0" text="Welcome to our Taco Restaurant!">
@@ -32,7 +32,7 @@
             <Image url="@../../47f3108dbd755839083fa9e5c0bcacc0_happy-taco-clipart_920-535.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="149.0" fitWidth="293.0" pickOnBounds="true" preserveRatio="true" translateY="-120.0">
+      <ImageView fitHeight="148.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true" translateY="-120.0">
          <image>
             <Image url="@../../taco%20man.jpg" />
          </image>
