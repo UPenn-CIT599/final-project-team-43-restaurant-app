@@ -14,7 +14,13 @@ public class Taco {
 	private ArrayList<InventoryItem> garnish;
 	private InventoryItem sauce;
 	private double price;
-	
+	/**
+	 * Constructor to build taco object from InventoryItems and set price.
+	 * @param shell
+	 * @param filling
+	 * @param garnish
+	 * @param sauce
+	 */
 	public Taco (InventoryItem shell, InventoryItem filling, ArrayList<InventoryItem> garnish, InventoryItem sauce){
 		this.shell = shell;
 		this.filling = filling;

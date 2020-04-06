@@ -3,38 +3,44 @@ import java.util.ArrayList;
 import java.util.HashMap;
 /**
  * This class monitors inventory items of the restaurant
- * @author yinjiezhang
+ * @author yinjiezhang, porth
  *
  */
 public class Inventory {
 
-	//InventoryItem are variables from InventoryItem class, Integer are amount of those items
-	private HashMap<InventoryItem, Double> inventory;
+	//InventoryItem are objects of InventoryItem class
+	private ArrayList<InventoryItem> inventory;
 	
 	/**
-	 * constructor
+	 * constructor initializes inventory ArrayList by reading from file
 	 * @param itemList
 	 */
-	public Inventory(ArrayList<InventoryItem> itemList) {
+	public Inventory(String fileName) {
 		
-		inventory = new HashMap<>();
-		
-		for (InventoryItem inventoryItem : itemList) {
-			double amount = inventoryItem.getOnHand();
-			inventory.put(inventoryItem, amount);
-		}
+		this.inventory = new ArrayList<InventoryItem>();
+		InventoryReader reader = new InventoryReader("inventory_small.csv");
+		this.inventory = reader.getInventoryList();
 	}
-	
-	
-	
-	
 	
 	public void sort(HashMap<InventoryItem, Integer> inventory) {
 		
 	}
 	
-	public void alertOfOutOfStock() {
+	/**
+	 * Method to iterate over inventory to find items in need of reorder.
+	 * If onHand quantity is less than the reorderPoint the item is added
+	 * to the list of items to order.
+	 * @return ArrayList itemsToOrder
+	 */
+	public ArrayList<InventoryItem> createProductOrder() {
 		
+		ArrayList<InventoryItem> itemsToOrder = new ArrayList<InventoryItem>();
+		for(InventoryItem product : this.inventory) {
+			if (product.getReorderPoint() > product.getOnHand()){
+					itemsToOrder.add(product);				
+			}			
+		}
+		return itemsToOrder;
 	}
 	
 	

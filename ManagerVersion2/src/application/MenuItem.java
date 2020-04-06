@@ -19,6 +19,12 @@ public class MenuItem {
 		
 	}
 	
+	public void addDrink(String description) {
+		String invId;
+		Drink newDrink = new Drink(description, invId);
+		For (item : inventory)
+		drink.add(newDrink);
+	}
 	
 
 }

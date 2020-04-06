@@ -10,7 +10,7 @@ public class Drink {
 	private double price;
 	private double cost;
 	/**
-	 * 
+	 * Constructor to build new drink object from InventoryObject
 	 * @param description
 	 * @param inventoryId
 	 */
@@ -18,7 +18,7 @@ public class Drink {
 		this.description = description;
 		this.inventoryId = inventoryId;
 		this.price = 1.75;
-		this.cost = cost;
+		this.cost = 0.00;
 		
 	}
 	public double getPrice() {
