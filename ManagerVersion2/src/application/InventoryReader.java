@@ -60,11 +60,20 @@ public class InventoryReader {
 	}
 
 	/**
-	 * getter returns ArrayList of Flight objects
+	 * getter returns ArrayList of InventoryItem objects
 	 * 
 	 * @return
 	 */
 	public ArrayList<InventoryItem> getInventoryList() {
 		return inventoryList;
 	}
+	/*public static void main(String[] args) {
+		InventoryReader reader = new InventoryReader("inventory_small.csv");
+		ArrayList<InventoryItem> inventoryList = new ArrayList<InventoryItem>(reader.getInventoryList());
+		for (InventoryItem item: inventoryList) {
+			System.out.println(item.getVendorName());
+		}
+		
+	}
+	*/
 }

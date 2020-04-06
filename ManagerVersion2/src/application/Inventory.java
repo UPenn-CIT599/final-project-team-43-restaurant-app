@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class Inventory {
 
 	//InventoryItem are variables from InventoryItem class, Integer are amount of those items
-	private HashMap<InventoryItem, Integer> inventory;
+	private HashMap<InventoryItem, Double> inventory;
 	
 	/**
 	 * constructor
@@ -20,7 +20,7 @@ public class Inventory {
 		inventory = new HashMap<>();
 		
 		for (InventoryItem inventoryItem : itemList) {
-			int amount = inventoryItem.getAmount();
+			double amount = inventoryItem.getOnHand();
 			inventory.put(inventoryItem, amount);
 		}
 	}
@@ -33,7 +33,7 @@ public class Inventory {
 		
 	}
 	
-	public Inventory alertOfOutOfStock() {
+	public void alertOfOutOfStock() {
 		
 	}
 	
