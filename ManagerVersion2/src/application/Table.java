@@ -10,14 +10,14 @@ public class Table {
 	private int tableNumber;
 	private boolean occupied;
 	private boolean paid;
-	private Order order; //Order class from customer 
+	private CustomerOrder order; //Order class from customer 
 	
 	/**
 	 * constructor
 	 * @param num
 	 * @param order
 	 */
-	public Table(int num, Order order) {
+	public Table(int num, CustomerOrder order) {
 		this.tableNumber = num;
 		this.order = order;
 		occupied = false;
@@ -54,11 +54,11 @@ public class Table {
 		this.paid = paid;
 	}
 
-	public Order getOrder() {
+	public CustomerOrder getOrder() {
 		return order;
 	}
 
-	public void setOrder(Order order) {
+	public void setOrder(CustomerOrder order) {
 		this.order = order;
 	}
 
