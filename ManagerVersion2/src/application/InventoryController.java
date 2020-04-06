@@ -11,6 +11,12 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
+/**
+ * This class controls the Inventory FXML file
+ * 
+ * @author yangliu
+ *
+ */
 public class InventoryController {
 	@FXML
 	private Button btn2;

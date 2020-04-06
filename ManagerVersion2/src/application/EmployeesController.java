@@ -11,6 +11,12 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 
+/**
+ * This class controls the Employee FXML file
+ * 
+ * @author yangliu
+ *
+ */
 public class EmployeesController {
 	@FXML
 	private Button btn2;

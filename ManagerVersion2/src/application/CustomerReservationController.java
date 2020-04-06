@@ -11,6 +11,12 @@ import javafx.stage.Stage;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 
+/**
+ * This class controls the CustomerReservation FXML file
+ * 
+ * @author yangliu
+ *
+ */
 public class CustomerReservationController extends Application {
 	@FXML
 	private Button btnCustomerHome;
@@ -37,7 +43,6 @@ public class CustomerReservationController extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		reservationTimeCBox.getItems().add("1 PM");
 
 	}
 }

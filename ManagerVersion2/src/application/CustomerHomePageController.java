@@ -14,8 +14,9 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * This class is in charge of connecting different interfaces and other class methods
- * @author yinjiezhang
+ * This class controls the CustomerHomePage FXML File
+ * 
+ * @author yinjiezhang; yangliu
  *
  */
 public class CustomerHomePageController implements Initializable {

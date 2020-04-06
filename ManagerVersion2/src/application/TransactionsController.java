@@ -10,6 +10,12 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
+/**
+ * This class controls the Transactions FXML file
+ * 
+ * @author yangliu
+ *
+ */
 public class TransactionsController {
 	@FXML
 	private Button btn2;

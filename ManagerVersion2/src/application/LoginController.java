@@ -11,6 +11,12 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
+/**
+ * This class controls the Login FXML file
+ * 
+ * @author yangliu
+ *
+ */
 public class LoginController {
 	@FXML
 	private Button btn2;

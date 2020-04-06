@@ -65,43 +65,81 @@ public class Orders {
 		}
 	}
 
-	// Need method below to assign quantity to each item that the customer ordered
+	/**
+	 * This method assigns quantity to each item that the customer ordered
+	 */
 	public void assignItemQuantity() {
 		
 	}
 
+	/**
+	 * Getter for customer
+	 * @return
+	 */
 	public Customer getCustomer() {
 		return customer;
 	}
 
+	/**
+	 * Setter for customer
+	 * @param customer
+	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 
+	/**
+	 * Getter for total price
+	 * @return
+	 */
 	public double getTotalPrice() {
 		return totalPrice;
 	}
 
+	/**
+	 * Setter for total price
+	 * @param totalPrice
+	 */
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 
+	/**
+	 * Getter for estimated time of delivery
+	 * @return
+	 */
 	public String getEstimatedTimeOfDelivery() {
 		return estimatedTimeOfDelivery;
 	}
 
+	/**
+	 * Setter for estimated time of delivery
+	 * @param estimatedTimeOfDelivery
+	 */
 	public void setEstimatedTimeOfDelivery(String estimatedTimeOfDelivery) {
 		this.estimatedTimeOfDelivery = estimatedTimeOfDelivery;
 	}
 
+	/**
+	 * Getter for the taco item to quantity hashmap
+	 * @return
+	 */
 	public HashMap<Taco, Integer> getTacoItemToOrderQuantity() {
 		return tacoItemToOrderQuantity;
 	}
 
+	/**
+	 * Getter for the drink item to quantity hashmap
+	 * @return
+	 */
 	public HashMap<Drink, Integer> getDrinkItemToOrderQuantity() {
 		return drinkItemToOrderQuantity;
 	}
 
+	/**
+	 * Getter for the side dish item to quantity hashmap
+	 * @return
+	 */
 	public HashMap<SideDish, Integer> getSideDishItemToOrderQuantity() {
 		return sideDishItemToOrderQuantity;
 	}

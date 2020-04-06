@@ -10,6 +10,13 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
+
+/**
+ * This class controls the Tables FXML file
+ * 
+ * @author yangliu
+ *
+ */
 public class TablesController {
 	@FXML
 	private Button btn2;

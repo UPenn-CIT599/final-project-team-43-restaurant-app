@@ -3,14 +3,14 @@ package application;
 import java.util.ArrayList;
 
 /**
- * This class monitors the customer aspect of the application
+ * This class monitors the customer aspect of our restaurant application
  * 
  * @author yangliu
  */
 
 public class Customer {
 
-	private double availableFunds;
+	private double availableFunds; // Funds that the customer has available to spend
 	private ArrayList<Taco> tacoOrders; // All taco orders for the customer
 	private ArrayList<Drink> drinkOrders; // All drink orders for the customer
 	private ArrayList<SideDish> sideDishOrders; // All side dish orders for the customer
@@ -42,34 +42,66 @@ public class Customer {
 		this.availableFunds = availableFunds;
 	}
 
+	/**
+	 * Getter of the list of tacos that the customer ordered
+	 * @return
+	 */
 	public ArrayList<Taco> getTacoOrders() {
 		return tacoOrders;
 	}
 
+	/**
+	 * Setter of the list of tacos that the customer ordered
+	 * @param tacoOrders
+	 */
 	public void setTacoOrders(ArrayList<Taco> tacoOrders) {
 		this.tacoOrders = tacoOrders;
 	}
 
+	/**
+	 * Getter for the list of drinks that the customer ordered
+	 * @return
+	 */
 	public ArrayList<Drink> getDrinkOrders() {
 		return drinkOrders;
 	}
 
+	/**
+	 * Setter for the list of drinks that the customer ordered
+	 * @param drinkOrders
+	 */
 	public void setDrinkOrders(ArrayList<Drink> drinkOrders) {
 		this.drinkOrders = drinkOrders;
 	}
 
+	/**
+	 * Getter for the list of side dishes that the customer ordered
+	 * @return
+	 */
 	public ArrayList<SideDish> getSideDishOrders() {
 		return sideDishOrders;
 	}
 
+	/**
+	 * Setter for the list of side dishes that the customer ordered
+	 * @param sideDishOrders
+	 */
 	public void setSideDishOrders(ArrayList<SideDish> sideDishOrders) {
 		this.sideDishOrders = sideDishOrders;
 	}
 
+	/**
+	 * Getter for the review that the customer gave
+	 * @return
+	 */
 	public CustomerReviews getReview() {
 		return review;
 	}
 
+	/**
+	 * Setter for the review that the customer gave
+	 * @param review
+	 */
 	public void setReview(CustomerReviews review) {
 		this.review = review;
 	}

@@ -7,9 +7,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-
 import javafx.event.ActionEvent;
 
+/**
+ * This class controls the Main FXML File
+ * 
+ * @author yangliu
+ *
+ */
 public class MainController {
 	@FXML
 	private Button btnTable, btnTransaction, btnEmployees, btnInventory, btn1;
@@ -21,19 +26,19 @@ public class MainController {
 
 		Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 
-		if(event.getSource() == btn1) {
+		if (event.getSource() == btn1) {
 			stage = (Stage) btn1.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-		} else if(event.getSource() == btnTable){
+		} else if (event.getSource() == btnTable) {
 			stage = (Stage) btnTable.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Tables.fxml"));
-		} else if(event.getSource() == btnTransaction){
+		} else if (event.getSource() == btnTransaction) {
 			stage = (Stage) btnTransaction.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Transactions.fxml"));
-		} else if(event.getSource() == btnEmployees){
+		} else if (event.getSource() == btnEmployees) {
 			stage = (Stage) btnEmployees.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Employees.fxml"));
-		}	else {
+		} else {
 			stage = (Stage) btnInventory.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Inventory.fxml"));
 		}
@@ -43,5 +48,5 @@ public class MainController {
 		stage.show();
 
 	}
-	
+
 }
