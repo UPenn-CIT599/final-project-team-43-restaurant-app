@@ -1,30 +1,35 @@
 package application;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+
 /**
  * This class monitors inventory items of the restaurant
  * @author yinjiezhang, porth
+ * 
+ * @author yinjiezhang
  *
  */
 public class Inventory {
 
-	//InventoryItem are objects of InventoryItem class
+	//InventoryItems are objects of InventoryItem class
 	private ArrayList<InventoryItem> inventory;
 	
 	/**
 	 * constructor initializes inventory ArrayList by reading from file
+	 * constructor
+	 * 
 	 * @param itemList
 	 */
+
 	public Inventory(String fileName) {
 		
 		this.inventory = new ArrayList<InventoryItem>();
 		InventoryReader reader = new InventoryReader("inventory_small.csv");
 		this.inventory = reader.getInventoryList();
+
 	}
 	
-	public void sort(HashMap<InventoryItem, Integer> inventory) {
-		
-	}
 	
 	/**
 	 * Method to iterate over inventory to find items in need of reorder.
@@ -45,11 +50,31 @@ public class Inventory {
 	
 	
 	public void addItem(String name, int amount) {
-		
+	}	
+
+	/**
+	 * This method sorts inventory HashMap by item amount from least to most
+	 * 
+	 * @param inventory
+	 */
+	public void sort(HashMap<InventoryItem, Double> inventory) {
 	}
 
+	/**
+	 * This method adds item to the inventory list
+	 * 
+	 * @param item
+	 */
+	public void addItem(InventoryItem item) {
 
-	public void deleteItem(String name, int amount) {
-		
+	}
+
+	/**
+	 * This method deletes item from inventory list
+	 * 
+	 * @param item
+	 */
+	public void deleteItem(InventoryItem item) {
+
 	}
 }

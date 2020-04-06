@@ -46,8 +46,7 @@ public class InventoryReader {
 					double price = Double.parseDouble(columnInfo[5]);
 					double onHand = Double.parseDouble(columnInfo[6]);
 					int calories = Integer.parseInt(columnInfo[7]);
-					InventoryItem item = new InventoryItem(itemId, name, packSize, units, vendor, price, onHand,
-							calories);
+					InventoryItem item = new InventoryItem(itemId, name, calories, units, packSize, price, onHand, vendor);
 					inventoryList.add(item);
 			}
 
