@@ -23,9 +23,9 @@ public class CustomerOrder {
 	private HashMap<Drink, Integer> drinkItemToOrderQuantity;
 	private HashMap<SideDish, Integer> sideDishItemToOrderQuantity;
 
-	private HashMap<Customer, Taco> customerTacosToOrdersForPickup;
-	private HashMap<Customer, Drink> customerDrinkToOrdersForPickup;
-	private HashMap<Customer, SideDish> customerSideDishToOrdersForPickup;
+	private HashMap<Customer, Taco> customerTacosToOrdersForDineIn;
+	private HashMap<Customer, Drink> customerDrinkToOrdersForDineIn;
+	private HashMap<Customer, SideDish> customerSideDishToOrdersForDineIn;
 
 	private HashMap<Customer, Taco> customerTacosToOrdersForDelivery;
 	private HashMap<Customer, Drink> customerDrinkToOrdersForDelivery;
@@ -35,7 +35,7 @@ public class CustomerOrder {
 	 * Constructor for Orders
 	 * 
 	 * @param customer the customer who is ordering
-	 * @param delivery set true if order is delivery; set false if order is pickup
+	 * @param delivery set true if order is delivery; set false if order is dine in
 	 */
 	public CustomerOrder(Customer customer, boolean delivery) {
 
@@ -43,7 +43,7 @@ public class CustomerOrder {
 		this.setCustomer(customer);
 		this.setDelivery(delivery);
 
-		// order items for delivery are in a separate hashmap from pickup
+		// order items for delivery are in a separate hashmap from dine in
 		if (delivery == true) {
 			for (Taco taco : customer.getTacoOrders()) {
 				customerTacosToOrdersForDelivery.put(customer, taco);
@@ -56,13 +56,13 @@ public class CustomerOrder {
 			}
 		} else if (delivery == false) {
 			for (Taco taco : customer.getTacoOrders()) {
-				customerTacosToOrdersForPickup.put(customer, taco);
+				customerTacosToOrdersForDineIn.put(customer, taco);
 			}
 			for (Drink drink : customer.getDrinkOrders()) {
-				customerDrinkToOrdersForPickup.put(customer, drink);
+				customerDrinkToOrdersForDineIn.put(customer, drink);
 			}
 			for (SideDish sideDish : customer.getSideDishOrders()) {
-				customerSideDishToOrdersForPickup.put(customer, sideDish);
+				customerSideDishToOrdersForDineIn.put(customer, sideDish);
 			}
 		}
 	}
@@ -167,7 +167,7 @@ public class CustomerOrder {
 	/**
 	 * Getter for isDelivery
 	 * 
-	 * @return true for delivery; false for pickup
+	 * @return true for delivery; false for dine in
 	 */
 	public boolean isDelivery() {
 		return delivery;
@@ -176,7 +176,7 @@ public class CustomerOrder {
 	/**
 	 * Setter for isDelivery
 	 * 
-	 * @param delivery true for delivery; false for pickup
+	 * @param delivery true for delivery; false for dine in
 	 */
 	public void setDelivery(boolean delivery) {
 		this.delivery = delivery;
