@@ -7,7 +7,6 @@ import java.util.HashMap;
  * This class monitors inventory items of the restaurant
  * @author yinjiezhang, porth
  * 
- * @author yinjiezhang
  *
  */
 public class Inventory {
