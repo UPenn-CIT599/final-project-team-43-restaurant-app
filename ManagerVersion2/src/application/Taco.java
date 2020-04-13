@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author porth
  *g
  */
-public class Taco {
+public class Taco extends MenuItem{
 
 	private InventoryItem shell;
 	private InventoryItem filling;
@@ -43,6 +43,10 @@ public class Taco {
 
 	public InventoryItem getSauce() {
 		return sauce;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	public double getPrice() {

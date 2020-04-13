@@ -1,29 +1,24 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * 
  * @author yangliu
  *
  */
-public class MenuItem {
+public abstract class MenuItem {
 	
-	//instance variables consist of arraylists of the different food class items
-	private ArrayList<Taco> tacos;
-	private ArrayList<Drink> drink;
-	private ArrayList<SideDish> sideDish;
+	//instance variables consist of salePrice, cost, description, portionSize, and ingredients.
+	public double price;
+	public double cost;
+	public String description;
+	public HashMap<InventoryItem, Double> ingredients; 
 	
 	
-	public MenuItem() {
-		
-	}
+	public MenuItem(String description) {
 	
-	public void addDrink(String description) {
-		String invId;
-		Drink newDrink = new Drink(description, invId);
-		For (item : inventory)
-		drink.add(newDrink);
 	}
 	
 

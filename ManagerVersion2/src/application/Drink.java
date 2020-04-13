@@ -4,7 +4,7 @@ package application;
  * @author porth
  *
  */
-public class Drink {
+public class Drink extends MenuItem{
 	private String description;
 	private String inventoryId;
 	private double price;
