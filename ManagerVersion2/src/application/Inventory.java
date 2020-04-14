@@ -47,33 +47,6 @@ public class Inventory {
 		return itemsToOrder;
 	}
 	
-	
-	public void addItem(String name, int amount) {
-	}	
+		
 
-	/**
-	 * This method sorts inventory HashMap by item amount from least to most
-	 * 
-	 * @param inventory
-	 */
-	public void sort(HashMap<InventoryItem, Double> inventory) {
-	}
-
-	/**
-	 * This method adds item to the inventory list
-	 * 
-	 * @param item
-	 */
-	public void addItem(InventoryItem item) {
-
-	}
-
-	/**
-	 * This method deletes item from inventory list
-	 * 
-	 * @param item
-	 */
-	public void deleteItem(InventoryItem item) {
-
-	}
 }
