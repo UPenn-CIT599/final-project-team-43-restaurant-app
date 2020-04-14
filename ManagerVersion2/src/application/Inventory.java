@@ -24,7 +24,8 @@ public class Inventory {
 	public Inventory(String fileName) {
 		
 		this.inventory = new ArrayList<InventoryItem>();
-		InventoryReader reader = new InventoryReader("inventory_small.csv");
+		InventoryReader reader = new InventoryReader();
+		reader.readFile("inventory_small_csv");
 		this.inventory = reader.getInventoryList();
 
 	}

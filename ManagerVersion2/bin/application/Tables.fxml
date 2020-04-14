@@ -31,8 +31,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl1o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl1p" layoutX="27.0" layoutY="83.0" text="UnPaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -42,8 +42,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl2o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl2p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -53,8 +53,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl3o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl3p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -64,8 +64,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl4o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl4p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -75,8 +75,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl8o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl8p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -86,8 +86,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl7o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl7p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -97,8 +97,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl6o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl6p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -108,8 +108,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl5o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl5p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -119,8 +119,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl12o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl12p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -130,8 +130,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl11o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl11p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -141,8 +141,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl10o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl10p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
@@ -152,8 +152,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl9o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl9p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
@@ -163,8 +163,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl16o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl16p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="352.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
@@ -174,8 +174,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl15o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl15p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="352.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -185,8 +185,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl14o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl14p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="352.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
@@ -196,8 +196,8 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="17.0" layoutY="84.0" mnemonicParsing="false" text="Paid" />
-                  <CheckBox layoutX="17.0" layoutY="58.0" mnemonicParsing="false" text="Occupied" />
+                  <Label fx:id="lbl13o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
+                  <Label fx:id="lbl13p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
                </children>
             </AnchorPane>
          </children>

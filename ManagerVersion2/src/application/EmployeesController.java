@@ -2,25 +2,67 @@ package application;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 /**
  * This class controls the Employee FXML file
  * 
- * @author yangliu
+ * @author yangliu, yinjiez
  *
  */
-public class EmployeesController {
+public class EmployeesController implements Initializable {
 	@FXML
 	private Button btn2;
+	
+	
+	//set up TableView for Employee interface
+	@FXML
+	private TableView<EmployeeControl> list;
+	@FXML
+	private TableColumn<EmployeeControl, String> name;
+	@FXML
+	private TableColumn<EmployeeControl, Integer> attendanceHours;
+	@FXML
+	private TableColumn<EmployeeControl, Integer> salary;
+	@FXML
+	private TableColumn<EmployeeControl, Boolean> onDuty;
 
+	private EmployeeControl employee1, employee2, employee3, employee4, employee5;
+	
+	public ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(
+			employee1 = EmployeeControl.employeeGenerator(), 
+			employee2 = EmployeeControl.employeeGenerator(),
+			employee3 = EmployeeControl.employeeGenerator(),
+			employee4 = EmployeeControl.employeeGenerator(),
+			employee5 = EmployeeControl.employeeGenerator()
+			);
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		name.setCellValueFactory(new PropertyValueFactory<EmployeeControl, String>("name"));
+		attendanceHours.setCellValueFactory(new PropertyValueFactory<EmployeeControl, Integer>("attendanceHours"));
+		salary.setCellValueFactory(new PropertyValueFactory<EmployeeControl, Integer>("salary"));
+		onDuty.setCellValueFactory(new PropertyValueFactory<EmployeeControl, Boolean>("onDuty"));
+		
+		list.setItems(obList);
+		
+	}
+
+	
 	// Event Listener on Button[#btn2].onAction
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {

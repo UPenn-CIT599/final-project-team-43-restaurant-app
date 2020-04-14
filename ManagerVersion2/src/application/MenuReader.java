@@ -3,9 +3,7 @@ package application;
 import java.util.ArrayList;
 
 public class MenuReader extends FileReader{
-	private ArrayList<Drink> drinks;
-	private ArrayList<Taco> tacos;
-	private ArrayList<SideDish> sides;
+	private Menu menu;
 	
 	/**
 	 * Constructor takes default FileReader constructor and
@@ -13,9 +11,7 @@ public class MenuReader extends FileReader{
 	 * MenuItem subclasses
 	 */
 	public MenuReader() {
-		drinks = new ArrayList<Drink>();
-		tacos = new ArrayList<Taco>();
-		sides = new ArrayList<SideDish>();
+		menu = new Menu();
 	}	
 	
 	/**
@@ -26,7 +22,7 @@ public class MenuReader extends FileReader{
 	@Override
 	public void putData(String[] columnInfo) {
 		// TODO Auto-generated method stub
-		
+		for (name : Inventory.get)
 	}
 
 }
