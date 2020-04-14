@@ -1,5 +1,6 @@
 # final-project-team-43-restaurant-app
 final-project-team-43-restaurant-app created by GitHub Classroom
+<<<<<<< HEAD
 A program to simulate the operation of a fast serve taco restaurant. 
 
 ## Getting Started
@@ -34,3 +35,11 @@ Yinjie Zhang yinjiez@seas.upenn.edu
 ## Acknowledgements
 
 
+=======
+
+
+
+
+manager login user name: manager@taco.edu
+              password: 05042020
+>>>>>>> branch 'master' of https://github.com/UPenn-CIT599/final-project-team-43-restaurant-app.git

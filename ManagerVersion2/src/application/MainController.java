@@ -19,7 +19,7 @@ public class MainController {
 	@FXML
 	private Button btnTable, btnTransaction, btnEmployees, btnInventory, btn1;
 
-	// Event Listener on Button[#btnTable].onAction
+	// Event Listener on Button[#btnTable, btnTransaction, btnEmployees, btnInventory, btn1].onAction
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
 		Stage stage = (Stage) btn1.getScene().getWindow();

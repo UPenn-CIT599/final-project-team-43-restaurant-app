@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+<BorderPane onDragDetected="#handleButtonAction" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <center>
       <HBox alignment="CENTER" prefHeight="300.0" prefWidth="350.0" BorderPane.alignment="CENTER">
          <children>
@@ -28,8 +28,8 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TextField />
-                  <PasswordField translateY="10.0" />
+                  <TextField fx:id="txtUserEmail" onAction="#handleButtonAction" promptText="User Email" />
+                  <PasswordField fx:id="txtPassword" onAction="#handleButtonAction" promptText="password" translateY="10.0" />
                   <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="Login" translateY="30.0" underline="true" />
                </children>
             </VBox>
@@ -37,18 +37,10 @@
       </HBox>
    </center>
    <top>
-      <Label text="Manager Version Login" BorderPane.alignment="CENTER">
+      <Label text="Manager Version Login" textFill="#066879" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.7619047619047619">
-               <stops>
-                  <Stop color="#10b8da" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </RadialGradient>
-         </textFill>
       </Label>
    </top>
    <left>

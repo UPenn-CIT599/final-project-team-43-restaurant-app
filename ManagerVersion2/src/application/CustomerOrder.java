@@ -23,13 +23,13 @@ public class CustomerOrder {
 	private HashMap<Drink, Integer> drinkItemToOrderQuantity;
 	private HashMap<SideDish, Integer> sideDishItemToOrderQuantity;
 
-	private HashMap<Customer, Taco> customerTacosToOrdersForDineIn;
-	private HashMap<Customer, Drink> customerDrinkToOrdersForDineIn;
-	private HashMap<Customer, SideDish> customerSideDishToOrdersForDineIn;
+	private HashMap<Customer, Taco> customerToTacoOrdersForDineIn;
+	private HashMap<Customer, Drink> customerToDrinkOrdersForDineIn;
+	private HashMap<Customer, SideDish> customerToSideDishOrdersForDineIn;
 
-	private HashMap<Customer, Taco> customerTacosToOrdersForDelivery;
-	private HashMap<Customer, Drink> customerDrinkToOrdersForDelivery;
-	private HashMap<Customer, SideDish> customerSideDishToOrdersForDelivery;
+	private HashMap<Customer, Taco> customerToTacoOrdersForDelivery;
+	private HashMap<Customer, Drink> customerToDrinkOrdersForDelivery;
+	private HashMap<Customer, SideDish> customerToSideDishOrdersForDelivery;
 
 	/**
 	 * Constructor for Orders
@@ -46,23 +46,23 @@ public class CustomerOrder {
 		// order items for delivery are in a separate hashmap from dine in
 		if (delivery == true) {
 			for (Taco taco : customer.getTacoOrders()) {
-				customerTacosToOrdersForDelivery.put(customer, taco);
+				customerToTacoOrdersForDelivery.put(customer, taco);
 			}
 			for (Drink drink : customer.getDrinkOrders()) {
-				customerDrinkToOrdersForDelivery.put(customer, drink);
+				customerToDrinkOrdersForDelivery.put(customer, drink);
 			}
 			for (SideDish sideDish : customer.getSideDishOrders()) {
-				customerSideDishToOrdersForDelivery.put(customer, sideDish);
+				customerToSideDishOrdersForDelivery.put(customer, sideDish);
 			}
 		} else if (delivery == false) {
 			for (Taco taco : customer.getTacoOrders()) {
-				customerTacosToOrdersForDineIn.put(customer, taco);
+				customerToTacoOrdersForDineIn.put(customer, taco);
 			}
 			for (Drink drink : customer.getDrinkOrders()) {
-				customerDrinkToOrdersForDineIn.put(customer, drink);
+				customerToDrinkOrdersForDineIn.put(customer, drink);
 			}
 			for (SideDish sideDish : customer.getSideDishOrders()) {
-				customerSideDishToOrdersForDineIn.put(customer, sideDish);
+				customerToSideDishOrdersForDineIn.put(customer, sideDish);
 			}
 		}
 	}
