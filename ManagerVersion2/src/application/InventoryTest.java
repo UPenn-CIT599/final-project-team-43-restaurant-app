@@ -14,7 +14,7 @@ class InventoryTest {
 	@BeforeAll
 	
 	static void setUpBeforeClass() throws Exception {
-		inventory = new Inventory("inventory_small.csv");			
+		inventory = new Inventory("Inventory.csv");			
 		}
 
 

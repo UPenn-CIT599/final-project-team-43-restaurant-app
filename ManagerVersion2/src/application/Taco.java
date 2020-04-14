@@ -9,11 +9,6 @@ import java.util.ArrayList;
  */
 public class Taco extends MenuItem{
 
-	private InventoryItem shell;
-	private InventoryItem filling;
-	private ArrayList<InventoryItem> garnish;
-	private InventoryItem sauce;
-	private double price;
 	/**
 	 * Constructor to build taco object from InventoryItems and set price.
 	 * @param shell
@@ -21,37 +16,8 @@ public class Taco extends MenuItem{
 	 * @param garnish
 	 * @param sauce
 	 */
-	public Taco (InventoryItem shell, InventoryItem filling, ArrayList<InventoryItem> garnish, InventoryItem sauce){
-		this.shell = shell;
-		this.filling = filling;
-		this.garnish = garnish;
-		this.sauce = sauce;
-		this.price = 0.00;
-	}
-
-	public InventoryItem getShell() {
-		return shell;
-	}
-
-	public InventoryItem getFilling() {
-		return filling;
-	}
-
-	public ArrayList<InventoryItem> getGarnish() {
-		return garnish;
-	}
-
-	public InventoryItem getSauce() {
-		return sauce;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public double getPrice() {
-		return price;
-	}
+	public Taco (){
 	
+	}
 	
 }

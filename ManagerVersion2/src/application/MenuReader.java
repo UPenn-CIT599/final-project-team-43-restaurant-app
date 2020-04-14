@@ -22,7 +22,13 @@ public class MenuReader extends FileReader{
 	@Override
 	public void putData(String[] columnInfo) {
 		// TODO Auto-generated method stub
-		for (name : Inventory.get)
+		String itemType = columnInfo[0];
+		String description = columnInfo[1];
+		String inventoryId = columnInfo[3];
+		Double portion = columnInfo[4];
+		If(!columnInfo[0] = "");
+			MenuItem item = new ItemType();
+		for (item : Inventory.getInventory());
 	}
 
 }

@@ -25,12 +25,22 @@ public class Inventory {
 		
 		this.inventory = new ArrayList<InventoryItem>();
 		InventoryReader reader = new InventoryReader();
-		reader.readFile("inventory_small_csv");
+		reader.readFile("Inventory.csv");
 		this.inventory = reader.getInventoryList();
 
 	}
 	
 	
+	public ArrayList<InventoryItem> getInventory() {
+		return inventory;
+	}
+
+
+	public void setInventory(ArrayList<InventoryItem> inventory) {
+		this.inventory = inventory;
+	}
+
+
 	/**
 	 * Method to iterate over inventory to find items in need of reorder.
 	 * If onHand quantity is less than the reorderPoint the item is added
