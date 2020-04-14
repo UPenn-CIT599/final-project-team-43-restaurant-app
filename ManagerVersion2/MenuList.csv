@@ -1,0 +1,32 @@
+﻿type,itemName,InventoryItem description,,quantity
+Taco,Beef Taco,Beef Taco Filling,InventoryItem ID,3
+,,Corn Tortilla,F2344,1
+,,Onion,2166R,0.01
+,,Cheese - queso,S3256,0.04
+,,Tomato,7345R,0.025
+,,Lettuce,8964R,0.05
+,,Hot sauce,8811,0.03
+Taco,Chicken Taco,Grilled chicken slices,S8175,3
+,,Flour tortilla,F2341,1
+,,Cheese - queso,S3256,0.04
+,,Cilantro,3321R,0.05
+,,Crema,S6572,0.08
+,,Tomatillo salsa,8872,0.05
+,,Tomato,7345R,0.025
+Taco,Veggie Taco,Corn Tortilla,F2344,1
+,,Veggie Taco Filling,S8836,3
+,,Avocado,7210R,0.15
+,,Pico di Gallo,8734,0.1
+,,Tomato,7345R,0.025
+,,Lettuce,8964R,0.05
+Drink,Dr Pepper,Dr Pepper,6649-6,1
+Drink,Sparking water,La Croix water,6241-6,1
+Drink,Pepsi Cola,Pepsi,6623-6,1
+Drink,Pacifico Beer,Pacifico,B4424,1
+SideDish,Nachos,Tortilla chips,S7746,3.5
+,,Nacho cheese,S3577,2.5
+,,Mild salsa,8878,2
+SideDish,Tortilla Chips,tortilla chips,S7746,3
+SideDish,Rice and Beans,Rice,S0176,0.125
+,,Refried Beans,S4568,5
+,,Rice seasoning,S9002,0.03

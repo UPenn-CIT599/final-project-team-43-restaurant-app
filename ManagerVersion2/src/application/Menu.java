@@ -15,7 +15,7 @@ public class Menu {
 	
 	public void populateMenu(String fileName) {
 		MenuReader reader = new MenuReader();
-		reader.readFile("menu_small.csv");
+		reader.readFile("MenuList.csv");
 		this.drinks = reader.getDrinks();
 		this.tacos = reader.getTacos();
 		this.sides = reader.getSideDishes();
