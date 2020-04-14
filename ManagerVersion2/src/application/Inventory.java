@@ -21,15 +21,19 @@ public class Inventory {
 	 * @param itemList
 	 */
 
-	public Inventory(String fileName) {
+	public Inventory() {
 		
 		this.inventory = new ArrayList<InventoryItem>();
-		InventoryReader reader = new InventoryReader();
-		reader.readFile("Inventory.csv");
-		this.inventory = reader.getInventoryList();
+		//InventoryReader reader = new InventoryReader();
+		//reader.readFile("Inventory.csv");
+		//this.inventory = reader.getInventoryList();
 
 	}
-	
+	public void populateInventory(String fileName) {
+		InventoryReader reader = new InventoryReader();
+		reader.readFile(fileName);
+		this.inventory = reader.getInventoryList();
+		}
 	
 	public ArrayList<InventoryItem> getInventory() {
 		return inventory;
@@ -58,18 +62,6 @@ public class Inventory {
 		return itemsToOrder;
 	}
 	
-	
-	public void addItem(String name, int amount) {
-	}	
-
-	/**
-	 * This method sorts inventory HashMap by item amount from least to most
-	 * 
-	 * @param inventory
-	 */
-	public void sort(HashMap<InventoryItem, Double> inventory) {
-	}
-
 	/**
 	 * This method adds item to the inventory list
 	 * 
@@ -87,4 +79,5 @@ public class Inventory {
 	public void deleteItem(InventoryItem item) {
 
 	}
+	
 }

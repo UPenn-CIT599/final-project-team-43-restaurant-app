@@ -11,16 +11,17 @@ import java.util.HashMap;
 public abstract class MenuItem {
 	
 	//instance variables consist of salePrice, cost, description, portionSize, and ingredients.
-	private double price;
-	private double cost;
-	private String description;
+	public double price;
+	public double cost;
+	public String description;
+	
 	private HashMap<InventoryItem, Double> ingredients; 
 	
 	
 	public MenuItem() {
 		price = .00;
 		cost = 0.00;
-		description = "";
+		setDescription("");
 		ingredients = new HashMap<InventoryItem, Double>();
 		
 	}
@@ -61,5 +62,20 @@ public abstract class MenuItem {
 	public void addItem(String description) {
 	
 	}
-	
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public HashMap<InventoryItem, Double> getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(HashMap<InventoryItem, Double> ingredients) {
+		this.ingredients = ingredients;
+	}
+
 }
