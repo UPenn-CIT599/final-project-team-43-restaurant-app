@@ -1,5 +1,10 @@
 package application;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class CustomerReviews {
 	/**
 	 * Class for customer reviews
@@ -47,5 +52,52 @@ public class CustomerReviews {
 	public void setMessageReview(String messageReview) {
 		this.messageReview = messageReview;
 	}
+	
+	
+	
+	/**
+	 * Adds the customer review into the restaurantreviews.csv file.  All reviews are 
+	 * stored in this file and will not be overwritten upon successive calls of this method.
+	 */
+	public void addReview() {
 
+		try {
+			Scanner in = new Scanner("restaurantreviews.csv");
+			FileWriter fw= new FileWriter("restaurantreviews.csv", true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			in.nextLine();
+			bw.newLine();
+			while (in.hasNextLine()) {
+				in.nextLine();
+				bw.newLine();
+				
+			}
+			bw.write(Integer.toString(scoreOutOfFive) + "," + messageReview);
+			bw.flush();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	//Below is the test for add review. 
+	/*
+	
+	public static void main(String[] args) {
+
+		Customer a = new Customer();
+		CustomerReviews review = new CustomerReviews();
+		review.setMessageReview("Test review");
+		review.setScoreOutOfFive(5);
+		a.setReview(review);
+		a.getReview().addReview();
+		
+	}
+	
+*/
+	
+	
 }
