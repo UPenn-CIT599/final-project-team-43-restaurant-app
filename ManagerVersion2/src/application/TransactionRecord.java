@@ -1,6 +1,10 @@
 package application;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 /**
  * This class has all the transaction records for the restaurant
  * @author yinjiezhang
@@ -8,10 +12,10 @@ import java.util.Random;
  */
 public class TransactionRecord {
 	
-	private int date;
-	private int time;
-	private double transactionAmount;
-	private String paymentMethod;
+	private SimpleIntegerProperty date;
+	private SimpleIntegerProperty time;
+	private SimpleDoubleProperty transactionAmount;
+	private SimpleStringProperty paymentMethod;
 	
 	/**
 	 * constructor
@@ -21,28 +25,28 @@ public class TransactionRecord {
 	 * @param paymentMethod
 	 */
 	public TransactionRecord(int date, int time, double transactionAmount, String paymentMethod) {
-		this.date = date;
-		this.time = time;
-		this.transactionAmount = transactionAmount;
-		this.paymentMethod = paymentMethod;
+		this.date = new SimpleIntegerProperty(date);
+		this.time = new SimpleIntegerProperty(time);
+		this.transactionAmount = new SimpleDoubleProperty(transactionAmount);
+		this.paymentMethod = new SimpleStringProperty(paymentMethod);
 	}
 	
 	private ArrayList<TransactionRecord> realTimeTransactionRecord = new ArrayList<>();
 
 	public int getDate() {
-		return date;
+		return date.get();
 	}
 
 	public int getTime() {
-		return time;
+		return time.get();
 	}
 
 	public double getTransactionAmount() {
-		return transactionAmount;
+		return transactionAmount.get();
 	}
 
 	public String getPaymentMethod() {
-		return paymentMethod;
+		return paymentMethod.get();
 	}
 
 	public ArrayList<TransactionRecord> getRealTimeTransactionRecord() {
@@ -55,7 +59,7 @@ public class TransactionRecord {
 	 * it should be input by customer 
 	 * @return transaction all the informations about one transaction
 	 */
-	public TransactionRecord transactionGenerator() {
+	public static TransactionRecord transactionGenerator() {
 		TransactionRecord transaction;
 		
 		Random rd = new Random();
@@ -67,7 +71,7 @@ public class TransactionRecord {
 		
 		date = rd.nextInt(31);
 		time = rd.nextInt(2459);
-		transactionAmount = rd.nextDouble()+ rd.nextInt(100);
+		transactionAmount = Math.round(rd.nextDouble() * 100.0)/100.0 + rd.nextInt(100);
 		
 		//creating random paymentMethod
 		String []banks = {"Visa", "Amex", "Discovery", "MasterCard"};

@@ -1,6 +1,10 @@
 package application;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 /**
  * This class monitors all the employees of the restaurant
  * @author yinjiezhang
@@ -8,59 +12,66 @@ import java.util.Random;
  */
 public class EmployeeControl {
 
-	private String name;
-	private int attendanceHours;
-	private int salary;
-	private boolean onDuty;
+	private SimpleStringProperty name;
+	private SimpleIntegerProperty attendanceHours;
+	private SimpleIntegerProperty salary;
+	private SimpleBooleanProperty onDuty;
+	
+	
+	
+	
+	private ArrayList<EmployeeControl> employeeList = new ArrayList<>();
+	
+	
 	
 	/**
 	 * constructor
 	 * @param name
 	 * @param attendanceHours
 	 * @param salary
+	 * @param onDuty
 	 */
 	public EmployeeControl(String name, int attendanceHours, int salary, boolean onDuty) {
-		this.name = name;
-		this.attendanceHours = attendanceHours;
-		this.salary = salary;
-		this.onDuty = onDuty;
+		super();
+		this.name = new SimpleStringProperty(name);
+		this.attendanceHours = new SimpleIntegerProperty(attendanceHours);
+		this.salary = new SimpleIntegerProperty(salary);
+		this.onDuty = new SimpleBooleanProperty(onDuty);
+	
 	}
-	
-	private ArrayList<EmployeeControl> employeeList = new ArrayList<>();
-	
-	
+
 	
 
 	public String getName() {
-		return name;
+		return name.get();
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = new SimpleStringProperty(name);
 	}
 
-	public int getAttendanceHours() {
-		return attendanceHours;
+	public Integer getAttendanceHours() {
+		return attendanceHours.get();
 	}
 
-	public void setAttendanceHours(int attendanceHours) {
-		this.attendanceHours = attendanceHours;
+	public void setAttendanceHours(Integer attendanceHours) {
+		this.attendanceHours = new SimpleIntegerProperty(attendanceHours);
 	}
 
-	public int getSalary() {
-		return salary;
+	public Integer getSalary() {
+		return salary.get();
 	}
 
-	public void setSalary(int salary) {
-		this.salary = salary;
+	public void setSalary(Integer salary) {
+		this.salary = new SimpleIntegerProperty(salary);
 	}
 
-	public boolean isOnDuty() {
-		return onDuty;
+	public Boolean getOnDuty() {
+		return onDuty.getValue();
 	}
 
-	public void setOnDuty(boolean onDuty) {
-		this.onDuty = onDuty;
+	public void setOnDuty(Boolean onDuty) {
+		this.onDuty = new SimpleBooleanProperty(onDuty);
 	}
 
 	public ArrayList<EmployeeControl> getEmployeeList() {
@@ -70,15 +81,15 @@ public class EmployeeControl {
 	public void setEmployeeList(ArrayList<EmployeeControl> employeeList) {
 		this.employeeList = employeeList;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * This method randomly generate employees for the application, when in practical use, 
 	 * it can be input by manager 
 	 * @return employee all the informations about one employee
 	 */
-	public EmployeeControl employeeGenerator() {
+	public static EmployeeControl employeeGenerator() {
 		EmployeeControl employee;
 		
 		Random rd = new Random();
