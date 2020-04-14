@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MenuReader extends FileReader{
 	private Menu menu;
-	private Inventory inventory = new Inventory();
+	public Inventory inventory = new Inventory();
 	/**
 	 * Constructor takes default FileReader constructor and
 	 * Declared local variable ArrayLists to contain various
@@ -30,7 +30,7 @@ public class MenuReader extends FileReader{
 		double portion = 0.0;
 		
 		if(!columnInfo[0].contentEquals("")){
-			System.out.println(description);
+			//System.out.println(description);
 			if(columnInfo[0].toLowerCase().contentEquals("drink")) {
 				Drink item = new Drink();
 				item.setDescription(description);
@@ -52,10 +52,10 @@ public class MenuReader extends FileReader{
 					inventoryId = columnInfo[i];
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
-							System.out.println(product.getUnitPrice());
+							//System.out.println(product.getUnitPrice());
 								if(product.getItemID().contentEquals(inventoryId)) {
 										item.getIngredients().put(product, portion);
-										System.out.println(portion);
+										//System.out.println(portion);
 								}
 						}					
 				}

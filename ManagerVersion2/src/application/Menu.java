@@ -13,14 +13,15 @@ public class Menu {
 		this.sides = new ArrayList<SideDish>();		
 	}
 	
-	public void populateMenu(String fileName) {
+	public void populateMenu(String fileName, Inventory inventory) {
 		MenuReader reader = new MenuReader();
+		reader.inventory = inventory;
 		reader.readFile(fileName);
 		this.drinks = reader.getDrinks();
 		this.tacos = reader.getTacos();
 		this.sides = reader.getSideDishes();
-		/*
-		 * for (Drink drink : this.drinks) {
+	
+		for (Drink drink : this.drinks) {
 			drink.setCost();
 			drink.setPrice();
 		}
@@ -32,17 +33,24 @@ public class Menu {
 			side.setCost();
 			side.setPrice();
 		}
-		*/
+		
 	}
 	/*
 	public static void main(String[] args) {
 		Inventory inv = new Inventory();
 		inv.populateInventory("Inventory.csv");
+		//menuReader.inventory = inv;
 		Menu menu = new Menu();
-		menu.populateMenu("MenuList.csv");
+		menu.populateMenu("MenuList.csv", inv);
 		for (Taco taco : menu.tacos) {
 			System.out.println(taco.description + " $" + taco.price);
 		}
-	}*/
-	
+		for (Drink drink: menu.drinks) {
+			System.out.println(drink.description + " $" + drink.price);
+		}
+		for (SideDish side : menu.sides) {
+			System.out.println(side.description + " $" + side.price);
+		}
+	}
+	*/
 }
