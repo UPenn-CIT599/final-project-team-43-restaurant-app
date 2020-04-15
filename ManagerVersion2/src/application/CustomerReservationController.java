@@ -9,6 +9,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 /**
@@ -18,11 +20,17 @@ import javafx.event.ActionEvent;
  *
  */
 public class CustomerReservationController extends Application {
+	
+	
 	@FXML
-	private Button btnCustomerHome;
-	private ChoiceBox<String> reservationTimeCBox;
+	private Button btnCustomerHome, btnReservation;
+	
+	@FXML
+	private ChoiceBox reservationTimeCBox;
 
-	// Event Listener on Button[#btnCustomerHome].onAction
+	ObservableList<String> availableTimes = FXCollections.observableArrayList("9 AM", "10 AM", "11 AM", "12 PM", "1 PM",
+			"2 PM", "3 PM", "4 PM", "5 PM");
+
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
 
@@ -33,12 +41,20 @@ public class CustomerReservationController extends Application {
 		if (event.getSource() == btnCustomerHome) {
 			stage = (Stage) btnCustomerHome.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
+		} else if (event.getSource() == btnReservation) {
+			stage = (Stage) btnReservation.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("ReservationConfirmation.fxml"));
 		}
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
 
+	}
+
+	@FXML
+	public void initialize() {
+		reservationTimeCBox.setItems(availableTimes);
 	}
 
 	@Override
