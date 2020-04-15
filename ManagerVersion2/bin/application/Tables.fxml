@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TablesController">
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TablesController">
    <center>
       <GridPane prefHeight="462.0" prefWidth="469.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -31,8 +31,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl1o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl1p" layoutX="27.0" layoutY="83.0" text="UnPaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl1o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl1p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -42,8 +50,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl2o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl2p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl2o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl2p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -53,8 +69,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl3o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl3p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                <Label fx:id="lbl3o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl3p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -64,8 +88,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl4o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl4p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl4o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl4p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="10.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -75,8 +107,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl8o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl8p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl8o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl8p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -86,8 +126,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl7o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl7p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                <Label fx:id="lbl7o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl7p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -97,8 +145,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl6o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl6p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl6o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl6p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -108,8 +164,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl5o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl5p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                 <Label fx:id="lbl5o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl5p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="124.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -119,8 +183,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl12o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl12p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl12o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl12p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
@@ -130,8 +202,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl11o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl11p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                 <Label fx:id="lbl11o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl11p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -141,8 +221,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl10o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl10p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                 <Label fx:id="lbl10o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl10p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
@@ -152,8 +240,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl9o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl9p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                <Label fx:id="lbl9o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl9p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="238.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
@@ -163,8 +259,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl16o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl16p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl16o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl16p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="352.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
@@ -174,8 +278,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl15o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl15p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl15o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl15p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="352.0" layoutY="242.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -185,8 +297,16 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl14o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl14p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                  <Label fx:id="lbl14o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl14p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="352.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
@@ -196,17 +316,25 @@
                         <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl13o" layoutX="27.0" layoutY="66.0" text="Unoccupied" textFill="#0b9047" />
-                  <Label fx:id="lbl13p" layoutX="27.0" layoutY="83.0" text="Unpaid" textFill="#7c0c0c" />
+                 <Label fx:id="lbl13o" layoutX="34.0" layoutY="67.0" text="Unoccupied" textFill="#49b554">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl13p" layoutX="33.0" layoutY="89.0" text="Unpaid" textFill="#3320c7" translateX="1.0">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
       </GridPane>
    </center>
    <top>
-      <Label text="Tables" textFill="#06ab19" BorderPane.alignment="CENTER">
+      <Label text="Tables" textFill="#49b554" BorderPane.alignment="CENTER">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="Copperplate Bold" size="24.0" />
          </font>
       </Label>
    </top>
@@ -215,42 +343,47 @@
          <children>
             <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
          </children>
@@ -260,49 +393,57 @@
       <AnchorPane prefHeight="462.0" prefWidth="59.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                <image>
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="86.0" fitWidth="55.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
+                  <Image url="@../../taco-cartoon.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
    </right>
    <bottom>
-      <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="BACK" underline="true" BorderPane.alignment="CENTER" />
+      <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="BACK" underline="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font></Button>
    </bottom>
 </BorderPane>

@@ -27,10 +27,10 @@ public class LoginController {
 	private TextField txtPassword;
 	
 	@FXML
-	private Button btn2;
+	private Button btn2, btnBackToCus;
 	
 
-	// Event Listener on Button[#btn2].onAction and check UserEmail and Password
+	// Event Listener on Button[#btn2, #btnBackToCus].onAction and check UserEmail and Password
 	
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
@@ -43,6 +43,12 @@ public class LoginController {
 			
 			stage = (Stage) btn2.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		} 
+		
+		if (event.getSource() == btnBackToCus) {
+			
+			stage = (Stage) btnBackToCus.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
 		} 
 		
 

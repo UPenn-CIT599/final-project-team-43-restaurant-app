@@ -9,69 +9,64 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
-   <center>
-      <HBox alignment="CENTER" prefHeight="250.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-         </BorderPane.margin>
-         <children>
-            <Button fx:id="btnTable" mnemonicParsing="false" onAction="#handleButtonAction" text="Tables" textAlignment="CENTER" textFill="#49b554" translateX="-30.0" translateY="-30.0">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnTransaction" mnemonicParsing="false" onAction="#handleButtonAction" text="Transactions" textAlignment="CENTER" textFill="#3320c7" translateX="-10.0" translateY="-30.0">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnEmployees" mnemonicParsing="false" onAction="#handleButtonAction" text="Employees" textAlignment="CENTER" textFill="#c72060" translateX="10.0" translateY="-30.0">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button fx:id="btnInventory" mnemonicParsing="false" onAction="#handleButtonAction" text="Inventory" textAlignment="CENTER" textFill="#c77d20" translateX="30.0" translateY="-30.0">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-   </center>
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <top>
-      <Label text="Welcome to the Manager Version!" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label text="Welcome to the Manager System!" textFill="#066879" translateY="35.0" BorderPane.alignment="CENTER">
          <font>
-            <Font name="System Bold Italic" size="22.0" />
+            <Font name="Copperplate" size="24.0" />
          </font>
-         <textFill>
-            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5238095238095238">
-               <stops>
-                  <Stop color="BLACK" />
-                  <Stop color="#1de512" offset="1.0" />
-               </stops>
-            </RadialGradient>
-         </textFill>
       </Label>
    </top>
    <bottom>
-      <Button fx:id="btn1" mnemonicParsing="false" onAction="#handleButtonAction" text="Logout" textAlignment="CENTER" translateY="-10.0" underline="true" BorderPane.alignment="CENTER" />
+      <Button fx:id="btn1" mnemonicParsing="false" onAction="#handleButtonAction" text="Logout" textAlignment="CENTER" translateY="-10.0" underline="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="DIN Condensed Bold" size="13.0" />
+         </font></Button>
    </bottom>
-   <left>
-      <ImageView fitHeight="156.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
-         </image>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </ImageView>
-   </left>
-   <right>
-      <ImageView fitHeight="156.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../../download-taco-category-png-clipart-and-icons-freepngclipart-387752.png" />
-         </image>
-      </ImageView>
-   </right>
+   <center>
+      <AnchorPane prefHeight="150.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="123.0" fitWidth="101.0" layoutX="382.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../inventory.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="105.0" fitWidth="98.0" layoutX="251.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../pos-terminal.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnTable" mnemonicParsing="false" onAction="#handleButtonAction" text="Tables" textAlignment="CENTER" textFill="#49b554" translateX="20.0" translateY="300.0">
+               <font>
+                  <Font name="Copperplate Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnTransaction" mnemonicParsing="false" onAction="#handleButtonAction" text="Transactions" textAlignment="CENTER" textFill="#3320c7" translateX="240.0" translateY="300.0">
+               <font>
+                  <Font name="Copperplate Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEmployees" mnemonicParsing="false" onAction="#handleButtonAction" text="Employees" textAlignment="CENTER" textFill="#c72060" translateX="117.0" translateY="300.0">
+               <font>
+                  <Font name="Copperplate Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnInventory" mnemonicParsing="false" onAction="#handleButtonAction" text="Inventory" textAlignment="CENTER" textFill="#c77d20" translateX="385.0" translateY="300.0">
+               <font>
+                  <Font name="Copperplate Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="102.0" fitWidth="103.0" layoutX="4.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bedside-tables-dining-room-round-table-tablecloth-255199.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="110.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../waiter.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

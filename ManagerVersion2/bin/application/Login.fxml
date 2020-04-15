@@ -16,12 +16,12 @@
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="User name:" translateY="-15.0">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="DIN Condensed Bold" size="16.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Password:" textAlignment="CENTER" translateX="4.0" translateY="3.0">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="DIN Condensed Bold" size="16.0" />
                      </font>
                   </Label>
                </children>
@@ -30,16 +30,19 @@
                <children>
                   <TextField fx:id="txtUserEmail" onAction="#handleButtonAction" promptText="User Email" />
                   <PasswordField fx:id="txtPassword" onAction="#handleButtonAction" promptText="password" translateY="10.0" />
-                  <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="Login" translateY="30.0" underline="true" />
+                  <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="Login" translateY="30.0" underline="true">
+                     <font>
+                        <Font name="DIN Condensed Bold" size="13.0" />
+                     </font></Button>
                </children>
             </VBox>
          </children>
       </HBox>
    </center>
    <top>
-      <Label text="Manager Version Login" textFill="#066879" BorderPane.alignment="CENTER">
+      <Label text="Manager System Login" textFill="#066879" translateY="35.0" BorderPane.alignment="CENTER">
          <font>
-            <Font name="System Bold" size="23.0" />
+            <Font name="Copperplate" size="24.0" />
          </font>
       </Label>
    </top>
@@ -57,4 +60,10 @@
          </image>
       </ImageView>
    </right>
+   <bottom>
+      <Button fx:id="btnBackToCus" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" text="Back to Customer" textAlignment="CENTER" textFill="#b8144f" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Kefa Regular" size="13.0" />
+         </font></Button>
+   </bottom>
 </BorderPane>
