@@ -16,10 +16,9 @@
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
           <Button mnemonicParsing="false" text="About us" />
-            <Button mnemonicParsing="false" text="View Menu" />
+            <Button fx:id="btnViewMenu" mnemonicParsing="false" onAction="#handleButtonAction" text="View Menu" />
             <Button fx:id="btnCReservation" mnemonicParsing="false" onAction="#handleButtonAction" text="Reservations" />
-            <Button mnemonicParsing="false" text="Order Delivery" />
-            <Button mnemonicParsing="false" text="Order Pickup" />
+            <Button fx:id="btnOrder" mnemonicParsing="false" onAction="#handleButtonAction" text="Place an Order" />
         </items>
       </ToolBar>
       <TextArea prefHeight="353.0" prefWidth="640.0" text="Welcome to our Taco Restaurant!">
@@ -27,23 +26,23 @@
             <Font name="Arial Bold" size="19.0" />
          </font>
       </TextArea>
-      <ImageView fitHeight="135.0" fitWidth="238.0" pickOnBounds="true" preserveRatio="true" translateX="400.0">
+      <ImageView fitHeight="135.0" fitWidth="276.0" pickOnBounds="true" preserveRatio="true" translateX="350.0" translateY="100.0">
          <image>
             <Image url="@../../47f3108dbd755839083fa9e5c0bcacc0_happy-taco-clipart_920-535.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="148.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true" translateY="-120.0">
+      <ImageView fitHeight="163.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true" translateX="40.0" translateY="-120.0">
          <image>
             <Image url="@../../taco%20man.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="178.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" translateY="-100.0">
+      <ImageView fitHeight="178.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="-70.0">
          <image>
             <Image url="@../../NationalTacoDay2016-1474926323-1.jpg" />
          </image>
       </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Not a customer? Click below!" />
-      <Button fx:id="btnL1" mnemonicParsing="false" onAction="#handleButtonAction" text="Manager Login" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Not a customer? Click below!" translateX="10.0" translateY="-10.0" />
+      <Button fx:id="btnL1" mnemonicParsing="false" onAction="#handleButtonAction" text="Manager Login" translateX="10.0" translateY="-10.0" />
    </children>
    <opaqueInsets>
       <Insets />

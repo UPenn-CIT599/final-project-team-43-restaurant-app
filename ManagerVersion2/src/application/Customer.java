@@ -9,11 +9,21 @@ import java.util.ArrayList;
  */
 
 public class Customer {
+	
+	String customerID;
 
 	private double availableFunds; // Funds that the customer has available to spend
+	
+	private Menu menu;
+	
+	/*
 	private ArrayList<Taco> tacoOrders; // All taco orders for the customer
 	private ArrayList<Drink> drinkOrders; // All drink orders for the customer
 	private ArrayList<SideDish> sideDishOrders; // All side dish orders for the customer
+	*/
+	
+	
+	
 	private CustomerReviews review;
 
 	/**

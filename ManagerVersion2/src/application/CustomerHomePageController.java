@@ -22,7 +22,7 @@ public class CustomerHomePageController implements Initializable {
 	
 	
 	@FXML
-	private Button  btnL1, btnCReservation;
+	private Button  btnL1, btnCReservation, btnViewMenu, btnOrder;;
 
 	
 	/**
@@ -42,6 +42,12 @@ public class CustomerHomePageController implements Initializable {
 		} else if(event.getSource() == btnCReservation) {
 			stage = (Stage) btnCReservation.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("CustomerReservation.fxml"));
+		} else if(event.getSource() == btnViewMenu) {
+			stage = (Stage) btnViewMenu.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+		} else if(event.getSource() == btnOrder) {
+			stage = (Stage) btnOrder.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("OrderPage.fxml"));
 		}
 		
 		Scene scene = new Scene(root);

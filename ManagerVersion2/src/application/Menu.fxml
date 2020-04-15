@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+  <tabs>
+    <Tab text="Tacos">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="199.0" fitWidth="136.0" layoutX="26.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Beef%20Taco.jpg" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+                  <Text fill="#a43a3a" layoutX="26.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beef Taco" wrappingWidth="66.28173828125">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="25.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our signature beef taco is made with the freshest grounded beef wrapped in corn tortilla and topped with onions, cheese, diced tomatoes and lettuce." wrappingWidth="119.0009765625">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="25.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1 per taco" />
+                  <ImageView fitHeight="202.0" fitWidth="140.0" layoutX="206.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../chicken%20taco.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#a14f2c" layoutX="205.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Taco" wrappingWidth="107.28173828125">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="205.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our chicken tacos come sizzling with tender chicken slices, wrapped around fresh flour tortilla and topped with cheese, cilantro, crema, tomatillo salsa, tomatoes and avocado." wrappingWidth="134.0009765625">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="207.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1 per taco" />
+                  <ImageView fitHeight="198.0" fitWidth="157.0" layoutX="384.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../veggie%20taco.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#1ea823" layoutX="385.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veggie Taco" wrappingWidth="107.28173828125">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="385.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vegetarian? No problem!  Satisfy your vegetarian craves with our veggie tacos, made with veggie taco filling, avocado, Pico di Gallo, tomatoes and lettuce." wrappingWidth="157.0009765625">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="387.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1 per taco" />
+                  <Button fx:id="btnBack1" layoutX="463.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
+                  <Button fx:id="btnOrder1" layoutX="509.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Drinks">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="152.0" fitWidth="151.0" layoutX="14.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../dr%20pepper.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="165.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../la%20croix.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="315.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pepsi.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="401.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../pacifico%20beer.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="139.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr Pepper.............................................$1 per can" wrappingWidth="265.22900390625" />
+                  <Text layoutX="139.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La Croix Sparkling water.......................$1 per can" wrappingWidth="285.22900390625" />
+                  <Text layoutX="136.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pepsi Cola.............................................$1 per can" wrappingWidth="271.22900390625" />
+                  <Text layoutX="138.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pacifico Beer.......................................$1 per can" wrappingWidth="261.22900390625" />
+                  <Button fx:id="btnBack2" layoutX="453.0" layoutY="326.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
+                  <Button fx:id="btnOrder2" layoutX="499.0" layoutY="326.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Sides">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="165.0" fitWidth="179.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../nacho.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="165.0" fitWidth="188.0" layoutX="202.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../tortilla%20chips.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="151.0" fitWidth="210.0" layoutX="376.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../rice%20beans.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#a1743e" layoutX="17.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachos" />
+                  <Text layoutX="18.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our delicious nachos come with side of mild salsa and nacho cheese." wrappingWidth="157.01904296875">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="17.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1 per order" />
+                  <Text fill="#becd4c" layoutX="205.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tortilla Chips" />
+                  <Text layoutX="206.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1$ per order" />
+                  <Text layoutX="208.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fresh and crispy tortilla chips.">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#437bd7" layoutX="380.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rice and Beans" />
+                  <Text layoutX="381.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made with our secret rice seasoning, quality rice grains and refried beans." wrappingWidth="195.154296875">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="381.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1 per order" />
+                  <Button fx:id="btnBack3" layoutX="458.0" layoutY="326.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
+                  <Button fx:id="btnOrder3" layoutX="504.0" layoutY="326.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <effect>
+      <InnerShadow blurType="GAUSSIAN" choke="0.58" color="#bf3f3a" height="33.07" radius="13.7725" width="24.02" />
+   </effect>
+</TabPane>
