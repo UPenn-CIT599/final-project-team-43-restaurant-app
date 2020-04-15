@@ -29,7 +29,7 @@ public class OrderPageController {
 
 	ObservableList<String> serviceOptionList = FXCollections.observableArrayList("Delivery", "Dine in");
 	
-	ObservableList<String> menuItemQuantity = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+	ObservableList<String> menuItemQuantity = FXCollections.observableArrayList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
@@ -56,17 +56,36 @@ public class OrderPageController {
 	@FXML
 	public void initialize() {
 		serviceOption.setItems(serviceOptionList); // choiceboxes get filled with a custom list in initialize method
-		beefTacoQuantity.setItems(menuItemQuantity);
-		chickenTacoQuantity.setItems(menuItemQuantity);
-		veggieTacoQuantity.setItems(menuItemQuantity);
-		nachosQuantity.setItems(menuItemQuantity);
-		tortillaQuantity.setItems(menuItemQuantity);
-		riceBeansQuantity.setItems(menuItemQuantity);
-		drPepperQuantity.setItems(menuItemQuantity);
-		laCroixQuantity.setItems(menuItemQuantity);
-		pepsiQuantity.setItems(menuItemQuantity);
-		pacificoQuantity.setItems(menuItemQuantity);
 		
+		beefTacoQuantity.setValue("0");  // setValue method sets the argument as the default option
+		beefTacoQuantity.setItems(menuItemQuantity);
+
+		chickenTacoQuantity.setValue("0");
+		chickenTacoQuantity.setItems(menuItemQuantity);
+		
+		veggieTacoQuantity.setValue("0");
+		veggieTacoQuantity.setItems(menuItemQuantity);
+		
+		nachosQuantity.setValue("0");
+		nachosQuantity.setItems(menuItemQuantity);
+		
+		tortillaQuantity.setValue("0");
+		tortillaQuantity.setItems(menuItemQuantity);
+		
+		riceBeansQuantity.setValue("0");
+		riceBeansQuantity.setItems(menuItemQuantity);
+		
+		drPepperQuantity.setValue("0");
+		drPepperQuantity.setItems(menuItemQuantity);
+		
+		laCroixQuantity.setValue("0");
+		laCroixQuantity.setItems(menuItemQuantity);
+		
+		pepsiQuantity.setValue("0");
+		pepsiQuantity.setItems(menuItemQuantity);
+		
+		pacificoQuantity.setValue("0");
+		pacificoQuantity.setItems(menuItemQuantity);
 		
 		availFunds.setText("$" + Integer.toString(40));
 
