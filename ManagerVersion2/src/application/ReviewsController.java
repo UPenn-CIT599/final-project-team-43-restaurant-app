@@ -119,6 +119,8 @@ public class ReviewsController {
 
 		// sets observable data into the table
 		tblReviews.setItems(reviewListObs);
+		
+		starsBox.setItems(starOptions);
 
 	}
 
