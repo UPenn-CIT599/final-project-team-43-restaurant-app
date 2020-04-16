@@ -13,7 +13,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class TransactionRecord {
 	
 	private SimpleIntegerProperty date;
-	private SimpleIntegerProperty time;
+	private SimpleStringProperty time;
 	private SimpleDoubleProperty transactionAmount;
 	private SimpleStringProperty paymentMethod;
 	
@@ -24,9 +24,9 @@ public class TransactionRecord {
 	 * @param transactionAmount
 	 * @param paymentMethod
 	 */
-	public TransactionRecord(int date, int time, double transactionAmount, String paymentMethod) {
+	public TransactionRecord(int date, String time, double transactionAmount, String paymentMethod) {
 		this.date = new SimpleIntegerProperty(date);
-		this.time = new SimpleIntegerProperty(time);
+		this.time = new SimpleStringProperty(time);
 		this.transactionAmount = new SimpleDoubleProperty(transactionAmount);
 		this.paymentMethod = new SimpleStringProperty(paymentMethod);
 	}
@@ -37,7 +37,7 @@ public class TransactionRecord {
 		return date.get();
 	}
 
-	public int getTime() {
+	public String getTime() {
 		return time.get();
 	}
 
@@ -65,12 +65,17 @@ public class TransactionRecord {
 		Random rd = new Random();
 		
 		int date;
-		int time;
+		String time;
 		double transactionAmount;
 		String paymentMethod;
 		
-		date = rd.nextInt(31);
-		time = rd.nextInt(2459);
+		while(true) {
+			date = rd.nextInt(31);
+			if(date != 0) {
+				break;
+			}
+		}
+		time = "" + String.valueOf(rd.nextInt(24)) + ":" + String.valueOf(rd.nextInt(60));
 		transactionAmount = Math.round(rd.nextDouble() * 100.0)/100.0 + rd.nextInt(100);
 		
 		//creating random paymentMethod

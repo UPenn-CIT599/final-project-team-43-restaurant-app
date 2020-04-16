@@ -40,14 +40,31 @@ public class TransactionsController implements Initializable {
 	@FXML
 	private TableColumn<TransactionRecord, String> paymentMethod;
 
-	private TransactionRecord record1, record2, record3, record4, record5;
+	private TransactionRecord record1, record2, record3, record4, record5,
+	record6, record7, record8, record9, record10, record11, record12, record13, record14, record15,
+	record16, record17, record18, record19, record20;
 		
 	public ObservableList<TransactionRecord> obList = FXCollections.observableArrayList(
 			record1 = TransactionRecord.transactionGenerator(), 
 			record2 = TransactionRecord.transactionGenerator(), 
 			record3 = TransactionRecord.transactionGenerator(), 
 			record4 = TransactionRecord.transactionGenerator(), 
-			record5 = TransactionRecord.transactionGenerator()
+			record5 = TransactionRecord.transactionGenerator(),
+			record6 = TransactionRecord.transactionGenerator(), 
+			record7 = TransactionRecord.transactionGenerator(), 
+			record8 = TransactionRecord.transactionGenerator(), 
+			record9 = TransactionRecord.transactionGenerator(), 
+			record10 = TransactionRecord.transactionGenerator(),
+			record11 = TransactionRecord.transactionGenerator(), 
+			record12 = TransactionRecord.transactionGenerator(), 
+			record13 = TransactionRecord.transactionGenerator(), 
+			record14 = TransactionRecord.transactionGenerator(), 
+			record15 = TransactionRecord.transactionGenerator(),
+			record16 = TransactionRecord.transactionGenerator(), 
+			record17 = TransactionRecord.transactionGenerator(), 
+			record18 = TransactionRecord.transactionGenerator(), 
+			record19 = TransactionRecord.transactionGenerator(), 
+			record20 = TransactionRecord.transactionGenerator()
 			);
 
 	@Override

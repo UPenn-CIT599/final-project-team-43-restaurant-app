@@ -26,10 +26,10 @@
                <children>
                   <TableView fx:id="list" prefHeight="453.0" prefWidth="384.0">
                      <columns>
-                        <TableColumn fx:id="name" prefWidth="96.0" text="name" />
-                        <TableColumn fx:id="attendanceHours" prefWidth="122.0" text="attendanceHours" />
-                        <TableColumn fx:id="salary" prefWidth="95.0" text="salary" />
-                        <TableColumn fx:id="onDuty" prefWidth="70.0" text="onDuty" />
+                        <TableColumn fx:id="name" prefWidth="140.0" text="name" />
+                        <TableColumn fx:id="attendanceHours" prefWidth="104.0" text="attendanceHours" />
+                        <TableColumn fx:id="salary" prefWidth="83.0" text="salary" />
+                        <TableColumn fx:id="onDuty" prefWidth="56.0" text="onDuty" />
                      </columns>
                   </TableView>
                </children>
