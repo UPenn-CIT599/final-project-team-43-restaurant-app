@@ -7,9 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-
-
 import javafx.event.ActionEvent;
 
 /**
@@ -58,4 +55,23 @@ public class LoginController {
 
 	}
 	
+	// Event Handler for showing system time
+	
+	
+	/**
+	@FXML
+		final Label clock = new Label();
+	@FXML	
+		final DateFormat format = DateFormat.getInstance();
+	@FXML	
+		final Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1),
+				new EventHandler<ActionEvent>() {
+			        @Override
+			        public void handle(ActionEvent event) {
+				        final Calendar cal = Calendar.getInstance();
+				        clock.setText(format.format(cal.getTime()));
+			        }
+		        }));
+		timeline.setCycleCount(Animation.INDEFINITE);
+		timeline.play();*/
 }
