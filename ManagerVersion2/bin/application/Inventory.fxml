@@ -16,7 +16,7 @@
       </Label>
    </top>
    <bottom>
-      <Button fx:id="btn2" mnemonicParsing="false" onAction="#handleButtonAction" text="BACK" underline="true" BorderPane.alignment="CENTER" >
+      <Button fx:id="btn2" mnemonicParsing="false" onAction="#handleButtonAction" text="BACK" underline="true" BorderPane.alignment="CENTER">
          <font>
             <Font name="DIN Condensed Bold" size="13.0" />
          </font></Button>
@@ -30,7 +30,6 @@
                 <TableColumn prefWidth="75.0" text="C2" />
               </columns>
             </TableView>
-            <Slider layoutX="365.0" layoutY="44.0" orientation="VERTICAL" prefHeight="409.0" prefWidth="16.0" />
          </children>
       </AnchorPane>
     </center>

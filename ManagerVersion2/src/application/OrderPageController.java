@@ -55,6 +55,7 @@ public class OrderPageController {
 
 	@FXML
 	public void initialize() {
+		Customer a = new Customer();
 		serviceOption.setItems(serviceOptionList); // choiceboxes get filled with a custom list in initialize method
 		
 		beefTacoQuantity.setValue("0");  // setValue method sets the argument as the default option
@@ -87,7 +88,7 @@ public class OrderPageController {
 		pacificoQuantity.setValue("0");
 		pacificoQuantity.setItems(menuItemQuantity);
 		
-		availFunds.setText("$" + Integer.toString(40));
+		availFunds.setText("$" + Double.toString(a.getAvailableFunds()));
 
 	}
 
