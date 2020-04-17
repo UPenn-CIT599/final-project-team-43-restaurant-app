@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,8 @@ public class CustomerHomePageController implements Initializable {
 	@FXML
 	private Button  btnL1, btnCReservation, btnViewMenu, btnOrder, btnReviews;
 
+	@FXML
+	private TextField customerIDBox;
 	
 	/**
 	 * This method defines all the button actions
@@ -58,9 +61,14 @@ public class CustomerHomePageController implements Initializable {
 		stage.show();
 	}
 	
+	@FXML
+	public void display() {
+		customerIDBox = new TextField(); // textfields need to be initialized in display method
+	}
+	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		
+		customerIDBox.setText(Customer.getCustomer().getCustomerID());
 	}
 	
 }

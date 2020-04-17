@@ -16,11 +16,13 @@ public class Customer {
 	
 	private Menu menu;
 	
-	/*
+	private static Customer customer = new Customer();
+	
+	
 	private ArrayList<Taco> tacoOrders; // All taco orders for the customer
 	private ArrayList<Drink> drinkOrders; // All drink orders for the customer
 	private ArrayList<SideDish> sideDishOrders; // All side dish orders for the customer
-	*/
+	
 	
 	
 	
@@ -116,6 +118,26 @@ public class Customer {
 		this.review = review;
 	}
 
+	public static Customer getCustomer() {
+		return customer;
+	}
+	
+	
+
+	public Menu getMenu() {
+		return menu;
+	}
+
+
+
+	public String getCustomerID() {
+		return customerID;
+	}
+
+	public void setCustomerID(String customerID) {
+		this.customerID = customerID;
+	}
+
 	/**
 	 * Adds items in the cart to the customer's order.
 	 * 
@@ -127,6 +149,9 @@ public class Customer {
 		this.drinkOrders = drinksInCart;
 		this.sideDishOrders = sideDishesInCart;
 	}
+	
+	
+	
 
 	/**
 	 * Saves the customer's review

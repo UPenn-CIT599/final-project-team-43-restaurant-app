@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import static Main.java;
 
 public class OrderPageController {
 
@@ -55,7 +56,6 @@ public class OrderPageController {
 
 	@FXML
 	public void initialize() {
-		Customer a = new Customer();
 		serviceOption.setItems(serviceOptionList); // choiceboxes get filled with a custom list in initialize method
 		
 		beefTacoQuantity.setValue("0");  // setValue method sets the argument as the default option
@@ -88,7 +88,9 @@ public class OrderPageController {
 		pacificoQuantity.setValue("0");
 		pacificoQuantity.setItems(menuItemQuantity);
 		
-		availFunds.setText("$" + Double.toString(a.getAvailableFunds()));
+		
+		
+		availFunds.setText("$" + Double.toString(Customer.getCustomer().getAvailableFunds()));
 
 	}
 

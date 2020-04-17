@@ -14,6 +14,8 @@ public class CustomerOrder {
 	// an instance of the order class is associated with only one customer
 	private Customer customer;
 	private double totalPrice;
+	
+	private static CustomerOrder currentOrder = new CustomerOrder(customer, );
 
 	private boolean delivery;
 	private String estimatedTimeOfDelivery;
