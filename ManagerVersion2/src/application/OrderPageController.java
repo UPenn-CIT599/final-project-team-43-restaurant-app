@@ -121,8 +121,7 @@ public class OrderPageController {
 			CustomerOrder.writeOrderDineIn(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost);
-
-			
+		
 		} 
 		// this if-block runs if the order is for delivery only
 		else if (event.getSource() == orderButton && serviceType.equals("Delivery") && availableFunds >= totalCost

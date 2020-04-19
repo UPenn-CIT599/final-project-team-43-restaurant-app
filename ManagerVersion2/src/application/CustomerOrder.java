@@ -18,16 +18,6 @@ import java.util.Scanner;
 
 public class CustomerOrder {
 
-	/**
-	 * 
-	 * Instance variables to include all columns of the csv file
-	 * 
-	 * 
-	 * Need to make a (static?) method for writing customer Order into csv with:
-	 * customerOrderID, customerID, delivery,beeftaco,beeftacoquantity...., total
-	 * price, reservation, and all info relevant to the order.
-	 */
-
 	// an instance of the order class is associated with only one customer
 	private Customer customer;
 	private int orderID;
@@ -106,10 +96,10 @@ public class CustomerOrder {
 				in.nextLine();
 				bw.newLine();
 			}
-			bw.write(lineNumber + "," + customerID + "," + serviceType + "," + orderDate + "," + orderTime + ","
-					+ beefTQty + "," + chickenTQty + "," + veggieTQty + "," + nachosQty + "," + tortillaQty + ","
-					+ riceBeansQty + "," + drPepperQty + "," + spkWaterQty + "," + pepsiQty + "," + pacificoQty + ","
-					+ totalCost);
+			bw.write(lineNumber + "," + customerID + "," + serviceType + "," + orderDate + "," + orderTime + "," + ","
+					+ "," + "," + beefTQty + "," + chickenTQty + "," + veggieTQty + "," + nachosQty + "," + tortillaQty
+					+ "," + riceBeansQty + "," + drPepperQty + "," + spkWaterQty + "," + pepsiQty + "," + pacificoQty
+					+ "," + totalCost);
 			bw.flush();
 
 		} catch (IOException e) {
@@ -132,7 +122,7 @@ public class CustomerOrder {
 			BufferedWriter bw = new BufferedWriter(fw);
 
 			int lineNumber = CSVReader.readNumberOfLines("CustomerOrders.csv") + 10000;
-			
+
 			in.nextLine();
 			bw.newLine();
 
@@ -140,10 +130,10 @@ public class CustomerOrder {
 				in.nextLine();
 				bw.newLine();
 			}
-			bw.write(lineNumber + "," + customerID + "," + serviceType + "," + orderDate + "," + orderTime + ","
-					+ beefTQty + "," + chickenTQty + "," + veggieTQty + "," + nachosQty + "," + tortillaQty + ","
-					+ riceBeansQty + "," + drPepperQty + "," + spkWaterQty + "," + pepsiQty + "," + pacificoQty + ","
-					+ totalCost + "," + deliveryAddress);
+			bw.write(lineNumber + "," + customerID + "," + serviceType + "," + orderDate + "," + orderTime + "," + ","
+					+ "," + "," + beefTQty + "," + chickenTQty + "," + veggieTQty + "," + nachosQty + "," + tortillaQty
+					+ "," + riceBeansQty + "," + drPepperQty + "," + spkWaterQty + "," + pepsiQty + "," + pacificoQty
+					+ "," + totalCost + "," + deliveryAddress);
 			bw.flush();
 
 		} catch (IOException e) {

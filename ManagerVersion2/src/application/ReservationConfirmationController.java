@@ -6,12 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ReservationConfirmationController {
 	
 	@FXML
 	private Button btnMainPage;
+	
+	@FXML
+	private TextField confirmedReservationDate, confirmedReservationTime, confirmedReservationID;
+	
+	
 
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
@@ -31,8 +37,22 @@ public class ReservationConfirmationController {
 
 	}
 	
-	
-	
+	@FXML
+	public void display() {
+		confirmedReservationDate = new TextField(); 
+		confirmedReservationTime = new TextField();
+		confirmedReservationID = new TextField();
+		
+	}
+
+	@FXML
+	public void initialize() {
+		
+		confirmedReservationDate.setText(Customer.getCustomer().getReservationDate());
+		confirmedReservationTime.setText(Customer.getCustomer().getReservationTime());
+		confirmedReservationID.setText(Customer.getCustomer().getReservationID());
+		
+	}
 	
 	
 }
