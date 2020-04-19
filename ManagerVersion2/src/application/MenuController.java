@@ -9,13 +9,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author yangliu
+ *
+ */
+
 public class MenuController {
-	
+
 	@FXML
 	private Button btnBack1, btnBack2, btnBack3, btnOrder1, btnOrder2, btnOrder3;
 
+	@FXML
+	private TextField beefTacoPriceBox, chickenTacoPriceBox, veggieTacoPriceBox, drPepperPriceBox, laCroixPriceBox,
+			pepsiPriceBox, pacificoPriceBox, nachosPriceBox, tortillaPriceBox, riceAndBeansPriceBox;
 
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
@@ -49,10 +59,43 @@ public class MenuController {
 
 	}
 
-	// Event Listener on changing labels which showing the tables are occupied or
-	// not/paid or not
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	@FXML
+	public void display() {
+		beefTacoPriceBox = new TextField();
+		chickenTacoPriceBox = new TextField();
+		veggieTacoPriceBox = new TextField();
+		drPepperPriceBox = new TextField();
+		laCroixPriceBox = new TextField();
+		pepsiPriceBox = new TextField();
+		pacificoPriceBox = new TextField();
+		nachosPriceBox = new TextField();
+		tortillaPriceBox = new TextField();
+		riceAndBeansPriceBox = new TextField();
+	}
+
+	@FXML
+	public void initialize() {
+
+		Inventory inv = new Inventory();
+		inv.populateInventory("Inventory.csv");
+
+		Menu menu = new Menu();
+		menu.populateMenu("MenuList.csv", inv);
+
+
+		// Displays price of each food item in the menu GUI screen
+		beefTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(0).getPrice()));
+		chickenTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(1).getPrice()));
+		veggieTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(2).getPrice()));
 		
+		drPepperPriceBox.setText("$" + Double.toString(menu.drinks.get(0).getPrice()));
+		laCroixPriceBox.setText("$" + Double.toString(menu.drinks.get(1).getPrice()));
+		pepsiPriceBox.setText("$" + Double.toString(menu.drinks.get(2).getPrice()));
+		pacificoPriceBox.setText("$" + Double.toString(menu.drinks.get(3).getPrice()));
+		
+		nachosPriceBox.setText("$" + Double.toString(menu.sides.get(0).getPrice()));
+		tortillaPriceBox.setText("$" + Double.toString(menu.sides.get(1).getPrice()));
+		riceAndBeansPriceBox.setText("$" + Double.toString(menu.sides.get(2).getPrice()));
+
 	}
 }
