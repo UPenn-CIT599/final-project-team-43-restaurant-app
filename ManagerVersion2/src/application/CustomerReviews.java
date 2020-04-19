@@ -89,8 +89,8 @@ public class CustomerReviews {
 
 	}
 
-	public static String[] obtainARandomReview() {
-		ArrayList<String> reviewList = new ArrayList<String>();
+	public static ArrayList<String[]> obtainAllReviews() {
+		ArrayList<String[]> reviewList = new ArrayList<String[]>();
 		File file = new File("restaurantreviews.csv");
 		Scanner in;
 		try {
@@ -100,15 +100,14 @@ public class CustomerReviews {
 			while (in.hasNextLine()) {
 				String currentReviewLine = in.nextLine();
 				String[] reviewLine = currentReviewLine.split(",", 2);
-				reviewList.add(reviewLine[0] + "," + reviewLine[1]);
+				reviewList.add(reviewLine);
 			}
 			in.close();
-			Collections.shuffle(reviewList);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return reviewList.get(0).split(",", 2);
+		return reviewList;
 		
 	}
 	

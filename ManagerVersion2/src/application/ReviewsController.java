@@ -1,9 +1,10 @@
 package application;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.io.BufferedReader;
+
+import java.io.FileReader;
+import java.io.IOException;
+
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +15,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
@@ -22,6 +22,13 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TableView;
 
 import javafx.scene.control.TableColumn;
+
+/**
+ * This class controls the Reviews.fxml file for customer reviews
+ * 
+ * @author yangliu
+ *
+ */
 
 public class ReviewsController {
 
@@ -35,10 +42,7 @@ public class ReviewsController {
 	private TableColumn<CustomerReviews, String> tblComments;
 
 	@FXML
-	private Button btnBack;
-
-	@FXML
-	private Button btnWriteReview;
+	private Button btnBack, btnWriteReview;
 
 	@FXML
 	private TextArea msgReview;
@@ -49,10 +53,6 @@ public class ReviewsController {
 	ObservableList<String> starOptions = FXCollections.observableArrayList("1", "2", "3", "4", "5");
 
 	ObservableList<CustomerReviews> reviewListObs;
-
-	CustomerReviews review1, review2, review3, review4, review5, review6;
-
-	ArrayList<String[]> reviewList;
 
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
@@ -70,44 +70,67 @@ public class ReviewsController {
 		stage.show();
 
 	}
-
+	
 	@FXML
-	public void initialize() {
+	public void writeReviewClicked(ActionEvent event) throws Exception {
+		Stage stage = (Stage) btnWriteReview.getScene().getWindow();
 
-		reviewListObs = FXCollections.observableArrayList(review1 = new CustomerReviews(),
-				review2 = new CustomerReviews(), review3 = new CustomerReviews(), review4 = new CustomerReviews(),
-				review5 = new CustomerReviews(), review6 = new CustomerReviews());
+		Parent root = FXMLLoader.load(getClass().getResource("Reviews.fxml"));
 
-		reviewList = new ArrayList<String[]>();
-
-		//add first random review to reviewList
-		reviewList.add(CustomerReviews.obtainARandomReview());
-		
-		//adds five more random reviews to reviewList
-		while (reviewList.size() <= 6) {
-			for (int i = 0; i < reviewList.size(); i++) {
-				String[] review = CustomerReviews.obtainARandomReview();
-				String msgValue = review[1];
-				if (!reviewList.get(i)[1].equals(msgValue)) {
-					reviewList.add(review);
-				}
-			}
+		if (event.getSource() == btnWriteReview && !starsBox.getSelectionModel().isEmpty() && !msgReview.getText().isEmpty()) {
 			
+			CustomerReviews newReview = new CustomerReviews();
+			newReview.setScoreOutOfFive(Integer.parseInt(starsBox.getValue()));
+			
+			//ignores newlines for review entry
+			newReview.setMessageReview(msgReview.getText().replaceAll("\n", " "));
+			
+			//writes the new review to the restaurantreviews.csv file
+			newReview.addReview();
+
+			
+			stage = (Stage) btnWriteReview.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("Reviews.fxml"));
+		} else {
+			stage = (Stage) btnWriteReview.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("Reviews.fxml"));
 		}
 
-		// adds random reviews from array list to each review object
-		review1.setScoreOutOfFive(Integer.parseInt(reviewList.get(0)[0]));
-		review1.setMessageReview(reviewList.get(0)[1]);
-		review2.setScoreOutOfFive(Integer.parseInt(reviewList.get(1)[0]));
-		review2.setMessageReview(reviewList.get(1)[1]);
-		review3.setScoreOutOfFive(Integer.parseInt(reviewList.get(2)[0]));
-		review3.setMessageReview(reviewList.get(2)[1]);
-		review4.setScoreOutOfFive(Integer.parseInt(reviewList.get(3)[0]));
-		review4.setMessageReview(reviewList.get(3)[1]);
-		review5.setScoreOutOfFive(Integer.parseInt(reviewList.get(4)[0]));
-		review5.setMessageReview(reviewList.get(4)[1]);
-		review6.setScoreOutOfFive(Integer.parseInt(reviewList.get(5)[0]));
-		review6.setMessageReview(reviewList.get(5)[1]);
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+
+	}
+	
+	
+	
+	
+	
+	
+	
+
+	@FXML
+	public void initialize() throws IOException {
+
+		reviewListObs = FXCollections.observableArrayList();
+
+		FileReader fr = new FileReader("restaurantreviews.csv");
+		BufferedReader br = new BufferedReader(fr);
+		br.readLine();
+
+		// Adds all of the reviews in restaurantreviews.csv file to the reviewListObs so
+		// that they can be placed/viewed in a table format
+		while (CSVReader.readNumberOfLines("restaurantreviews.csv") - 1 > reviewListObs.size()) {
+			CustomerReviews currentReview = new CustomerReviews();
+			reviewListObs.add(currentReview);
+			String line = br.readLine();
+			if (line != null) {
+				String[] lineReview = line.split(",", 2);
+				currentReview.setScoreOutOfFive(Integer.parseInt(lineReview[0]));
+				currentReview.setMessageReview(lineReview[1]);
+			}
+		}
+		br.close();
 
 		// sets all star columns to the scoreOutOfFive instance variable of
 		// CustomerReviews.
@@ -119,7 +142,7 @@ public class ReviewsController {
 
 		// sets observable data into the table
 		tblReviews.setItems(reviewListObs);
-		
+
 		starsBox.setItems(starOptions);
 
 	}
