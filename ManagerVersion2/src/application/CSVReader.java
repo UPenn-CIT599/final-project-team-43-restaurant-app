@@ -52,28 +52,28 @@ public abstract class CSVReader {
 
 	}
 
-	
 	/**
 	 * Reads
+	 * 
 	 * @return
 	 * @throws FileNotFoundException
 	 */
 	public static int readNumberOfLines(String filename) throws FileNotFoundException {
 
 		BufferedReader br;
-		
-			br = new BufferedReader(new FileReader(filename));
-			int counter = 0;
-			String currentLine;
-			try {
-				while ((currentLine = br.readLine()) != null) {
-					counter++;
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+
+		br = new BufferedReader(new FileReader(filename));
+		int counter = 0;
+		String currentLine;
+		try {
+			while ((currentLine = br.readLine()) != null) {
+				counter++;
 			}
-			return counter;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return counter;
 
 	}
 
