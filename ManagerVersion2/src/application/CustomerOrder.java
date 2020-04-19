@@ -1,6 +1,13 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.LineNumberReader;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  * This class keeps track of the orders for the customers
@@ -11,15 +18,23 @@ import java.util.HashMap;
 
 public class CustomerOrder {
 
+	/**
+	 * 
+	 * Instance variables to include all columns of the csv file
+	 * 
+	 * 
+	 * Need to make a (static?) method for writing customer Order into csv with:
+	 * customerOrderID, customerID, delivery,beeftaco,beeftacoquantity...., total
+	 * price, reservation, and all info relevant to the order.
+	 */
+
 	// an instance of the order class is associated with only one customer
 	private Customer customer;
+	private int orderID;
 	private double totalPrice;
-	
-	private static CustomerOrder currentOrder = new CustomerOrder(customer, );
 
 	private boolean delivery;
 	private String estimatedTimeOfDelivery;
-
 
 	private HashMap<Taco, Integer> tacoItemToOrderQuantity;
 	private HashMap<Drink, Integer> drinkItemToOrderQuantity;
@@ -70,9 +85,71 @@ public class CustomerOrder {
 	}
 
 	/**
-	 * This method assigns quantity to each item that the customer ordered
+	 * This method writes the customer order to CustomerOrders.csv for dine-in
+	 * orders
 	 */
-	public void assignItemQuantity() {
+	public static void writeOrderDineIn(String customerID, String serviceType, String orderDate, String orderTime,
+			int beefTQty, int chickenTQty, int veggieTQty, int nachosQty, int tortillaQty, int riceBeansQty,
+			int drPepperQty, int spkWaterQty, int pepsiQty, int pacificoQty, double totalCost) {
+
+		try {
+			Scanner in = new Scanner("CustomerOrders.csv");
+			FileWriter fw = new FileWriter("CustomerOrders.csv", true);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			int lineNumber = CSVReader.readNumberOfLines("CustomerOrders.csv") + 10000;
+
+			in.nextLine();
+			bw.newLine();
+
+			while (in.hasNextLine()) {
+				in.nextLine();
+				bw.newLine();
+			}
+			bw.write(lineNumber + "," + customerID + "," + serviceType + "," + orderDate + "," + orderTime + ","
+					+ beefTQty + "," + chickenTQty + "," + veggieTQty + "," + nachosQty + "," + tortillaQty + ","
+					+ riceBeansQty + "," + drPepperQty + "," + spkWaterQty + "," + pepsiQty + "," + pacificoQty + ","
+					+ totalCost);
+			bw.flush();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * This method writes the customer order to CustomerOrders.csv for delivery
+	 * orders
+	 */
+	public static void writeOrderDelivery(String customerID, String serviceType, String orderDate, String orderTime,
+			int beefTQty, int chickenTQty, int veggieTQty, int nachosQty, int tortillaQty, int riceBeansQty,
+			int drPepperQty, int spkWaterQty, int pepsiQty, int pacificoQty, double totalCost, String deliveryAddress) {
+		try {
+			Scanner in = new Scanner("CustomerOrders.csv");
+			FileWriter fw = new FileWriter("CustomerOrders.csv", true);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			int lineNumber = CSVReader.readNumberOfLines("CustomerOrders.csv") + 10000;
+			
+			in.nextLine();
+			bw.newLine();
+
+			while (in.hasNextLine()) {
+				in.nextLine();
+				bw.newLine();
+			}
+			bw.write(lineNumber + "," + customerID + "," + serviceType + "," + orderDate + "," + orderTime + ","
+					+ beefTQty + "," + chickenTQty + "," + veggieTQty + "," + nachosQty + "," + tortillaQty + ","
+					+ riceBeansQty + "," + drPepperQty + "," + spkWaterQty + "," + pepsiQty + "," + pacificoQty + ","
+					+ totalCost + "," + deliveryAddress);
+			bw.flush();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -81,8 +158,23 @@ public class CustomerOrder {
 	 * 
 	 * @return the total value of all food items the customer ordered
 	 */
-	public double calculateTotalPrice() {
+	public static double calculateTotalPrice(int beefTQty, int chickenTQty, int veggieTQty, int nachosQty,
+			int tortillaQty, int riceBeansQty, int drPepperQty, int spkWaterQty, int pepsiQty, int pacificoQty) {
+		Inventory inv = new Inventory();
+		inv.populateInventory("Inventory.csv");
+		// menuReader.inventory = inv;
+		Menu menu = new Menu();
+		menu.populateMenu("MenuList.csv", inv);
 
+		double totalCost = 0;
+
+		totalCost = beefTQty * menu.tacos.get(0).getPrice() + chickenTQty * menu.tacos.get(1).getPrice()
+				+ veggieTQty * menu.tacos.get(2).getPrice() + nachosQty * menu.sides.get(0).getPrice()
+				+ tortillaQty * menu.sides.get(1).getPrice() + riceBeansQty * menu.sides.get(2).getPrice()
+				+ drPepperQty * menu.drinks.get(0).getPrice() + spkWaterQty * menu.drinks.get(1).getPrice()
+				+ pepsiQty * menu.drinks.get(2).getPrice() + pacificoQty * menu.drinks.get(3).getPrice();
+
+		return totalCost;
 	}
 
 	/**
@@ -183,6 +275,5 @@ public class CustomerOrder {
 	public void setDelivery(boolean delivery) {
 		this.delivery = delivery;
 	}
-
 
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author porth
  *
  */
-public class InventoryReader extends FileReader {
+public class InventoryReader extends CSVReader {
 
 	private ArrayList<InventoryItem> inventoryList;
 

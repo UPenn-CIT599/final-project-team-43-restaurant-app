@@ -2,7 +2,7 @@ package application;
 
 import java.util.ArrayList;
 
-public class MenuReader extends FileReader{
+public class MenuReader extends CSVReader{
 	private Menu menu;
 	public Inventory inventory = new Inventory();
 	/**
