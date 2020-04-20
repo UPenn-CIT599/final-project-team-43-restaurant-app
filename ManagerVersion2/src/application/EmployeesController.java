@@ -41,6 +41,7 @@ public class EmployeesController implements Initializable {
 	@FXML
 	private TableColumn<EmployeeControl, Boolean> onDuty;
 
+	/**
 	private EmployeeControl employee1, employee2, employee3, employee4, employee5;
 	
 	public ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(
@@ -49,7 +50,13 @@ public class EmployeesController implements Initializable {
 			employee3 = EmployeeControl.employeeGenerator(),
 			employee4 = EmployeeControl.employeeGenerator(),
 			employee5 = EmployeeControl.employeeGenerator()
-			);
+			);*/
+	
+    EmployeeList el = new EmployeeList("Employee List.csv");
+	
+	public ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(
+			el.getEmployeeList()
+    );
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
