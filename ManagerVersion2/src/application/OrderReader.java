@@ -81,7 +81,9 @@ public class OrderReader extends CSVReader {
 			if (drink.getDescription().contentEquals("Pacifico Beer")){
 				order.drinkOrder.put(drink, beerQty);
 			}
+			
 		}
+		order.setTotalBill(ttlPrice);
 	}
 
 }

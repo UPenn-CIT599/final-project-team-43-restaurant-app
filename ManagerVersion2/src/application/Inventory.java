@@ -44,7 +44,6 @@ public class Inventory {
 		this.inventory = inventory;
 	}
 
-
 	/**
 	 * Method to iterate over inventory to find items in need of reorder.
 	 * If onHand quantity is less than the reorderPoint the item is added

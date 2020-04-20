@@ -17,6 +17,7 @@ public class KitchenOrder {
 	private String reservationTime;
 	private String reservationDate;
 	private String deliveryAddress;
+	private double totalBill;
 	
 	public KitchenOrder(String orderId, String orderDate, String orderTime, String serviceType) {
 		this.drinkOrder = drinkOrder;
@@ -28,9 +29,10 @@ public class KitchenOrder {
 		this.orderDate = orderDate;
 		this.orderTime = orderTime;
 		this.reservationId = reservationId;
-		this.reservationDate = reservationDate;
+		this.reservationDate = reservationDate; 
 		this.reservationTime = reservationTime;
 		this.deliveryAddress = deliveryAddress;
+		this.totalBill = totalBill;
 	}
 
 	public HashMap<Drink, Integer> getDrinkOrder() {
@@ -129,6 +131,14 @@ public class KitchenOrder {
 		this.deliveryAddress = deliveryAddress;
 	}
 	
+	public double getTotalBill() {
+		return totalCost;
+	}
+
+	public void setTotalBill(double totalBill) {
+		this.totalBill = totalBill;
+	}
+
 	public void fetchOrder(String fName) throws FileNotFoundException {
 		OrderReader rdr = new OrderReader();
 		rdr.readOneLine(fName);

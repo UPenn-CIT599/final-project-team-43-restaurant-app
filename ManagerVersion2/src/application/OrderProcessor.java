@@ -1,31 +1,52 @@
 package application;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 
 public class OrderProcessor {
-	private CustomerOrder order;
+	private KitchenOrder order;
 	private Inventory inventory;
 	private EmployeesController employee;
-	private CSVReader reader;
 	String fileName;
-	
+	Boolean isFilled;
+
 	public OrderProcessor(String fName) {
-		this.fileName = fName;	
+		this.fileName = fName;
 		this.inventory = inventory;
 		this.order = order;
 		this.employee = employee;
-		this
+		this.isFilled = false;
 	}
-public String fillOrder(CustomerOrder currentOrder);
-	
-	for (HashMap<Taco, Integer> tacoType : currentOrder.getTacos()) {
+
+	public boolean fillOrder(KitchenOrder currentOrder) throws FileNotFoundException {
 		double quantity = 0;
-		double orderPrice = 0;
-		for (Taco taco : tacoType.getTacos().getKeys()) {
-			for (InventoryItem item : taco.getIngredients().getKeys()) {
-				quantity = taco.get(taco) * item.get(item);
-				reduceInventory(item.getItemID, quantity);
+		double inventoryOut = 0;
+		this.order.fetchOrder("CustomerOrder.csv");
+		for (Taco tacoType : this.order.getTacoOrder().keySet()) {
+		quantity = this.order.getTacoOrder().get(tacoType);
+			for (InventoryItem item : tacoType.getIngredients().keySet()) {
+				inventoryOut = quantity * tacoType.getIngredients().get(item);
+				item.reduceOnHand(inventoryOut);
 			}
 		}
+
+		for (Drink drinkType : this.order.getDrinkOrder().keySet()) {
+			quantity = this.order.getDrinkOrder().get(drinkType);
+			for (InventoryItem item : drinkType.getIngredients().keySet()) {
+				inventoryOut = quantity * drinkType.getIngredients().get(item);
+				item.reduceOnHand(inventoryOut);
+			}
+		}
+
+		for (SideDish sideType : this.order.getSideOrder().keySet()) {
+			quantity = this.order.getSideOrder().get(sideType);
+			for (InventoryItem item : sideType.getIngredients().keySet()) {
+				inventoryOut = quantity * sideType.getIngredients().get(item);
+				item.reduceOnHand(inventoryOut);
+			}
+		}
+
+		this.isFilled = true;
+		return isFilled;
 	}
 }
