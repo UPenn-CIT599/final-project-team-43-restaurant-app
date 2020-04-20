@@ -10,7 +10,7 @@ Find tacoRunner class and  select run.
 
 ### Prerequisites
 
-PC with java IDE.
+PC with java IDE and Java SE 13.
 
 ### Installing
 
@@ -26,7 +26,7 @@ javFx Scene Builder
 
 ## Authors
 
-Yang Liu liu4@seas.upenn.edu
+Yang Liu liuy4@seas.upenn.edu
 
 Andrew Porth avporth@seas.upenn.edu
 
