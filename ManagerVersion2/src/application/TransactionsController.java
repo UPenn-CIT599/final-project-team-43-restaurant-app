@@ -30,49 +30,59 @@ public class TransactionsController implements Initializable {
 	
 	//set up TableView for Transaction interface
 	@FXML
-	private TableView<TransactionRecord> list;
+	private TableView<TransactionItem> list;
 	@FXML
-	private TableColumn<TransactionRecord, Integer> date;
+	private TableColumn<TransactionItem, String> customerID;
 	@FXML
-	private TableColumn<TransactionRecord, Integer> time;
+	private TableColumn<TransactionItem, String> date;
 	@FXML
-	private TableColumn<TransactionRecord, Double> transactionAmount;
+	private TableColumn<TransactionItem, String> time;
 	@FXML
-	private TableColumn<TransactionRecord, String> paymentMethod;
+	private TableColumn<TransactionItem, Double> transactionAmount;
+	@FXML
+	private TableColumn<TransactionItem, String> paymentMethod;
 
-	private TransactionRecord record1, record2, record3, record4, record5,
+	/**
+	private TransactionItem record1, record2, record3, record4, record5,
 	record6, record7, record8, record9, record10, record11, record12, record13, record14, record15,
 	record16, record17, record18, record19, record20;
 		
 	public ObservableList<TransactionRecord> obList = FXCollections.observableArrayList(
-			record1 = TransactionRecord.transactionGenerator(), 
-			record2 = TransactionRecord.transactionGenerator(), 
-			record3 = TransactionRecord.transactionGenerator(), 
-			record4 = TransactionRecord.transactionGenerator(), 
-			record5 = TransactionRecord.transactionGenerator(),
-			record6 = TransactionRecord.transactionGenerator(), 
-			record7 = TransactionRecord.transactionGenerator(), 
-			record8 = TransactionRecord.transactionGenerator(), 
-			record9 = TransactionRecord.transactionGenerator(), 
-			record10 = TransactionRecord.transactionGenerator(),
-			record11 = TransactionRecord.transactionGenerator(), 
-			record12 = TransactionRecord.transactionGenerator(), 
-			record13 = TransactionRecord.transactionGenerator(), 
-			record14 = TransactionRecord.transactionGenerator(), 
-			record15 = TransactionRecord.transactionGenerator(),
-			record16 = TransactionRecord.transactionGenerator(), 
-			record17 = TransactionRecord.transactionGenerator(), 
-			record18 = TransactionRecord.transactionGenerator(), 
-			record19 = TransactionRecord.transactionGenerator(), 
-			record20 = TransactionRecord.transactionGenerator()
-			);
-
+			record1 = TransactionItem.transactionGenerator(), 
+			record2 = TransactionItem.transactionGenerator(), 
+			record3 = TransactionItem.transactionGenerator(), 
+			record4 = TransactionItem.transactionGenerator(), 
+			record5 = TransactionItem.transactionGenerator(),
+			record6 = TransactionItem.transactionGenerator(), 
+			record7 = TransactionItem.transactionGenerator(), 
+			record8 = TransactionItem.transactionGenerator(), 
+			record9 = TransactionItem.transactionGenerator(), 
+			record10 = TransactionItem.transactionGenerator(),
+			record11 = TransactionItem.transactionGenerator(), 
+			record12 = TransactionItem.transactionGenerator(), 
+			record13 = TransactionItem.transactionGenerator(), 
+			record14 = TransactionItem.transactionGenerator(), 
+			record15 = TransactionItem.transactionGenerator(),
+			record16 = TransactionItem.transactionGenerator(), 
+			record17 = TransactionItem.transactionGenerator(), 
+			record18 = TransactionItem.transactionGenerator(), 
+			record19 = TransactionItem.transactionGenerator(), 
+			record20 = TransactionItem.transactionGenerator()
+			);*/
+	
+	TransactionRecord tr = new TransactionRecord("CustomerOrders.csv");
+	
+	public ObservableList<TransactionItem> obList = FXCollections.observableArrayList(
+			tr.getRealTimeTransactionRecord()
+    );
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		date.setCellValueFactory(new PropertyValueFactory<TransactionRecord, Integer>("date"));
-		time.setCellValueFactory(new PropertyValueFactory<TransactionRecord, Integer>("time"));
-		transactionAmount.setCellValueFactory(new PropertyValueFactory<TransactionRecord, Double>("transactionAmount"));
-		paymentMethod.setCellValueFactory(new PropertyValueFactory<TransactionRecord, String>("paymentMethod"));
+		customerID.setCellValueFactory(new PropertyValueFactory<TransactionItem, String>("customerID"));
+		date.setCellValueFactory(new PropertyValueFactory<TransactionItem, String>("date"));
+		time.setCellValueFactory(new PropertyValueFactory<TransactionItem, String>("time"));
+		transactionAmount.setCellValueFactory(new PropertyValueFactory<TransactionItem, Double>("transactionAmount"));
+		paymentMethod.setCellValueFactory(new PropertyValueFactory<TransactionItem, String>("paymentMethod"));
 			
 		list.setItems(obList);
 			

@@ -1,96 +1,51 @@
 package application;
 import java.util.ArrayList;
 import java.util.Random;
-
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 /**
  * This class has all the transaction records for the restaurant
  * @author yinjiezhang
  *
  */
-public class TransactionRecord {
+public class TransactionRecord extends CSVReader {
 	
-	private SimpleIntegerProperty date;
-	private SimpleStringProperty time;
-	private SimpleDoubleProperty transactionAmount;
-	private SimpleStringProperty paymentMethod;
+	private ArrayList<TransactionItem> realTimeTransactionRecord = new ArrayList<>();
 	
 	/**
 	 * constructor
-	 * @param date
-	 * @param time
-	 * @param transactionAmount
-	 * @param paymentMethod
+	 * use readFile method from CSVReader parent class to generate realTimeTransactionRecord arraylist
+	 * @param fileName
 	 */
-	public TransactionRecord(int date, String time, double transactionAmount, String paymentMethod) {
-		this.date = new SimpleIntegerProperty(date);
-		this.time = new SimpleStringProperty(time);
-		this.transactionAmount = new SimpleDoubleProperty(transactionAmount);
-		this.paymentMethod = new SimpleStringProperty(paymentMethod);
-	}
-	
-	private ArrayList<TransactionRecord> realTimeTransactionRecord = new ArrayList<>();
-
-	public int getDate() {
-		return date.get();
+	public TransactionRecord(String fileName) {
+		readFile(fileName);
 	}
 
-	public String getTime() {
-		return time.get();
-	}
-
-	public double getTransactionAmount() {
-		return transactionAmount.get();
-	}
-
-	public String getPaymentMethod() {
-		return paymentMethod.get();
-	}
-
-	public ArrayList<TransactionRecord> getRealTimeTransactionRecord() {
+	public ArrayList<TransactionItem> getRealTimeTransactionRecord() {
 		return realTimeTransactionRecord;
 	}
-	
-	
+
+
+
 	/**
-	 * This method randomly generate transactions for the application, when in practical use, 
-	 * it should be input by customer 
-	 * @return transaction all the informations about one transaction
+	 * This putData method extends from CSVReader, can use information reading from "CustomerOrders.csv" to generate
+	 * its own arraylist for manager system presenting
 	 */
-	public static TransactionRecord transactionGenerator() {
-		TransactionRecord transaction;
-		
-		Random rd = new Random();
-		
-		int date;
-		String time;
-		double transactionAmount;
-		String paymentMethod;
-		
-		while(true) {
-			date = rd.nextInt(31);
-			if(date != 0) {
-				break;
-			}
-		}
-		time = "" + String.valueOf(rd.nextInt(24)) + ":" + String.valueOf(rd.nextInt(60));
-		transactionAmount = Math.round(rd.nextDouble() * 100.0)/100.0 + rd.nextInt(100);
+	@Override
+	public void putData(String[] columnInfo) {
+		String customerID = columnInfo[1];
+		String date = columnInfo[3];
+		String time = columnInfo[4];
+		double transactionAmount = Double.parseDouble(columnInfo[15]);
 		
 		//creating random paymentMethod
+		Random rd = new Random();
 		String []banks = {"Visa", "Amex", "Discovery", "MasterCard"};
+		String paymentMethod = banks[rd.nextInt(4)];
 		
-		paymentMethod = banks[rd.nextInt(4)];
+		TransactionItem transaction;
+		transaction = new TransactionItem(customerID, date, time, transactionAmount, paymentMethod);
 		
-		transaction = new TransactionRecord(date, time, transactionAmount, paymentMethod);
-		
-		return transaction;
+		realTimeTransactionRecord.add(transaction);
 	}
-	
-	
-	
-	
 	
 	
 }

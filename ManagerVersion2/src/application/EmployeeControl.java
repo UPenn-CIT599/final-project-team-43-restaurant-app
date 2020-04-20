@@ -1,5 +1,4 @@
 package application;
-import java.util.ArrayList;
 import java.util.Random;
 
 import javafx.beans.property.SimpleBooleanProperty;
@@ -18,10 +17,6 @@ public class EmployeeControl {
 	private SimpleDoubleProperty salary;
 	private SimpleBooleanProperty onDuty;
 	
-	
-	
-	
-	private ArrayList<EmployeeControl> employeeList = new ArrayList<>();
 	
 	
 	
@@ -73,14 +68,6 @@ public class EmployeeControl {
 
 	public void setOnDuty(Boolean onDuty) {
 		this.onDuty = new SimpleBooleanProperty(onDuty);
-	}
-
-	public ArrayList<EmployeeControl> getEmployeeList() {
-		return employeeList;
-	}
-
-	public void setEmployeeList(ArrayList<EmployeeControl> employeeList) {
-		this.employeeList = employeeList;
 	}
 
 
