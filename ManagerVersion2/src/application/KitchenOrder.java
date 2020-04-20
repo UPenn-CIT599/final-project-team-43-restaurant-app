@@ -132,7 +132,7 @@ public class KitchenOrder {
 	}
 	
 	public double getTotalBill() {
-		return totalCost;
+		return totalBill;
 	}
 
 	public void setTotalBill(double totalBill) {
