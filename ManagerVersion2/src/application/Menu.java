@@ -13,6 +13,7 @@ public class Menu {
 		this.sides = new ArrayList<SideDish>();		
 	}
 	
+
 	public void populateMenu(String fileName, Inventory inventory) {
 		MenuReader reader = new MenuReader();
 		reader.inventory = inventory;
@@ -33,8 +34,21 @@ public class Menu {
 			side.setCost();
 			side.setPrice();
 		}
-		
 	}
+		
+		public ArrayList<Drink> getDrinks() {
+			return drinks;
+		}
+
+		public ArrayList<Taco> getTacos() {
+			return tacos;
+		}
+
+		public ArrayList<SideDish> getSides() {
+			return sides;
+		}
+	
+	
 	/*
 	public static void main(String[] args) {
 		Inventory inv = new Inventory();

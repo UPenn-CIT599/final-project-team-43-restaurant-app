@@ -51,9 +51,37 @@ public abstract class CSVReader {
 		}
 
 	}
+/**
+ * ReadLine method creates BufferedReader to read a single line of 
+ * text after skipping the first line of a file
+ * @param fileName
+ * @throws FileNotFoundException
+ */
+	public void readOneLine(String fileName) throws FileNotFoundException {
+		BufferedReader rdr;
+
+		rdr = new BufferedReader(new FileReader(fileName));
+		try {
+			rdr.readLine();
+			String itemRow;
+			rdr.readLine();
+			if((itemRow = rdr.readLine()) != null) {
+				String[] columnInfo = itemRow.split("'");
+				putData(columnInfo);
+			}
+			rdr.close();
+		}
+
+		catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
+	}
 
 	/**
-	 * Reads
+	 * Reads file and counts the number of non-empty lines.
 	 * 
 	 * @return
 	 * @throws FileNotFoundException

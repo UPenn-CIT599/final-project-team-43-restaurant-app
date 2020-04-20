@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  * 
- * @author yangliu
+ * @author yangliu, 
  *
  */
 public abstract class MenuItem {
