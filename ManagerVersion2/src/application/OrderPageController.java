@@ -121,6 +121,8 @@ public class OrderPageController {
 			CustomerOrder.writeOrderDineIn(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost);
+			
+			TableList.assignTableToOrder();
 		
 		} 
 		// this if-block runs if the order is for delivery only

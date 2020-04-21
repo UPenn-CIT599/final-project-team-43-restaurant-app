@@ -40,6 +40,7 @@ public class Main extends Application {
 		Customer.getCustomer().setAvailableFunds(Customer.getCustomer().getAvailableFunds());
 		
 		
+		
 		//gives the customer a unique ID
 		double ID = Math.random() * 9999999;
 		Customer.getCustomer().setCustomerID(Integer.toString((int)ID));

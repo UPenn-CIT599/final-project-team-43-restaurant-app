@@ -6,7 +6,12 @@ import java.util.HashMap;
 public class OrderProcessor {
 	private KitchenOrder order;
 	private Inventory inventory;
+<<<<<<< HEAD
+	private EmployeeControl employee;
+	private CSVReader reader;
+=======
 	private EmployeesController employee;
+>>>>>>> 45208925f4ac9d3f0361a51a44337996bb16773c
 	String fileName;
 	Boolean isFilled;
 
