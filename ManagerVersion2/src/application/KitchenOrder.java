@@ -17,8 +17,9 @@ public class KitchenOrder {
 	private String reservationTime;
 	private String reservationDate;
 	private String deliveryAddress;
+	private double totalBill;
 	
-	public KitchenOrder(String orderId, String orderDate, String orderTime, String serviceType) {
+	public KitchenOrder() {
 		this.drinkOrder = drinkOrder;
 		this.tacoOrder = tacoOrder;
 		this.sideOrder = sideOrder;
@@ -28,9 +29,10 @@ public class KitchenOrder {
 		this.orderDate = orderDate;
 		this.orderTime = orderTime;
 		this.reservationId = reservationId;
-		this.reservationDate = reservationDate;
+		this.reservationDate = reservationDate; 
 		this.reservationTime = reservationTime;
 		this.deliveryAddress = deliveryAddress;
+		this.totalBill = totalBill;
 	}
 
 	public HashMap<Drink, Integer> getDrinkOrder() {
@@ -129,9 +131,25 @@ public class KitchenOrder {
 		this.deliveryAddress = deliveryAddress;
 	}
 	
-	public void fetchOrder(String fName) throws FileNotFoundException {
+	public double getTotalBill() {
+		return totalBill;
+	}
+
+	public void setTotalBill(double totalBill) {
+		this.totalBill = totalBill;
+	}
+/**
+ * initializes new OrderReader and fetches customerOrder to fill 
+ * by reading first order in "CustomerOrders.csv"
+ * @param fName
+ * @throws FileNotFoundException
+ */
+	public KitchenOrder fetchOrder(String fName) throws FileNotFoundException {
 		OrderReader rdr = new OrderReader();
 		rdr.readOneLine(fName);
+		KitchenOrder newOrder = new KitchenOrder();
+		newOrder = rdr.getOrder();
+		return newOrder;
 			
 	}
 }

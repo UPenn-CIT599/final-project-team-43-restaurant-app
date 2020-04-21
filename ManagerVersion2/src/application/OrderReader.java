@@ -37,7 +37,11 @@ public class OrderReader extends CSVReader {
 		int beerQty = Integer.parseInt(columnInfo[17]);
 		double ttlPrice = Double.parseDouble(columnInfo[18]);
 		String delivAddress = columnInfo[19];
-		KitchenOrder order = new KitchenOrder(orderId, orderDate, orderTime, serviceType);
+		KitchenOrder order = new KitchenOrder();
+		order.setOrderId(orderId);
+		order.setOrderDate(orderDate);
+		order.setOrderTime(orderTime);
+		order.setServiceType(serviceType);
 		if (!reservationId.contentEquals("")){
 			order.setReservationId(reservationId);
 			order.setReservationDate(reservationDate);
@@ -81,7 +85,12 @@ public class OrderReader extends CSVReader {
 			if (drink.getDescription().contentEquals("Pacifico Beer")){
 				order.drinkOrder.put(drink, beerQty);
 			}
+			
 		}
+		order.setTotalBill(ttlPrice);
 	}
-
+	
+	public KitchenOrder getOrder() {
+		return order;
+	}
 }

@@ -114,6 +114,10 @@ public class InventoryItem {
 	public void setOnHand(double onHand) {
 		this.onHand = onHand;
 	}
+	//method to reduce onHand quantity as orders are filled 
+	public void reduceOnHand(double amount) {
+		this.onHand = this.onHand - amount;
+	}
 
 	public double getReorderPoint() {
 		return reorderPoint;
