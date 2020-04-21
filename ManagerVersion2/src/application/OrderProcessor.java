@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class OrderProcessor {
 	private CustomerOrder order;
 	private Inventory inventory;
-	private EmployeesController employee;
+	private EmployeeControl employee;
 	private CSVReader reader;
 	String fileName;
 	
