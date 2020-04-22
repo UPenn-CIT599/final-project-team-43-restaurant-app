@@ -73,7 +73,7 @@ public class EmployeeControl {
 
 
 	/**
-	 * This method randomly generate employees for the application, when in practical use, 
+	 * This method randomly generate one employee for the application, when in practical use, 
 	 * it can be input by manager 
 	 * @return employee all the informations about one employee
 	 */

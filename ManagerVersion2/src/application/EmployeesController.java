@@ -25,8 +25,11 @@ import javafx.event.ActionEvent;
  *
  */
 public class EmployeesController implements Initializable {
+	
 	@FXML
 	private Button btn2;
+	@FXML
+	private Button btnAddEmployee;
 	
 	
 	//set up TableView for Employee interface
@@ -52,20 +55,23 @@ public class EmployeesController implements Initializable {
 			employee5 = EmployeeControl.employeeGenerator()
 			);*/
 	
-    EmployeeList el = new EmployeeList("Employee List.csv");
+    public static final EmployeeList el = new EmployeeList("Employee List.csv");
 	
-	public ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(
+	public static ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(
 			el.getEmployeeList()
-    );
+		    );
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
 		name.setCellValueFactory(new PropertyValueFactory<EmployeeControl, String>("name"));
 		attendanceHours.setCellValueFactory(new PropertyValueFactory<EmployeeControl, Integer>("attendanceHours"));
 		salary.setCellValueFactory(new PropertyValueFactory<EmployeeControl, Integer>("salary"));
 		onDuty.setCellValueFactory(new PropertyValueFactory<EmployeeControl, Boolean>("onDuty"));
 		
+		
 		list.setItems(obList);
+		
 		
 	}
 
@@ -87,4 +93,26 @@ public class EmployeesController implements Initializable {
 		stage.show();
 
 	}
+	
+	// Event Listener on Button[#btnAddEmployee].onAction
+	@FXML
+	public void addEmployeeAction(ActionEvent event) throws Exception {
+		
+		
+		if (event.getSource() == btnAddEmployee) {
+			EmployeeList.addEmployee();
+			
+		}
+
+		Stage stage = (Stage) btnAddEmployee.getScene().getWindow(); 
+		
+		Parent root = FXMLLoader.load(getClass().getResource("Employees.fxml"));
+		
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+		
+	}
+	
+	
 }

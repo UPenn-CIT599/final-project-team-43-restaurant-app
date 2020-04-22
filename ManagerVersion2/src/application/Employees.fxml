@@ -8,13 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeesController">
-   <top>
-      <Label text="Employees" textAlignment="CENTER" textFill="#c72060" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="Copperplate Bold" size="24.0" />
-         </font>
-      </Label>
-   </top>
    <bottom>
       <Button fx:id="btn2" mnemonicParsing="false" onAction="#handleButtonAction" text="BACK" underline="true" BorderPane.alignment="CENTER">
          <font>
@@ -137,4 +130,20 @@
          </children>
       </AnchorPane>
    </right>
+   <top>
+      <AnchorPane prefHeight="33.0" prefWidth="502.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="190.0" layoutY="2.0" text="Employees" textAlignment="CENTER" textFill="#c72060">
+               <font>
+                  <Font name="Copperplate Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAddEmployee" layoutX="41.0" layoutY="1.0" mnemonicParsing="false" onAction="#addEmployeeAction" text="ADD EMPLOYEE" textAlignment="CENTER" textFill="#5b0505">
+               <font>
+                  <Font name="DIN Condensed Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>

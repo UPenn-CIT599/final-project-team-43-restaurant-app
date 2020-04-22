@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class EmployeeList extends CSVReader{
 	
-	private ArrayList<EmployeeControl> employeeList = new ArrayList<>();
+	private static ArrayList<EmployeeControl> employeeList = new ArrayList<>();
 	
 	/**
 	 * constructor
@@ -25,6 +25,24 @@ public class EmployeeList extends CSVReader{
 
 	public ArrayList<EmployeeControl> getEmployeeList() {
 		return employeeList;
+	}
+	
+	/**
+	 * This putData method extends from CSVReader, can use information reading from "Employee List.csv" to generate
+	 * its own arraylist for manager system presenting
+	 */
+	@Override
+	public void putData(String[] columnInfo) {
+		String name = columnInfo[0];
+		int attendanceHours = Integer.parseInt(columnInfo[1]);
+		double salary = Double.parseDouble(columnInfo[2]);
+		boolean onDuty = Boolean.parseBoolean(columnInfo[3]);
+		
+		
+		EmployeeControl employee;
+		employee = new EmployeeControl(name, attendanceHours, salary, onDuty);
+		
+		employeeList.add(employee);
 	}
 	
 	/**
@@ -64,22 +82,40 @@ public class EmployeeList extends CSVReader{
 	
 	/**
 	 * add new employee to the list and write into the employee List.csv 
-	 * @param employee
+	 * Then the new employee will show on the Employee GUI
 	 */
-	public void addEmployee(EmployeeControl employee) {
+	public static void addEmployee() {
+		EmployeeControl employee = EmployeeControl.employeeGenerator();
 		employeeList.add(employee);
 		
 		try {
+			
 			FileWriter fw = new FileWriter("Employee List.csv", true);
 			
+			
+			fw.write("\n");
 			fw.write(employee.getName()+ "," + String.valueOf(employee.getAttendanceHours()) + "," + 
 				     String.valueOf(employee.getSalary()) + "," + String.valueOf(employee.getOnDuty()));
 			fw.close();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+	}
+	
+	/**
+	 * Assign an available employee to the customer who just ordered
+	 */
+	public static void assignEmployeeToCustomer() {
+		String customerID = Customer.getCustomer().getCustomerID();
+		for(int i = 0; i < employeeList.size(); i++) {
+			if(employeeList.get(i).getOnDuty() && employeeList.get(i).) {
+				
+				break;
+			}
+		}
 	}
 	
 	/**
@@ -92,22 +128,6 @@ public class EmployeeList extends CSVReader{
 	}*/
 	
 	
-	/**
-	 * This putData method extends from CSVReader, can use information reading from "Employee List.csv" to generate
-	 * its own arraylist for manager system presenting
-	 */
-	@Override
-	public void putData(String[] columnInfo) {
-		String name = columnInfo[0];
-		int attendanceHours = Integer.parseInt(columnInfo[1]);
-		double salary = Double.parseDouble(columnInfo[2]);
-		boolean onDuty = Boolean.parseBoolean(columnInfo[3]);
-		
-		
-		EmployeeControl employee;
-		employee = new EmployeeControl(name, attendanceHours, salary, onDuty);
-		
-		employeeList.add(employee);
-	}
+	
 	
 }
