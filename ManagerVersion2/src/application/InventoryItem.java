@@ -36,13 +36,13 @@ public class InventoryItem {
 	public InventoryItem(String itemID, String name, double calorie, String units, double packSize, double price,
 			double onHand, String vendor) {
 		this.itemID = itemID;
-		itemName = name;
+		this.itemName = name;
 
 		this.calorie = calorie;
 		this.units = units;
 
 		this.packSize = packSize;
-		packPrice = price;
+		this.packPrice = price;
 		this.onHand = onHand;
 		this.vendorName = vendor;
 
