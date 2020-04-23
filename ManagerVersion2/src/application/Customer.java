@@ -13,24 +13,25 @@ import java.util.Scanner;
  */
 
 public class Customer {
+	
+	private static Customer customer = new Customer();
 
 	String customerID;
-
+	CustomerOrder order;
 	private double availableFunds; // Funds that the customer has available to spend
+	private CustomerReviews review;
 
 	private String reservationID; // the customer's reservationID set upon making reservation
 	private String reservationDate;
 	private String reservationTime;
 
-	private Menu menu;
+	//private Menu menu;
 
-	private static Customer customer = new Customer();
 
 	private ArrayList<Taco> tacoOrders; // All taco orders for the customer
 	private ArrayList<Drink> drinkOrders; // All drink orders for the customer
 	private ArrayList<SideDish> sideDishOrders; // All side dish orders for the customer
 
-	private CustomerReviews review;
 
 	/**
 	 * Constructor for the customer class. Customer is given a random amount of
@@ -134,9 +135,6 @@ public class Customer {
 		return customer;
 	}
 
-	public Menu getMenu() {
-		return menu;
-	}
 
 	public String getCustomerID() {
 		return customerID;
@@ -170,6 +168,14 @@ public class Customer {
 		this.reservationTime = reservationTime;
 	}
 
+	public CustomerOrder getOrder() {
+		return order;
+	}
+
+	public void setOrder(CustomerOrder order) {
+		this.order = order;
+	}
+
 	/**
 	 * Adds items in the cart to the customer's order.
 	 * 
@@ -182,12 +188,15 @@ public class Customer {
 		this.sideDishOrders = sideDishesInCart;
 	}
 
+	
+	
 	/**
 	 * Saves the customer's review
 	 * 
 	 * @param scoreOutOfFive Customer's review of 1-5
 	 * @param messageReview  Customer's message review
 	 */
+	/*
 	public void giveReview(int scoreOutOfFive, String messageReview) {
 		if (scoreOutOfFive <= 5 && scoreOutOfFive >= 1) {
 			this.review.setScoreOutOfFive(scoreOutOfFive);
@@ -196,6 +205,8 @@ public class Customer {
 
 	}
 
+	*/
+	
 	//Writes reservation to CustomerOrders.csv
 	public static void writeReservation(String customerID, String reservationID, String date, String time) {
 		try {

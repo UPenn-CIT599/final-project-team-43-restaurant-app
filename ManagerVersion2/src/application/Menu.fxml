@@ -12,13 +12,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="634.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx" fx:controller="application.MenuController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="717.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
   <tabs>
     <Tab text="Tacos">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="199.0" fitWidth="136.0" layoutX="26.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="228.0" fitWidth="189.0" layoutX="59.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Beef%20Taco.jpg" />
                      </image>
@@ -26,54 +26,60 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
-                  <Text fill="#a43a3a" layoutX="26.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beef Taco" wrappingWidth="66.28173828125">
+                  <Text fill="#a43a3a" layoutX="60.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beef Taco" wrappingWidth="66.28173828125">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <Text layoutX="25.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our signature beef taco is made with the freshest grounded beef wrapped in corn tortilla and topped with onions, cheese, diced tomatoes and lettuce." wrappingWidth="119.0009765625">
+                  <Text layoutX="59.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our signature beef taco is made with the freshest grounded beef wrapped in corn tortilla and topped with onions, cheese, diced tomatoes and lettuce." wrappingWidth="119.0009765625">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Text>
-                  <Text layoutX="85.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
-                  <ImageView fitHeight="202.0" fitWidth="140.0" layoutX="206.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                  <Text layoutX="154.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
+                  <ImageView fitHeight="230.0" fitWidth="215.0" layoutX="263.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../chicken%20taco.jpg" />
                      </image>
                   </ImageView>
-                  <Text fill="#a14f2c" layoutX="205.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Taco" wrappingWidth="107.28173828125">
+                  <Text fill="#a14f2c" layoutX="268.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Taco" wrappingWidth="107.28173828125">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <Text layoutX="205.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our chicken tacos come sizzling with tender chicken slices, wrapped around fresh flour tortilla and topped with cheese, cilantro, crema, tomatillo salsa, tomatoes and avocado." wrappingWidth="134.0009765625">
+                  <Text layoutX="268.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our chicken tacos come sizzling with tender chicken slices, wrapped around fresh flour tortilla and topped with cheese, cilantro, crema, tomatillo salsa, tomatoes and avocado." wrappingWidth="134.0009765625">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Text>
-                  <Text layoutX="273.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
-                  <ImageView fitHeight="198.0" fitWidth="157.0" layoutX="384.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <Text layoutX="367.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
+                  <ImageView fitHeight="221.0" fitWidth="219.0" layoutX="464.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../veggie%20taco.jpg" />
                      </image>
                   </ImageView>
-                  <Text fill="#1ea823" layoutX="385.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veggie Taco" wrappingWidth="107.28173828125">
+                  <Text fill="#1ea823" layoutX="464.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veggie Taco" wrappingWidth="107.28173828125">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Text>
-                  <Text layoutX="385.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vegetarian? No problem!  Satisfy your vegetarian craves with our veggie tacos, made with veggie taco filling, avocado, Pico di Gallo, tomatoes and lettuce." wrappingWidth="157.0009765625">
+                  <Text layoutX="464.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vegetarian? No problem!  Satisfy your vegetarian craves with our veggie tacos, made with veggie taco filling, avocado, Pico di Gallo, tomatoes and lettuce." wrappingWidth="157.0009765625">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Text>
-                  <Button fx:id="btnBack1" layoutX="496.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
-                  <Button fx:id="btnOrder1" layoutX="542.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
-                  <TextField fx:id="beefTacoPriceBox" editable="false" layoutX="26.0" layoutY="320.0" prefHeight="27.0" prefWidth="54.0" />
-                  <TextField fx:id="chickenTacoPriceBox" editable="false" layoutX="208.0" layoutY="320.0" prefHeight="27.0" prefWidth="61.0" />
-                  <TextField fx:id="veggieTacoPriceBox" editable="false" layoutX="396.0" layoutY="320.0" prefHeight="27.0" prefWidth="57.0" />
-                  <Text layoutX="463.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
+                  <Button fx:id="btnBack1" layoutX="576.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
+                  <Button fx:id="btnOrder1" layoutX="622.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
+                  <TextField fx:id="beefTacoPriceBox" editable="false" layoutX="60.0" layoutY="350.0" prefHeight="27.0" prefWidth="85.0" />
+                  <TextField fx:id="chickenTacoPriceBox" editable="false" layoutX="268.0" layoutY="350.0" prefHeight="27.0" prefWidth="88.0" />
+                  <TextField fx:id="veggieTacoPriceBox" editable="false" layoutX="480.0" layoutY="348.0" prefHeight="27.0" prefWidth="85.0" />
+                  <Text layoutX="575.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
+                  <Text layoutX="155.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
+                  <TextField fx:id="beefTacoCalorieBox" editable="false" layoutX="61.0" layoutY="384.0" prefHeight="27.0" prefWidth="84.0" />
+                  <Text layoutX="368.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
+                  <TextField fx:id="chickenTacoCalorieBox" editable="false" layoutX="268.0" layoutY="384.0" prefHeight="27.0" prefWidth="88.0" />
+                  <TextField fx:id="veggieTacoCalorieBox" editable="false" layoutX="481.0" layoutY="384.0" prefHeight="27.0" prefWidth="84.0" />
+                  <Text layoutX="576.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per taco" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -81,36 +87,48 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="152.0" fitWidth="151.0" layoutX="14.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="186.0" fitWidth="190.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../dr%20pepper.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="165.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="185.0" fitWidth="190.0" layoutX="190.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../la%20croix.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="315.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="189.0" fitWidth="146.0" layoutX="375.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../pepsi.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="401.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="190.0" fitWidth="237.0" layoutX="504.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../pacifico%20beer.jpg" />
                      </image>
                   </ImageView>
-                  <Text layoutX="136.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr Pepper....................................                   per can" wrappingWidth="265.22900390625" />
-                  <Text layoutX="136.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La Croix Sparkling water.............                   per can" wrappingWidth="285.22900390625" />
-                  <Text layoutX="136.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pepsi Cola.............................................      per can" wrappingWidth="271.22900390625" />
-                  <Text layoutX="136.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pacifico Beer.......................................        per can" wrappingWidth="278.22900390625" />
-                  <Button fx:id="btnBack2" layoutX="488.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
-                  <Button fx:id="btnOrder2" layoutX="534.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
-                  <TextField fx:id="drPepperPriceBox" editable="false" layoutX="297.0" layoutY="219.0" prefHeight="27.0" prefWidth="53.0" />
-                  <TextField fx:id="laCroixPriceBox" editable="false" layoutX="297.0" layoutY="257.0" prefHeight="27.0" prefWidth="53.0" />
-                  <TextField fx:id="pepsiPriceBox" editable="false" layoutX="298.0" layoutY="298.0" prefHeight="27.0" prefWidth="52.0" />
-                  <TextField fx:id="pacificoPriceBox" editable="false" layoutX="297.0" layoutY="332.0" prefHeight="27.0" prefWidth="53.0" />
+                  <Text fill="#d35d5d" layoutX="76.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr Pepper" wrappingWidth="62.22900390625" />
+                  <Text fill="#f2c452" layoutX="212.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La Croix Sparkling Water" wrappingWidth="137.22900390625" />
+                  <Text fill="#3e5bbc" layoutX="403.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pepsi Cola" wrappingWidth="88.22900390625" />
+                  <Text fill="#e89600" layoutX="548.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pacifico Beer" wrappingWidth="94.22900390625" />
+                  <Button fx:id="btnBack2" layoutX="576.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
+                  <Button fx:id="btnOrder2" layoutX="622.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
+                  <TextField fx:id="drPepperPriceBox" editable="false" layoutX="34.0" layoutY="272.0" prefHeight="27.0" prefWidth="85.0" />
+                  <TextField fx:id="laCroixPriceBox" editable="false" layoutX="228.0" layoutY="272.0" prefHeight="27.0" prefWidth="82.0" />
+                  <TextField fx:id="pepsiPriceBox" editable="false" layoutX="388.0" layoutY="272.0" prefHeight="27.0" prefWidth="86.0" />
+                  <TextField fx:id="pacificoPriceBox" editable="false" layoutX="557.0" layoutY="272.0" prefHeight="27.0" prefWidth="87.0" />
+                  <Text layoutX="127.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per can" />
+                  <Text layoutX="315.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per can" />
+                  <Text layoutX="481.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per can" />
+                  <Text layoutX="649.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per bottle" />
+                  <TextField fx:id="drPepperCalorieBox" editable="false" layoutX="34.0" layoutY="321.0" prefHeight="27.0" prefWidth="85.0" />
+                  <Text layoutX="127.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per can" />
+                  <TextField fx:id="laCroixCalorieBox" editable="false" layoutX="230.0" layoutY="321.0" prefHeight="27.0" prefWidth="81.0" />
+                  <Text layoutX="315.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per can" />
+                  <TextField fx:id="pepsiCalorieBox" editable="false" layoutX="390.0" layoutY="321.0" prefHeight="27.0" prefWidth="85.0" />
+                  <Text layoutX="480.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per can" />
+                  <TextField fx:id="pacificoCalorieBox" editable="false" layoutX="559.0" layoutY="321.0" prefHeight="27.0" prefWidth="85.0" />
+                  <Text layoutX="649.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per bottle" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -118,47 +136,53 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="165.0" fitWidth="179.0" layoutX="14.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="200.0" fitWidth="212.0" layoutX="14.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../nacho.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="165.0" fitWidth="188.0" layoutX="202.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="201.0" fitWidth="233.0" layoutX="235.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../tortilla%20chips.jpeg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="151.0" fitWidth="210.0" layoutX="376.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="170.0" fitWidth="256.0" layoutX="448.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../rice%20beans.jpg" />
                      </image>
                   </ImageView>
-                  <Text fill="#a1743e" layoutX="17.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachos" />
-                  <Text layoutX="18.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our delicious nachos come with side of mild salsa and nacho cheese." wrappingWidth="157.01904296875">
+                  <Text fill="#a1743e" layoutX="23.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachos" />
+                  <Text layoutX="24.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our delicious nachos come with side of mild salsa and nacho cheese." wrappingWidth="157.01904296875">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Text>
-                  <Text layoutX="77.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" per order" wrappingWidth="62.90478515625" />
-                  <Text fill="#becd4c" layoutX="205.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tortilla Chips" />
-                  <Text layoutX="276.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per order" />
-                  <Text layoutX="208.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fresh and crispy tortilla chips.">
+                  <Text layoutX="135.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" per order" wrappingWidth="62.90478515625" />
+                  <Text fill="#becd4c" layoutX="243.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tortilla Chips" />
+                  <Text layoutX="361.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per order" />
+                  <Text layoutX="246.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fresh and crispy tortilla chips.">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Text>
-                  <Text fill="#437bd7" layoutX="380.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rice and Beans" />
-                  <Text layoutX="381.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made with our secret rice seasoning, quality rice grains and refried beans." wrappingWidth="195.154296875">
+                  <Text fill="#437bd7" layoutX="466.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rice and Beans" />
+                  <Text layoutX="467.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made with our secret rice seasoning, quality rice grains and refried beans." wrappingWidth="195.154296875">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Text>
-                  <Text layoutX="463.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per order" />
-                  <Button fx:id="btnBack3" layoutX="488.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
-                  <Button fx:id="btnOrder3" layoutX="534.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
-                  <TextField fx:id="nachosPriceBox" editable="false" layoutX="19.0" layoutY="294.0" prefHeight="27.0" prefWidth="55.0" />
-                  <TextField fx:id="tortillaPriceBox" editable="false" layoutX="211.0" layoutY="294.0" prefHeight="27.0" prefWidth="60.0" />
-                  <TextField fx:id="riceAndBeansPriceBox" editable="false" layoutX="391.0" layoutY="294.0" prefHeight="27.0" prefWidth="61.0" />
+                  <Text layoutX="591.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per order" />
+                  <Button fx:id="btnBack3" layoutX="576.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Back" />
+                  <Button fx:id="btnOrder3" layoutX="622.0" layoutY="411.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Order Now!" />
+                  <TextField fx:id="nachosPriceBox" editable="false" layoutX="23.0" layoutY="325.0" prefHeight="27.0" prefWidth="100.0" />
+                  <TextField fx:id="tortillaPriceBox" editable="false" layoutX="249.0" layoutY="325.0" prefHeight="27.0" prefWidth="95.0" />
+                  <TextField fx:id="riceAndBeansPriceBox" editable="false" layoutX="477.0" layoutY="325.0" prefHeight="27.0" prefWidth="101.0" />
+                  <Text layoutX="135.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" per order" wrappingWidth="62.90478515625" />
+                  <TextField fx:id="nachosCalorieBox" editable="false" layoutX="23.0" layoutY="363.0" prefHeight="27.0" prefWidth="101.0" />
+                  <Text layoutX="361.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per order" />
+                  <TextField fx:id="tortillaCalorieBox" editable="false" layoutX="249.0" layoutY="363.0" prefHeight="27.0" prefWidth="96.0" />
+                  <Text layoutX="591.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="per order" />
+                  <TextField fx:id="riceAndBeansCalorieBox" editable="false" layoutX="477.0" layoutY="363.0" prefHeight="27.0" prefWidth="103.0" />
                </children>
             </AnchorPane>
         </content>

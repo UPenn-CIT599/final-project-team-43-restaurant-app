@@ -25,7 +25,9 @@ public class MenuController {
 
 	@FXML
 	private TextField beefTacoPriceBox, chickenTacoPriceBox, veggieTacoPriceBox, drPepperPriceBox, laCroixPriceBox,
-			pepsiPriceBox, pacificoPriceBox, nachosPriceBox, tortillaPriceBox, riceAndBeansPriceBox;
+			pepsiPriceBox, pacificoPriceBox, nachosPriceBox, tortillaPriceBox, riceAndBeansPriceBox, beefTacoCalorieBox,
+			chickenTacoCalorieBox, veggieTacoCalorieBox, drPepperCalorieBox, laCroixCalorieBox, pepsiCalorieBox,
+			pacificoCalorieBox, nachosCalorieBox, tortillaCalorieBox, riceAndBeansCalorieBox;
 
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
@@ -71,6 +73,16 @@ public class MenuController {
 		nachosPriceBox = new TextField();
 		tortillaPriceBox = new TextField();
 		riceAndBeansPriceBox = new TextField();
+		beefTacoCalorieBox = new TextField();
+		chickenTacoCalorieBox = new TextField();
+		veggieTacoCalorieBox = new TextField();
+		drPepperCalorieBox = new TextField();
+		laCroixCalorieBox = new TextField();
+		pepsiCalorieBox = new TextField();
+		pacificoCalorieBox = new TextField();
+		nachosCalorieBox = new TextField();
+		tortillaCalorieBox = new TextField();
+		riceAndBeansCalorieBox = new TextField();
 	}
 
 	@FXML
@@ -82,20 +94,22 @@ public class MenuController {
 		Menu menu = new Menu();
 		menu.populateMenu("MenuList.csv", inv);
 
-
 		// Displays price of each food item in the menu GUI screen
 		beefTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(0).getPrice()));
 		chickenTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(1).getPrice()));
 		veggieTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(2).getPrice()));
-		
+
 		drPepperPriceBox.setText("$" + Double.toString(menu.drinks.get(0).getPrice()));
 		laCroixPriceBox.setText("$" + Double.toString(menu.drinks.get(1).getPrice()));
 		pepsiPriceBox.setText("$" + Double.toString(menu.drinks.get(2).getPrice()));
 		pacificoPriceBox.setText("$" + Double.toString(menu.drinks.get(3).getPrice()));
-		
+
 		nachosPriceBox.setText("$" + Double.toString(menu.sides.get(0).getPrice()));
 		tortillaPriceBox.setText("$" + Double.toString(menu.sides.get(1).getPrice()));
 		riceAndBeansPriceBox.setText("$" + Double.toString(menu.sides.get(2).getPrice()));
+		
+		// Displays calorie of each food item in the menu GUI screen
+
 
 	}
 }

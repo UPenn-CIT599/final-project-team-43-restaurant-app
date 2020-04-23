@@ -168,6 +168,18 @@ public class CustomerOrder {
 	}
 
 	/**
+	 * This method returns the monetary value that the customer has remaining after
+	 * making an order purchase
+	 * 
+	 * @param orderCost Cost of the order
+	 * @param customerFunds Initial funds of the customer
+	 * @return the customer's available balance
+	 */
+	public static double makePurchase(double orderCost, double customerFunds) {
+		return customerFunds - orderCost;
+	}
+
+	/**
 	 * Getter for customer
 	 * 
 	 * @return

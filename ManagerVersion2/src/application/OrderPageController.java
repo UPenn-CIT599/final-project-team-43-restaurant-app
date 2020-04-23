@@ -18,6 +18,12 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * This class controls the order page.
+ * 
+ * @author yangliu
+ *
+ */
 public class OrderPageController {
 
 	// total cost of the order in the order page
@@ -79,6 +85,8 @@ public class OrderPageController {
 
 		// stores customer's available funds in availableFunds
 		this.availableFunds = Customer.getCustomer().getAvailableFunds();
+		//declares fundsAfterPurchase variable
+		double fundsAfterPurchase;
 
 		// stores customer ID in customerID
 		String customerID = Customer.getCustomer().getCustomerID();
@@ -122,6 +130,10 @@ public class OrderPageController {
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost);
 			
+			//stores the customer's remaining money in fundsAfterPurchase variable
+			fundsAfterPurchase = CustomerOrder.makePurchase(totalCost, availableFunds);
+			Customer.getCustomer().setAvailableFunds(fundsAfterPurchase); 
+			
 			TableList.assignTableToOrder();
 		
 		} 
@@ -139,6 +151,8 @@ public class OrderPageController {
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost, address);
 
+			fundsAfterPurchase = CustomerOrder.makePurchase(totalCost, availableFunds);
+			Customer.getCustomer().setAvailableFunds(fundsAfterPurchase); 
 		} 
 
 		Scene scene = new Scene(root);
