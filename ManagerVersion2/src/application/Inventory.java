@@ -82,7 +82,7 @@ public class Inventory {
 			
 		
 		}
-	return this.inventory;	
+	return orders;	
 	}
 	/**
 	 * This method adds item to the inventory list
