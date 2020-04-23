@@ -10,9 +10,12 @@ public class OrderProcessor {
 
 	private EmployeeControl employee;
 	private CSVReader reader;
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> f294834e39ee72770b1c3b57550e8aef858a698d
 	String fileName;
 	Boolean isFilled;
 

@@ -67,12 +67,22 @@ public class Inventory {
 	 * @param units
 	 * @return
 	 */
-	public double buyProduct(InventoryItem product, int units) {
+	public void buyProduct(InventoryItem product, int units) {
 		double cost = product.getPackPrice() * units;
 		double available = product.getOnHand();
 		available += (product.getPackSize() * units);
 		product.setOnHand(available);
-		return cost;
+	}
+	
+	public ArrayList<PurchaseOrder> replenishInventory() {
+		double cost;
+		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
+		for (InventoryItem product : createProductOrder()){
+			buyProduct(product, 1);
+			
+		
+		}
+	return this.inventory;	
 	}
 	/**
 	 * This method adds item to the inventory list
