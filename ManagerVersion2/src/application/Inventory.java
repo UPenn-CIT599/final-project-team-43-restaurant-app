@@ -82,7 +82,11 @@ public class Inventory {
 			
 		
 		}
+<<<<<<< HEAD
 	return inventory;	
+=======
+	return orders;	
+>>>>>>> d8b37ad6c9d6103aad8bc2e64a891274b98d3b7d
 	}
 	/**
 	 * This method adds item to the inventory list
