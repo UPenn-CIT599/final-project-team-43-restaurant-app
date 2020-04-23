@@ -10,12 +10,7 @@ public class OrderProcessor {
 
 	private EmployeeControl employee;
 	private CSVReader reader;
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> f294834e39ee72770b1c3b57550e8aef858a698d
 	String fileName;
 	Boolean isFilled;
 
@@ -46,7 +41,7 @@ public class OrderProcessor {
 				item.reduceOnHand(inventoryOut);
 			}
 		}
-//iterates through drink types and quantities, reducing associated inventoryItems
+        //iterates through drink types and quantities, reducing associated inventoryItems
 		for (Drink drinkType : this.order.getDrinkOrder().keySet()) {
 			quantity = this.order.getDrinkOrder().get(drinkType);
 			for (InventoryItem item : drinkType.getIngredients().keySet()) {
@@ -54,7 +49,7 @@ public class OrderProcessor {
 				item.reduceOnHand(inventoryOut);
 			}
 		}
-//iterates through side dishes and quantities, reducing associated Inventory Items
+        //iterates through side dishes and quantities, reducing associated Inventory Items
 		for (SideDish sideType : this.order.getSideOrder().keySet()) {
 			quantity = this.order.getSideOrder().get(sideType);
 			for (InventoryItem item : sideType.getIngredients().keySet()) {

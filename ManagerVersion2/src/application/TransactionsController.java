@@ -70,7 +70,7 @@ public class TransactionsController implements Initializable {
 			record20 = TransactionItem.transactionGenerator()
 			);*/
 	
-	static TransactionRecord tr = new TransactionRecord("CustomerOrders.csv");
+	public static TransactionRecord tr = new TransactionRecord("CustomerOrders.csv");
 	
 	public static ObservableList<TransactionItem> obList = FXCollections.observableArrayList(
 			tr.getRealTimeTransactionRecord()
