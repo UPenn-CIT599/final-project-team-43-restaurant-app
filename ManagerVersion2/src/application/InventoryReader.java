@@ -1,24 +1,26 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Class to read data from .csv file into an ArrayList of InventoryItem objects
  * Subclass of abstract class FileReader
- * @author porth
+ * @author porth, yinjiez
  *
  */
 public class InventoryReader extends CSVReader {
 
-	private ArrayList<InventoryItem> inventoryList;
+	private static ArrayList<InventoryItem> inventoryList = new ArrayList<>();
 
 	/**
 	 * Constructor creates default instance of FileReader with additional instance
 	 * variable to store inventory items
 	 */
-	public InventoryReader() {
-		inventoryList = new ArrayList<InventoryItem>();
-
+	public InventoryReader(String fileName) {
+		
+		readFile(fileName);
 	}
 
 	/**
@@ -68,4 +70,57 @@ public class InventoryReader extends CSVReader {
 		}
 	}
 	 */
+	
+	/**
+	 * Method to iterate over inventory to find items in need of reorder.
+	 * If onHand quantity is less than the reorderPoint the item is added
+	 * to the list of items to order.
+	 * @return ArrayList itemsToOrder
+	 */
+	public ArrayList<InventoryItem> createProductOrder() {
+		
+	List<InventoryItem> itemsToOrder = new ArrayList<InventoryItem>();
+		for(InventoryItem product : inventoryList) {
+			if (product.getReorderPoint() > product.getOnHand()){
+					itemsToOrder.add(product);				
+			}			
+		}
+		Collections.sort(
+				itemsToOrder,
+				(item1, item2) -> item1.getVendorName().compareTo(item2.getVendorName()));
+		
+		return (ArrayList<InventoryItem>) itemsToOrder;
+	}
+	
+	/**
+	 * Method to replenish depleted products
+	 * @param product
+	 * @param units
+	 * @return
+	 */
+	public double buyProduct(InventoryItem product, int units) {
+		double cost = product.getPackPrice() * units;
+		double available = product.getOnHand();
+		available += (product.getPackSize() * units);
+		product.setOnHand(available);
+		return cost;
+	}
+	/**
+	 * This method adds item to the inventory list
+	 * 
+	 * @param item
+	 */
+	public void addItem(InventoryItem item) {
+		inventoryList.add(item);
+	}
+
+	/**
+	 * This method deletes item from inventory list
+	 * 
+	 * @param item
+	 */
+	public void deleteItem(InventoryItem item) {
+		inventoryList.remove(item);
+	}
+	
 }

@@ -1,5 +1,8 @@
 package application;
 
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 /**
  * This class has information of one inventory item
  * 
@@ -8,18 +11,18 @@ package application;
  */
 public class InventoryItem {
 
-	private String itemID;
-	private String itemName;
+	private SimpleStringProperty itemID;
+	private SimpleStringProperty itemName;
 
-	private double calorie;
-	private double unitPrice;
-	private String units;
+	private SimpleDoubleProperty calorie;
+	private SimpleDoubleProperty unitPrice;
+	private SimpleStringProperty units;
 
-	private double packSize;
-	private double packPrice;
-	private double onHand;
-	private double reorderPoint;
-	private String vendorName;
+	private SimpleDoubleProperty packSize;
+	private SimpleDoubleProperty packPrice;
+	private SimpleDoubleProperty onHand;
+	private SimpleDoubleProperty reorderPoint;
+	private SimpleStringProperty vendorName;
 
 	/**
 	 * constructor
@@ -35,104 +38,105 @@ public class InventoryItem {
 	 */
 	public InventoryItem(String itemID, String name, double calorie, String units, double packSize, double price,
 			double onHand, String vendor) {
-		this.itemID = itemID;
-		this.itemName = name;
+		this.itemID = new SimpleStringProperty(itemID);
+		this.itemName = new SimpleStringProperty(name);
 
-		this.calorie = calorie;
-		this.units = units;
+		this.calorie = new SimpleDoubleProperty(calorie);
+		this.units = new SimpleStringProperty(units);
 
-		this.packSize = packSize;
-		this.packPrice = price;
-		this.onHand = onHand;
-		this.vendorName = vendor;
+		this.packSize = new SimpleDoubleProperty(packSize);
+		this.packPrice = new SimpleDoubleProperty(price);
+		this.onHand = new SimpleDoubleProperty(onHand);
+		this.vendorName = new SimpleStringProperty(vendor);
 
-		this.unitPrice = price / packSize;
-		this.reorderPoint = packSize * .20;
+		this.unitPrice = new SimpleDoubleProperty(Math.round(price / packSize * 100)/100.0);
+		this.reorderPoint = new SimpleDoubleProperty(Math.round(packSize * .20 * 100)/100.0);
 
 	}
 
 	public String getItemID() {
-		return itemID;
+		return itemID.get();
 	}
 
 	public void setItemID(String itemID) {
-		this.itemID = itemID;
+		this.itemID = new SimpleStringProperty(itemID);
 	}
 
 	public String getItemName() {
-		return itemName;
+		return itemName.get();
 	}
 
 	public void setItemName(String itemName) {
-		this.itemName = itemName;
+		this.itemName = new SimpleStringProperty(itemName);
 	}
 
 	public double getCalorie() {
-		return calorie;
+		return calorie.get();
 	}
 
 	public void setCalorie(double calorie) {
-		this.calorie = calorie;
+		this.calorie = new SimpleDoubleProperty(calorie);
 	}
 
 	public double getUnitPrice() {
-		return unitPrice;
+		return unitPrice.get();
 	}
 
 	public void setUnitPrice(double unitPrice) {
-		this.unitPrice = unitPrice;
+		this.unitPrice = new SimpleDoubleProperty(unitPrice);
 	}
 
 	public String getUnits() {
-		return units;
+		return units.get();
 	}
 
 	public void setUnits(String units) {
-		this.units = units;
+		this.units = new SimpleStringProperty(units);
 	}
 
 	public double getPackSize() {
-		return packSize;
+		return packSize.get();
 	}
 
 	public void setPackSize(double packSize) {
-		this.packSize = packSize;
+		this.packSize = new SimpleDoubleProperty(packSize);
 	}
 
 	public double getPackPrice() {
-		return packPrice;
+		return packPrice.get();
 	}
 
 	public void setPackPrice(double packPrice) {
-		this.packPrice = packPrice;
+		this.packPrice = new SimpleDoubleProperty(packPrice);
 	}
 
 	public double getOnHand() {
-		return onHand;
+		return onHand.get();
 	}
 
 	public void setOnHand(double onHand) {
-		this.onHand = onHand;
+		this.onHand = new SimpleDoubleProperty(onHand);
 	}
 	//method to reduce onHand quantity as orders are filled 
 	public void reduceOnHand(double amount) {
-		this.onHand = this.onHand - amount;
+		
+		this.onHand = new SimpleDoubleProperty(this.onHand.get() - amount);
 	}
 
 	public double getReorderPoint() {
-		return reorderPoint;
+		return reorderPoint.get();
 	}
 
 	public void setReorderPoint(double reorderPoint) {
-		this.reorderPoint = reorderPoint;
+		this.reorderPoint = new SimpleDoubleProperty(reorderPoint);
 	}
 
 	public String getVendorName() {
-		return vendorName;
+		return vendorName.get();
 	}
 
 	public void setVendorName(String vendorName) {
-		this.vendorName = vendorName;
+		this.vendorName = new SimpleStringProperty(vendorName);
 	}
 
 }

@@ -1,10 +1,8 @@
 package application;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * This class monitors inventory items of the restaurant
@@ -15,7 +13,7 @@ import java.util.Comparator;
 public class Inventory {
 
 	//InventoryItems are objects of InventoryItem class
-	private ArrayList<InventoryItem> inventory;
+	private static ArrayList<InventoryItem> inventory;
 	
 	/**
 	 * constructor initializes empty ArrayList of invenory items
@@ -24,7 +22,7 @@ public class Inventory {
 
 	public Inventory() {
 		
-		this.inventory = new ArrayList<InventoryItem>();
+		inventory = new ArrayList<InventoryItem>();
 	}
 	/**
 	 * method to populate ArrayList of Inventory Items by reading from .csv File
@@ -32,10 +30,10 @@ public class Inventory {
 	 */
 	public void populateInventory(String fileName) {
 		//Initializes new InventoryReader
-		InventoryReader reader = new InventoryReader();
+		InventoryReader reader = new InventoryReader(fileName);
 		//calls reader methods to read file and fill ArrayList
-		reader.readFile(fileName);
-		this.inventory = reader.getInventoryList();
+		//reader.readFile(fileName);
+		inventory = reader.getInventoryList();
 		}
 	
 	public ArrayList<InventoryItem> getInventory() {
@@ -51,7 +49,7 @@ public class Inventory {
 	public ArrayList<InventoryItem> createProductOrder() {
 		
 	List<InventoryItem> itemsToOrder = new ArrayList<InventoryItem>();
-		for(InventoryItem product : this.inventory) {
+		for(InventoryItem product : inventory) {
 			if (product.getReorderPoint() > product.getOnHand()){
 					itemsToOrder.add(product);				
 			}			
@@ -82,7 +80,7 @@ public class Inventory {
 	 * @param item
 	 */
 	public void addItem(InventoryItem item) {
-		this.inventory.add(item);
+		inventory.add(item);
 	}
 
 	/**
@@ -91,7 +89,7 @@ public class Inventory {
 	 * @param item
 	 */
 	public void deleteItem(InventoryItem item) {
-		this.inventory.remove(item);
+		inventory.remove(item);
 	}
 	
 }

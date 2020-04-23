@@ -32,19 +32,29 @@ public class TransactionRecord extends CSVReader {
 	@Override
 	public void putData(String[] columnInfo) {
 		String customerID = columnInfo[1];
+		
 		String date = columnInfo[3];
+		
 		String time = columnInfo[4];
-		double transactionAmount = Double.parseDouble(columnInfo[15]);
+		
+		double transactionAmount = 0.0;
+		if(columnInfo.length > 18 && !columnInfo[18].isEmpty()) {
+			transactionAmount = Double.parseDouble(columnInfo[18]);
+		}
+		
 		
 		//creating random paymentMethod
 		Random rd = new Random();
 		String []banks = {"Visa", "Amex", "Discovery", "MasterCard"};
 		String paymentMethod = banks[rd.nextInt(4)];
 		
-		TransactionItem transaction;
-		transaction = new TransactionItem(customerID, date, time, transactionAmount, paymentMethod);
+		if(!date.isEmpty() || !time.isEmpty()) {
+			TransactionItem transaction;
+			transaction = new TransactionItem(customerID, date, time, transactionAmount, paymentMethod);
+			
+			realTimeTransactionRecord.add(transaction);
+		}
 		
-		realTimeTransactionRecord.add(transaction);
 	}
 	
 	

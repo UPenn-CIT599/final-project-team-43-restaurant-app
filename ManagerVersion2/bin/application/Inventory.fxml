@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryController">
+<BorderPane prefHeight="515.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryController">
    <top>
       <Label text="Inventory" textAlignment="CENTER" textFill="#c77d20" BorderPane.alignment="CENTER">
          <font>
@@ -22,12 +22,20 @@
          </font></Button>
    </bottom>
    <center>
-      <AnchorPane prefHeight="462.0" prefWidth="387.0" BorderPane.alignment="CENTER">
+      <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <TableView prefHeight="453.0" prefWidth="363.0">
+            <TableView fx:id="list" prefHeight="453.0" prefWidth="441.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="itemID" prefWidth="75.0" text="itemID" />
+                <TableColumn fx:id="itemName" prefWidth="130.0" text="itemName" />
+                  <TableColumn fx:id="calorie" prefWidth="58.0" text="calorie" />
+                  <TableColumn fx:id="unitPrice" prefWidth="68.0" text="unitPrice" />
+                  <TableColumn fx:id="units" prefWidth="44.0" text="units" />
+                  <TableColumn fx:id="packSize" prefWidth="75.0" text="packSize" />
+                  <TableColumn fx:id="packPrice" prefWidth="75.0" text="packPrice" />
+                  <TableColumn fx:id="onHand" prefWidth="75.0" text="onHand" />
+                  <TableColumn fx:id="reorderPoint" prefWidth="75.0" text="reorderPoint" />
+                  <TableColumn fx:id="vendorName" prefWidth="130.0" text="vendorName" />
               </columns>
             </TableView>
          </children>
