@@ -11,20 +11,19 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class OrderProcessor {
-	private KitchenOrder order;
-	private Menu menu;
-	private Inventory inventory;
+	KitchenOrder order;
+	Menu menu;
+	Inventory inventory;
 	private EmployeeList empList = new EmployeeList("Employee List.csv");
 	// private CSVReader reader;
-	Boolean isComplete;
+	private Boolean isComplete;
 	private String paymentMethod;
-	String[] banks = { "Visa", "Amex", "Discovery", "MasterCard" };
-	String completedTime;
+	private String completedTime;
 	private EmployeeControl employee;
 
 	public OrderProcessor(KitchenOrder currentOrder) throws FileNotFoundException {
 
-		this.employee = empList.assignEmployeeToCustomer();
+		// this.employee = empList.assignEmployeeToCustomer();
 
 		this.inventory = inventory;
 		this.order = currentOrder;
@@ -46,7 +45,7 @@ public class OrderProcessor {
 	public void fillOrder() throws FileNotFoundException {
 		double quantity = 0;
 		double inventoryOut = 0;
-		String employeeName = this.employee.getName();
+		// String employeeName = this.employee.getName();
 		String[] banks = { "Visa", "Amex", "Discovery", "MasterCard", "Cash" };
 		Random rd = new Random();
 		DateTimeFormatter time = DateTimeFormatter.ofPattern("HH:mm");
@@ -86,20 +85,36 @@ public class OrderProcessor {
 		this.isComplete = true;
 		// writeTransactionRecord(this.order, this.isComplete, this.completedTime,
 		// employeeName, this.paymentMethod);
-		writeTransactionRecord(this.order);
+		String transRecord;
+		transRecord = createTransactionRecord();
+		writeTransactionRecord(transRecord);
 	}
 
-	// public static void writeTransactionRecord(KitchenOrder order, Boolean
-	// isComplete, String completedTime, String employeeName, String paymentMethod)
-	// {
-	public static void writeTransactionRecord(KitchenOrder order) {
-		KitchenOrder writeOrder = order;
+	public String createTransactionRecord() {
+		String record;
+		record = (this.order.getOrderId() + "," + this.order.getCustomerId() + "," + this.order.getServiceType()
+		+ "," + this.order.getOrderDate() + "," + this.order.getOrderTime() + ","
+		+ this.order.getQuantitiesAsString().get("bfTacoQty") + ","
+		+ this.order.getQuantitiesAsString().get("chkTacoQty") + ","
+		+ this.order.getQuantitiesAsString().get("vegTacoQty") + ","
+		+ this.order.getQuantitiesAsString().get("nachosQty") + ","
+		+ this.order.getQuantitiesAsString().get("chipsQty") + ","
+		+ this.order.getQuantitiesAsString().get("beansQty") + ","
+		+ this.order.getQuantitiesAsString().get("drPQty") + ","
+		+ this.order.getQuantitiesAsString().get("spklWtrQty") + ","
+		+ this.order.getQuantitiesAsString().get("pepsiQty") + ","
+		+ this.order.getQuantitiesAsString().get("beerQty") + "," + this.order.getTotalBill() + ","
+		+ this.isComplete + "," + this.completedTime + "," + "employeeName goes here" + ","
+		+ this.paymentMethod);
+		System.out.println(record);
+		return record;
+	}
+	public static void writeTransactionRecord(String record) {
+		String transRecord = record;
 		try {
 			Scanner in = new Scanner("TransactionRecord.csv");
 			FileWriter fw = new FileWriter("TransactionRecord.csv", true);
 			BufferedWriter bw = new BufferedWriter(fw);
-
-			int lineNumber = CSVReader.readNumberOfLines("TransactionRecord.csv") + 10000;
 
 			in.nextLine();
 			bw.newLine();
@@ -108,14 +123,7 @@ public class OrderProcessor {
 				in.nextLine();
 				bw.newLine();
 			}
-			bw.write(lineNumber + "," + order.getCustomerId() + "," + writeOrder.getServiceType() + ","
-					+ writeOrder.getOrderDate() + "," + writeOrder.getOrderTime() + "," + "," + rdr.beefTacoQty + ","
-					+ writeOrder.getTacoOrder().get(taco.getDescription()) + "," + writeOrder.getSideOrder().get(0) + ","
-					+ writeOrder.getSideOrder().get(1) + "," + writeOrder.getSideOrder().get(2) + ","
-					+ writeOrder.getDrinkOrder().get(0) + "," + writeOrder.getDrinkOrder().get(1) + ","
-					+ writeOrder.getDrinkOrder().get(2) + "," + writeOrder.getDrinkOrder().get(3) + ","
-					+ writeOrder.getTotalBill() + "," + isComplete + "," + completedTime + "," + "employee.getName()"
-					+ "," + paymentMethod);
+			bw.write(transRecord);
 			bw.flush();
 			bw.close();
 			in.close();

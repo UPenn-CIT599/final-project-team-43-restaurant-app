@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class OrderReader extends CSVReader {
 	KitchenOrder order;
 	Menu menu;
-	Inventory inventory;
+
 	
-	public OrderReader() {
+	public OrderReader(Menu currentMenu) {
 		order = new KitchenOrder();
 		menu = new Menu();
-		inventory = new Inventory();
+		menu = currentMenu;
 	}
 	
 
@@ -28,17 +28,17 @@ public class OrderReader extends CSVReader {
 		String reservationId = columnInfo[5];
 		String reservationDate = columnInfo[6];
 		String reservationTime = columnInfo[7];
-		int bfTacoQty = Integer.parseInt(columnInfo[8]);
-		int chkTacoQty = Integer.parseInt(columnInfo[9]);
-		int vegTacoQty = Integer.parseInt(columnInfo[10]);
-		int nachoQty = Integer.parseInt(columnInfo[11]);
-		int chipsQty = Integer.parseInt(columnInfo[12]);
-		int beansQty = Integer.parseInt(columnInfo[13]);
-		int drPQty = Integer.parseInt(columnInfo[14]);
-		int spklWtrQty = Integer.parseInt(columnInfo[15]);
-		int pepsiQty = Integer.parseInt(columnInfo[16]);
-		int beerQty = Integer.parseInt(columnInfo[17]);
-		double ttlPrice = Double.parseDouble(columnInfo[18]);
+		Integer bfTacoQty = Integer.parseInt(columnInfo[8]);
+		Integer chkTacoQty = Integer.parseInt(columnInfo[9]);
+		Integer vegTacoQty = Integer.parseInt(columnInfo[10]);
+		Integer nachoQty = Integer.parseInt(columnInfo[11]);
+		Integer chipsQty = Integer.parseInt(columnInfo[12]);
+		Integer beansQty = Integer.parseInt(columnInfo[13]);
+		Integer drPQty = Integer.parseInt(columnInfo[14]);
+		Integer spklWtrQty = Integer.parseInt(columnInfo[15]);
+		Integer pepsiQty = Integer.parseInt(columnInfo[16]);
+		Integer beerQty = Integer.parseInt(columnInfo[17]);
+		Double ttlPrice = Double.parseDouble(columnInfo[18]);
 		String delivAddress;
 		order.setOrderId(orderId);
 		order.setCustomerId(customerId);
@@ -55,14 +55,16 @@ public class OrderReader extends CSVReader {
 			order.setDeliveryAddress(delivAddress);
 		}
 		for(Taco taco : menu.getTacos()) {
+			
 			if (taco.getDescription().contentEquals("Beef Taco")){
 				order.tacoOrder.put(taco, bfTacoQty);
 			}
+			
 			if (taco.getDescription().contentEquals("Chicken Taco")){
-				order.tacoOrder.put(taco, chkTacoQty);
+				order.getTacoOrder().put(taco, chkTacoQty);
 			}
 			if (taco.getDescription().contentEquals("Veggie Taco")){
-				order.tacoOrder.put(taco, vegTacoQty);
+				order.getTacoOrder().put(taco, vegTacoQty);
 			}
 		}
 		for(SideDish side : menu.getSides()) {
@@ -92,20 +94,32 @@ public class OrderReader extends CSVReader {
 			
 		}
 		order.setTotalBill(ttlPrice);
+		//puts order items and quantities in hashMap for writing to transaction record
+		order.quantitiesAsString.put("bfTacoQty", columnInfo[8]);
+		order.quantitiesAsString.put("chkTacoQty", columnInfo[9]);
+		order.quantitiesAsString.put("vegTacoQty", columnInfo[10]);
+		order.quantitiesAsString.put("nachosQty", columnInfo[11]);
+		order.quantitiesAsString.put("chipsQty", columnInfo[12]);
+		order.quantitiesAsString.put("beansQty", columnInfo[13]);
+		order.quantitiesAsString.put("drPQty", columnInfo[14]);
+		order.quantitiesAsString.put("spklWtrQty", columnInfo[15]);
+		order.quantitiesAsString.put("pepsiQty", columnInfo[16]);
+		order.quantitiesAsString.put("beerQty", columnInfo[17]);
+		
 	}
 	
 	public HashMap<String, String> getOrderQuantitiesAsStrings(String[] columnInfo){
 		HashMap<String, String> quantities = new HashMap<String, String>();
-		quantities.put("bfTacoQty", columnInfo[8]);
-		quantities.put("chkTacoQty", columnInfo[9]);
-		quantities.put("vegTacoQty", columnInfo[10]);
-		quantities.put("nachosQty", columnInfo[11]);
-		quantities.put("chipsQty", columnInfo[12]);
-		quantities.put("beansQty", columnInfo[13]);
-		quantities.put("drPQty", columnInfo[14]);
-		quantities.put("spklWtrQty", columnInfo[15]);
-		quantities.put("pepsiQty", columnInfo[16]);
-		quantities.put("beerQty", columnInfo[17]);
+		order.quantitiesAsString.put("bfTacoQty", columnInfo[8]);
+		order.quantitiesAsString.put("chkTacoQty", columnInfo[9]);
+		order.quantitiesAsString.put("vegTacoQty", columnInfo[10]);
+		order.quantitiesAsString.put("nachosQty", columnInfo[11]);
+		order.quantitiesAsString.put("chipsQty", columnInfo[12]);
+		order.quantitiesAsString.put("beansQty", columnInfo[13]);
+		order.quantitiesAsString.put("drPQty", columnInfo[14]);
+		order.quantitiesAsString.put("spklWtrQty", columnInfo[15]);
+		order.quantitiesAsString.put("pepsiQty", columnInfo[16]);
+		order.quantitiesAsString.put("beerQty", columnInfo[17]);
 		return quantities;
 	}
 	
