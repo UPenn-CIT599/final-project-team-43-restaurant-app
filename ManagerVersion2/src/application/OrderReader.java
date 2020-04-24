@@ -94,6 +94,21 @@ public class OrderReader extends CSVReader {
 		order.setTotalBill(ttlPrice);
 	}
 	
+	public HashMap<String, String> getOrderQuantitiesAsStrings(String[] columnInfo){
+		HashMap<String, String> quantities = new HashMap<String, String>();
+		quantities.put("bfTacoQty", columnInfo[8]);
+		quantities.put("chkTacoQty", columnInfo[9]);
+		quantities.put("vegTacoQty", columnInfo[10]);
+		quantities.put("nachosQty", columnInfo[11]);
+		quantities.put("chipsQty", columnInfo[12]);
+		quantities.put("beansQty", columnInfo[13]);
+		quantities.put("drPQty", columnInfo[14]);
+		quantities.put("spklWtrQty", columnInfo[15]);
+		quantities.put("pepsiQty", columnInfo[16]);
+		quantities.put("beerQty", columnInfo[17]);
+		return quantities;
+	}
+	
 	public KitchenOrder getOrder() {
 		return order;
 	}
