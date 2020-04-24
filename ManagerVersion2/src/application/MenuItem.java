@@ -11,11 +11,11 @@ import java.util.HashMap;
 public abstract class MenuItem {
 	
 	//instance variables consist of salePrice, cost, description, portionSize, and ingredients.
-	public double price;
-	public double cost;
-	public String description;
+	double price;
+	double cost;
+	String description;
 	
-	private HashMap<InventoryItem, Double> ingredients; 
+	HashMap<InventoryItem, Double> ingredients; 
 	
 	
 	public MenuItem() {
@@ -25,17 +25,23 @@ public abstract class MenuItem {
 		ingredients = new HashMap<InventoryItem, Double>();
 		
 	}
-	
+	/**
+	 * iterates over ingredients in item, calculates unit price time portion for each
+	 * and updates the total cost
+	 */
 	public void setCost() {
 		for (InventoryItem ingredient : ingredients.keySet()) {
 			cost += ingredient.getUnitPrice() * ingredients.get(ingredient);
 		}
 	}
-	
+	//getter for cost
 	public double getCost() {
 			return cost;
 		}
-	
+	/**
+	 * method to set price of a menu item by multiplying its cost by a multiplier
+	 * prices are then rounded to the nearest $.25 (or $.95)
+	 */
 	public void setPrice() {
 		final double costMultiplier = 4.5;
 		price = cost * costMultiplier;
@@ -53,7 +59,7 @@ public abstract class MenuItem {
 		}
 		else price = dollars + .95;
 	}
-	
+	//getter for price
 	public double getPrice() {
 		return price;
 	}
@@ -66,10 +72,11 @@ public abstract class MenuItem {
 	public String getDescription() {
 		return description;
 	}
-
+	//setter for Item description
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	//getter returns a HashMap of ingredients and portions
 	public HashMap<InventoryItem, Double> getIngredients() {
 		return ingredients;
 	}

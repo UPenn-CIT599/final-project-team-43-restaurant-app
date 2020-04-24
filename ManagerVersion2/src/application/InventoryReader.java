@@ -60,17 +60,6 @@ public class InventoryReader extends CSVReader {
 		inventoryList.add(item);
 
 	}
-	/*
-	public static void main(String[] args) {
-		InventoryReader reader = new InventoryReader();
-		reader.readFile("inventory_small.csv");
-		ArrayList<InventoryItem> inventoryList = new ArrayList<InventoryItem>(reader.getInventoryList());
-		for (InventoryItem item : inventoryList) {
-			System.out.println(item.getVendorName());
-		}
-	}
-	 */
-	
 	/**
 	 * Method to iterate over inventory to find items in need of reorder.
 	 * If onHand quantity is less than the reorderPoint the item is added
@@ -105,22 +94,6 @@ public class InventoryReader extends CSVReader {
 		product.setOnHand(available);
 		return cost;
 	}
-	/**
-	 * This method adds item to the inventory list
-	 * 
-	 * @param item
-	 */
-	public void addItem(InventoryItem item) {
-		inventoryList.add(item);
-	}
-
-	/**
-	 * This method deletes item from inventory list
-	 * 
-	 * @param item
-	 */
-	public void deleteItem(InventoryItem item) {
-		inventoryList.remove(item);
-	}
+	
 	
 }

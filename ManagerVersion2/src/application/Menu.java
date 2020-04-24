@@ -1,19 +1,29 @@
 package application;
 
 import java.util.ArrayList;
-
+/**
+ * Class to contain ArrayLists of different menu items
+ * @author porth
+ *
+ */
 public class Menu {
 	ArrayList<Drink> drinks;
 	ArrayList<Taco> tacos;
 	ArrayList<SideDish> sides;
-	
+	/**
+	 * Constructor initializes empty ArrayLists to be filled by MenuReader
+	 */
 	public Menu() {
 		this.drinks = new ArrayList<Drink>();
 		this.tacos = new ArrayList<Taco>();
 		this.sides = new ArrayList<SideDish>();		
 	}
 	
-
+	/**
+	 * Method to construct MenuReader and fill Menu ArrayLists with menu items
+	 * @param fileName name of .csv file with menu items and ingredients
+	 * @param inventory ArrayList of InventoryItems
+	 */
 	public void populateMenu(String fileName, Inventory inventory) {
 		MenuReader reader = new MenuReader();
 		reader.inventory = inventory;
@@ -35,15 +45,15 @@ public class Menu {
 			side.setPrice();
 		}
 	}
-		
+		//getter returns Drink objects
 		public ArrayList<Drink> getDrinks() {
 			return drinks;
 		}
-
+		//getter returns Taco objects
 		public ArrayList<Taco> getTacos() {
 			return tacos;
 		}
-
+		//getter returns SideDish objects
 		public ArrayList<SideDish> getSides() {
 			return sides;
 		}

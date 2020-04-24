@@ -13,10 +13,10 @@ import java.util.Collections;
 public class Inventory {
 
 	//InventoryItems are objects of InventoryItem class
-	private static ArrayList<InventoryItem> inventory;
+	private ArrayList<InventoryItem> inventory;
 	
 	/**
-	 * constructor initializes empty ArrayList of invenory items
+	 * constructor initializes empty ArrayList of inventory items
 	 * 
 	 */
 
@@ -43,7 +43,7 @@ public class Inventory {
 	/**
 	 * Method to iterate over inventory to find items in need of reorder.
 	 * If onHand quantity is less than the reorderPoint the item is added
-	 * to the list of items to order.
+	 * to the list of items to order, which is then sorted by vendor.
 	 * @return ArrayList itemsToOrder
 	 */
 	public ArrayList<InventoryItem> createProductOrder() {

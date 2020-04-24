@@ -169,7 +169,7 @@ public class KitchenOrder {
 		return newOrder;
 
 	}
-
+/*
 	public static void main(String[] args) throws FileNotFoundException {
 		KitchenOrder currentOrder = new KitchenOrder();
 		Inventory inventory = new Inventory();
@@ -195,5 +195,6 @@ public class KitchenOrder {
 		//processor.writeTransactionRecord();
 
 	}
+	*/
 }
 
