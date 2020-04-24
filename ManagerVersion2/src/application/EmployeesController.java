@@ -55,11 +55,9 @@ public class EmployeesController implements Initializable {
 			employee5 = EmployeeControl.employeeGenerator()
 			);*/
 	
-    public static final EmployeeList el = new EmployeeList("Employee List.csv");
+    public static EmployeeList el = new EmployeeList("Employee List.csv");
 	
-	public static ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(
-			el.getEmployeeList()
-		    );
+	public static ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(el.getEmployeeList());
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

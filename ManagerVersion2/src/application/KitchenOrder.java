@@ -164,7 +164,7 @@ public class KitchenOrder {
 		//currentOrder = currentOrder.getOrder();
 		System.out.println(currentOrder.getServiceType());
 		OrderProcessor processor = new OrderProcessor();
-		processor.fillOrder();
+		processor.fillOrder(currentOrder);
 		
 	}*/
 }
