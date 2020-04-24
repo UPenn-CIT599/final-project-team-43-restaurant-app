@@ -152,7 +152,7 @@ public class CustomerOrder {
 			int tortillaQty, int riceBeansQty, int drPepperQty, int spkWaterQty, int pepsiQty, int pacificoQty) {
 		Inventory inv = new Inventory();
 		inv.populateInventory("Inventory.csv");
-		// menuReader.inventory = inv;
+		
 		Menu menu = new Menu();
 		menu.populateMenu("MenuList.csv", inv);
 

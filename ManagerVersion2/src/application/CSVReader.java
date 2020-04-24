@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * Abstract class to read data from CSV files
  * 
- * @author porth
+ * @author porth, yangliu
  *
  */
 public abstract class CSVReader {
@@ -83,7 +83,7 @@ public abstract class CSVReader {
 	/**
 	 * Reads file and counts the number of non-empty lines.
 	 * 
-	 * @return
+	 * @return the number of non-empty lines
 	 * @throws FileNotFoundException
 	 */
 	public static int readNumberOfLines(String filename) throws FileNotFoundException {

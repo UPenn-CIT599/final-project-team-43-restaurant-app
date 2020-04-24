@@ -26,11 +26,7 @@ import javafx.stage.Stage;
  */
 public class OrderPageController {
 
-	// total cost of the order in the order page
-	double totalCost;
-	
-	//total available funds of the customer for spending
-	double availableFunds;
+
 
 	@FXML
 	private Button btnBack, orderButton;
@@ -84,7 +80,7 @@ public class OrderPageController {
 		String currentTime = time.format(now);
 
 		// stores customer's available funds in availableFunds
-		this.availableFunds = Customer.getCustomer().getAvailableFunds();
+		double availableFunds = Customer.getCustomer().getAvailableFunds();
 		//declares fundsAfterPurchase variable
 		double fundsAfterPurchase;
 
@@ -104,7 +100,7 @@ public class OrderPageController {
 		int pacificoQty = Integer.parseInt(pacificoQuantity.getValue().toString());
 
 		// calculates total cost of all items
-		this.totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty, tortillaQty,
+		double totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty, tortillaQty,
 				riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty);
 
 		// removes commas from the customer-inputed address
@@ -121,9 +117,9 @@ public class OrderPageController {
 		else if (event.getSource() == orderButton && serviceType.equals("Dine in") && availableFunds >= totalCost && totalCost != 0) {
 
 			stage = (Stage) orderButton.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
+			root = FXMLLoader.load(getClass().getResource("OrderPlaced.fxml"));
 
-			this.totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
+			totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
 					tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty);
 
 			CustomerOrder.writeOrderDineIn(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
@@ -142,9 +138,9 @@ public class OrderPageController {
 				&& totalCost != 0 && !address.isEmpty()) {
 
 			stage = (Stage) orderButton.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
+			root = FXMLLoader.load(getClass().getResource("OrderPlaced.fxml"));
 
-			this.totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
+			totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
 					tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty);
 
 			CustomerOrder.writeOrderDelivery(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
