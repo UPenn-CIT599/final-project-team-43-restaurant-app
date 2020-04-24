@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class EmployeeList extends CSVReader{
 	
-	private static ArrayList<EmployeeControl> employeeList = new ArrayList<>();
+	private ArrayList<EmployeeControl> employeeList = new ArrayList<>();
 	
 	/**
 	 * constructor
@@ -86,7 +86,8 @@ public class EmployeeList extends CSVReader{
 	 */
 	public static void addEmployee() {
 		EmployeeControl employee = EmployeeControl.employeeGenerator();
-		employeeList.add(employee);
+		EmployeeList list = new EmployeeList("Employee List.csv");
+		list.employeeList.add(employee);
 		
 		try {
 			
@@ -109,9 +110,11 @@ public class EmployeeList extends CSVReader{
 	 * Assign an available employee to the customer who just ordered
 	 */
 	public static void assignEmployeeToCustomer() {
+		EmployeeList list = new EmployeeList("Employee List.csv");
+		
 		String customerID = Customer.getCustomer().getCustomerID();
-		for(int i = 0; i < employeeList.size(); i++) {
-			if(employeeList.get(i).getOnDuty() && employeeList.get(i).) {
+		for(int i = 0; i < list.employeeList.size(); i++) {
+			if(list.employeeList.get(i).getOnDuty() && list.employeeList.get(i).) {
 				
 				break;
 			}

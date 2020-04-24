@@ -70,14 +70,18 @@ public class TransactionsController implements Initializable {
 			record20 = TransactionItem.transactionGenerator()
 			);*/
 	
-	public static TransactionRecord tr = new TransactionRecord("CustomerOrders.csv");
 	
-	public static ObservableList<TransactionItem> obList = FXCollections.observableArrayList(
-			tr.getRealTimeTransactionRecord()
-    );
+	
+	ObservableList<TransactionItem> obList;
+	
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		TransactionRecord tr = new TransactionRecord("CustomerOrders.csv");
+		obList = FXCollections.observableArrayList(
+				tr.getRealTimeTransactionRecord()
+	    );
+		
 		customerID.setCellValueFactory(new PropertyValueFactory<TransactionItem, String>("customerID"));
 		date.setCellValueFactory(new PropertyValueFactory<TransactionItem, String>("date"));
 		time.setCellValueFactory(new PropertyValueFactory<TransactionItem, String>("time"));

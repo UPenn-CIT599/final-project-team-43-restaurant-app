@@ -79,14 +79,11 @@ public class Inventory {
 		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
 		for (InventoryItem product : createProductOrder()){
 			buyProduct(product, 1);
-			
+		
+		
 		
 		}
-<<<<<<< HEAD
-	return inventory;	
-=======
-	return orders;	
->>>>>>> d8b37ad6c9d6103aad8bc2e64a891274b98d3b7d
+		return orders;
 	}
 	/**
 	 * This method adds item to the inventory list

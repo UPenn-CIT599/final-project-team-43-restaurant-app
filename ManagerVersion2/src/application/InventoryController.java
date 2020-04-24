@@ -53,15 +53,15 @@ public class InventoryController implements Initializable {
 	private TableColumn<InventoryItem, String> vendorName;
 	
 	
-	public static final InventoryReader in = new InventoryReader("Inventory.csv");
 	
-	
-	public static ObservableList<InventoryItem> obList = FXCollections.observableArrayList(
-			in.getInventoryList()
-		    );
+	ObservableList<InventoryItem> obList;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		InventoryReader in = new InventoryReader("Inventory.csv");
+		obList = FXCollections.observableArrayList(
+				in.getInventoryList()
+			    );
 		
 		itemID.setCellValueFactory(new PropertyValueFactory<InventoryItem, String>("itemID"));
 		itemName.setCellValueFactory(new PropertyValueFactory<InventoryItem, String>("itemName"));

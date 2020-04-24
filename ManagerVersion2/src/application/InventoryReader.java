@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class InventoryReader extends CSVReader {
 
-	private static ArrayList<InventoryItem> inventoryList = new ArrayList<>();
+	private ArrayList<InventoryItem> inventoryList = new ArrayList<>();
 
 	/**
 	 * Constructor creates default instance of FileReader with additional instance

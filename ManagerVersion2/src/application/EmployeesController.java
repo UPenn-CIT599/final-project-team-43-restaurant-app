@@ -55,12 +55,14 @@ public class EmployeesController implements Initializable {
 			employee5 = EmployeeControl.employeeGenerator()
 			);*/
 	
-    public static EmployeeList el = new EmployeeList("Employee List.csv");
+    
+	ObservableList<EmployeeControl> obList;
 	
-	public static ObservableList<EmployeeControl> obList = FXCollections.observableArrayList(el.getEmployeeList());
-
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		EmployeeList el = new EmployeeList("Employee List.csv");
+		obList = FXCollections.observableArrayList(el.getEmployeeList());
 		
 		name.setCellValueFactory(new PropertyValueFactory<EmployeeControl, String>("name"));
 		attendanceHours.setCellValueFactory(new PropertyValueFactory<EmployeeControl, Integer>("attendanceHours"));
