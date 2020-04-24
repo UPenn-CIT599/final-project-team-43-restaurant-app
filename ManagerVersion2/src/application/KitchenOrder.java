@@ -1,6 +1,7 @@
 package application;
 
 import java.io.FileNotFoundException;
+import java.time.LocalTime;
 import java.util.HashMap;
 
 public class KitchenOrder {
@@ -91,8 +92,8 @@ public class KitchenOrder {
 		this.orderDate = orderDate;
 	}
 
-	public String getOrderTime() {
-		return orderTime;
+	public LocalTime getOrderTime() {
+		return LocalTime.parse(orderTime);
 	}
 
 	public void setOrderTime(String orderTime) {
@@ -152,5 +153,19 @@ public class KitchenOrder {
 		return newOrder;
 			
 	}
+	/*public static void main(String[] args) throws FileNotFoundException {
+		KitchenOrder currentOrder = new KitchenOrder();
+		Inventory inventory = new Inventory();
+		Menu menu = new Menu();
+		inventory.populateInventory("Inventory.csv");
+		menu.populateMenu("MenuList.csv", inventory);
+		currentOrder = currentOrder.fetchOrder("CustomerOrders.csv");
+		
+		//currentOrder = currentOrder.getOrder();
+		System.out.println(currentOrder.getServiceType());
+		OrderProcessor processor = new OrderProcessor();
+		processor.fillOrder();
+		
+	}*/
 }
 

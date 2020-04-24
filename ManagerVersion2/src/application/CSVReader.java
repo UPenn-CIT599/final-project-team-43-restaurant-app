@@ -41,7 +41,6 @@ public abstract class CSVReader {
 				String itemRow = scan.nextLine();
 				// System.out.println(itemRow);
 				String[] columnInfo = itemRow.split(",");
-
 				putData(columnInfo);
 			}
 			scan.close();
@@ -62,11 +61,13 @@ public abstract class CSVReader {
 
 		rdr = new BufferedReader(new FileReader(fileName));
 		try {
+			//skip the first line
 			rdr.readLine();
-			String itemRow;
-			rdr.readLine();
-			if((itemRow = rdr.readLine()) != null) {
-				String[] columnInfo = itemRow.split("'");
+			//read the second line and assign to itemRow
+			String itemRow = rdr.readLine();
+			//if row has contents split into fields
+			if(itemRow != null) {
+				String[] columnInfo = itemRow.split(",");
 				putData(columnInfo);
 			}
 			rdr.close();

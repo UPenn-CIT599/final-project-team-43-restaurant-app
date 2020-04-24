@@ -53,7 +53,6 @@ public class Menu {
 	public static void main(String[] args) {
 		Inventory inv = new Inventory();
 		inv.populateInventory("Inventory.csv");
-		//menuReader.inventory = inv;
 		Menu menu = new Menu();
 		menu.populateMenu("MenuList.csv", inv);
 		for (Taco taco : menu.tacos) {

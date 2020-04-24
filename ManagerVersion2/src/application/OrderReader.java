@@ -8,9 +8,12 @@ import java.util.ArrayList;
 public class OrderReader extends CSVReader {
 	KitchenOrder order;
 	Menu menu;
+	Inventory inventory;
 	
 	public OrderReader() {
+		order = new KitchenOrder();
 		menu = new Menu();
+		inventory = new Inventory();
 	}
 	
 
@@ -36,9 +39,9 @@ public class OrderReader extends CSVReader {
 		int pepsiQty = Integer.parseInt(columnInfo[16]);
 		int beerQty = Integer.parseInt(columnInfo[17]);
 		double ttlPrice = Double.parseDouble(columnInfo[18]);
-		String delivAddress = columnInfo[19];
-		KitchenOrder order = new KitchenOrder();
+		String delivAddress;
 		order.setOrderId(orderId);
+		order.setCustomerId(customerId);
 		order.setOrderDate(orderDate);
 		order.setOrderTime(orderTime);
 		order.setServiceType(serviceType);
@@ -48,6 +51,7 @@ public class OrderReader extends CSVReader {
 			order.setReservationTime(reservationTime);
 		}
 		if (serviceType.toLowerCase().contentEquals("delivery")) {
+			delivAddress = columnInfo[19];
 			order.setDeliveryAddress(delivAddress);
 		}
 		for(Taco taco : menu.getTacos()) {
@@ -93,4 +97,7 @@ public class OrderReader extends CSVReader {
 	public KitchenOrder getOrder() {
 		return order;
 	}
+	
+
 }
+
