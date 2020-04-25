@@ -19,6 +19,8 @@ import javafx.stage.Stage;
  */
 
 public class MenuController {
+	
+
 
 	@FXML
 	private Button btnBack1, btnBack2, btnBack3, btnOrder1, btnOrder2, btnOrder3;
@@ -84,7 +86,7 @@ public class MenuController {
 
 
 		// Displays price of each food item in the menu GUI screen
-		beefTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(0).getCost()));
+		beefTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(0).getPrice()));
 		chickenTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(1).getPrice()));
 		veggieTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(2).getPrice()));
 		
