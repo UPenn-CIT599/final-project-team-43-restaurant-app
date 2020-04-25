@@ -69,6 +69,7 @@ public class CustomerHomePageController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		customerIDBox.setText(Customer.getCustomer().getCustomerID());
+		
 	}
 	
 }

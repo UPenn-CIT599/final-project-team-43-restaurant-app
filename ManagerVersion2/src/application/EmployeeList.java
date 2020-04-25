@@ -109,9 +109,9 @@ public class EmployeeList extends CSVReader{
 	/**
 	 * Assign an available employee to the customer who just ordered
 	 */
-	public static void assignEmployeeToCustomer() {
+
+	public static EmployeeControl assignEmployeeToCustomer() {
 		EmployeeList list = new EmployeeList("Employee List.csv");
-		
 		String customerID = Customer.getCustomer().getCustomerID();
 		for(int i = 0; i < list.employeeList.size(); i++) {
 			if(list.employeeList.get(i).getOnDuty() && list.employeeList.get(i).) {

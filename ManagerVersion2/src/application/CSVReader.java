@@ -5,12 +5,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Abstract class to read data from CSV files
  * 
- * @author porth
+ * @author porth, yangliu
  *
  */
 public abstract class CSVReader {
@@ -41,7 +42,6 @@ public abstract class CSVReader {
 				String itemRow = scan.nextLine();
 				// System.out.println(itemRow);
 				String[] columnInfo = itemRow.split(",");
-
 				putData(columnInfo);
 			}
 			scan.close();
@@ -52,8 +52,8 @@ public abstract class CSVReader {
 
 	}
 /**
- * ReadLine method creates BufferedReader to read a single line of 
- * text after skipping the first line of a file
+ * ReadLine method creates BufferedReader to read last line of 
+ * text 
  * @param fileName
  * @throws FileNotFoundException
  */
@@ -62,13 +62,20 @@ public abstract class CSVReader {
 
 		rdr = new BufferedReader(new FileReader(fileName));
 		try {
-			rdr.readLine();
-			String itemRow;
-			rdr.readLine();
-			if((itemRow = rdr.readLine()) != null) {
-				String[] columnInfo = itemRow.split("'");
-				putData(columnInfo);
+			//skip the first line
+			//rdr.readLine();
+			//read the second line and assign to itemRow
+			ArrayList<String> lines = new ArrayList<String>();
+			String itemRow = rdr.readLine();
+			//if row has contents split into fields
+			while (itemRow != null) {
+				itemRow = rdr.readLine();
+				lines.add(itemRow);
 			}
+			itemRow = lines.get(lines.size() -2);
+			String[] columnInfo = itemRow.split(",");
+			putData(columnInfo);
+			
 			rdr.close();
 		}
 
@@ -79,11 +86,11 @@ public abstract class CSVReader {
 		}
 
 	}
-
+	
 	/**
 	 * Reads file and counts the number of non-empty lines.
 	 * 
-	 * @return
+	 * @return the number of non-empty lines
 	 * @throws FileNotFoundException
 	 */
 	public static int readNumberOfLines(String filename) throws FileNotFoundException {

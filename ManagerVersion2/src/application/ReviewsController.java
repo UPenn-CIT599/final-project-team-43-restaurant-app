@@ -103,11 +103,6 @@ public class ReviewsController {
 	}
 	
 	
-	
-	
-	
-	
-	
 
 	@FXML
 	public void initialize() throws IOException {
@@ -143,6 +138,7 @@ public class ReviewsController {
 		// sets observable data into the table
 		tblReviews.setItems(reviewListObs);
 
+		//sets star options (1-5) for the starsBox Choice Box
 		starsBox.setItems(starOptions);
 
 	}

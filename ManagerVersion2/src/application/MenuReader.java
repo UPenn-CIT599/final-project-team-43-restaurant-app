@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MenuReader extends CSVReader{
 	private Menu menu;
-	public Inventory inventory = new Inventory();
+	Inventory inventory;
 	/**
 	 * Constructor takes default FileReader constructor and
 	 * Declared local variable ArrayLists to contain various
@@ -52,10 +52,8 @@ public class MenuReader extends CSVReader{
 					inventoryId = columnInfo[i];
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
-							//System.out.println(product.getUnitPrice());
 								if(product.getItemID().contentEquals(inventoryId)) {
 										item.getIngredients().put(product, portion);
-										//System.out.println(portion);
 								}
 						}					
 				}

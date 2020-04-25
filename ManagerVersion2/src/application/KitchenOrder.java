@@ -1,13 +1,15 @@
 package application;
 
 import java.io.FileNotFoundException;
+import java.time.LocalTime;
 import java.util.HashMap;
 
 public class KitchenOrder {
-	
-	HashMap <Drink, Integer> drinkOrder;
-	HashMap <Taco, Integer> tacoOrder;
-	HashMap <SideDish, Integer> sideOrder;
+
+	HashMap<Drink, Integer> drinkOrder;
+	HashMap<Taco, Integer> tacoOrder;
+	HashMap<SideDish, Integer> sideOrder;
+	HashMap<String, String> quantitiesAsString;
 	private String customerId;
 	private String orderId;
 	private String serviceType;
@@ -18,18 +20,23 @@ public class KitchenOrder {
 	private String reservationDate;
 	private String deliveryAddress;
 	private double totalBill;
-	
+
 	public KitchenOrder() {
-		this.drinkOrder = drinkOrder;
+		HashMap<Drink, Integer> drinkOrder = new HashMap<Drink, Integer>();
+		HashMap<Taco, Integer> tacoOrder = new HashMap<Taco, Integer>();
+		HashMap<SideDish, Integer> sideOrder = new HashMap<SideDish, Integer>();
+		HashMap<String, String> quantitiesAsString = new HashMap<String, String>();
 		this.tacoOrder = tacoOrder;
+		this.drinkOrder = drinkOrder;
 		this.sideOrder = sideOrder;
+		this.quantitiesAsString = quantitiesAsString;
 		this.customerId = customerId;
 		this.orderId = orderId;
 		this.serviceType = serviceType;
 		this.orderDate = orderDate;
 		this.orderTime = orderTime;
 		this.reservationId = reservationId;
-		this.reservationDate = reservationDate; 
+		this.reservationDate = reservationDate;
 		this.reservationTime = reservationTime;
 		this.deliveryAddress = deliveryAddress;
 		this.totalBill = totalBill;
@@ -91,8 +98,8 @@ public class KitchenOrder {
 		this.orderDate = orderDate;
 	}
 
-	public String getOrderTime() {
-		return orderTime;
+	public LocalTime getOrderTime() {
+		return LocalTime.parse(orderTime);
 	}
 
 	public void setOrderTime(String orderTime) {
@@ -106,7 +113,7 @@ public class KitchenOrder {
 	public void setReservationId(String reservationId) {
 		this.reservationId = reservationId;
 	}
-	
+
 	public String getReservationDate() {
 		return reservationDate;
 	}
@@ -130,7 +137,7 @@ public class KitchenOrder {
 	public void setDeliveryAddress(String deliveryAddress) {
 		this.deliveryAddress = deliveryAddress;
 	}
-	
+
 	public double getTotalBill() {
 		return totalBill;
 	}
@@ -138,19 +145,63 @@ public class KitchenOrder {
 	public void setTotalBill(double totalBill) {
 		this.totalBill = totalBill;
 	}
-/**
- * initializes new OrderReader and fetches customerOrder to fill 
- * by reading first order in "CustomerOrders.csv"
- * @param fName
- * @throws FileNotFoundException
- */
-	public KitchenOrder fetchOrder(String fName) throws FileNotFoundException {
-		OrderReader rdr = new OrderReader();
+
+	public HashMap<String, String> getQuantitiesAsString() {
+		return quantitiesAsString;
+	}
+
+	public void setQuantitiesAsString(HashMap<String, String> quantitiesAsString) {
+		this.quantitiesAsString = quantitiesAsString;
+	}
+
+	/**
+	 * initializes new OrderReader and fetches customerOrder to fill by reading
+	 * first order in "CustomerOrders.csv"
+	 * 
+	 * @param fName
+	 * @throws FileNotFoundException
+	 */
+	public KitchenOrder fetchOrder(String fName, Menu menu) throws FileNotFoundException {
+		OrderReader rdr = new OrderReader(menu);
 		rdr.readOneLine(fName);
 		KitchenOrder newOrder = new KitchenOrder();
 		newOrder = rdr.getOrder();
 		return newOrder;
-			
+
 	}
+
+	public static void main(String[] args) throws FileNotFoundException {
+		KitchenOrder currentOrder = new KitchenOrder();
+		Inventory inventory = new Inventory();
+		Menu menu = new Menu();
+		inventory.populateInventory("Inventory.csv");
+		menu.populateMenu("MenuList.csv", inventory);
+		/*
+		for (Taco taco : menu.tacos) {
+			System.out.println(taco.description + " $" + taco.price);
+		}
+		for (Drink drink : menu.drinks) {
+			System.out.println(drink.description + " $" + drink.price);
+		}
+		for (SideDish side : menu.sides) {
+			System.out.println(side.description + " $" + side.price);
+		}
+		*/
+		currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
+		//System.out.println(currentOrder.serviceType);
+
+		OrderProcessor processor = new OrderProcessor(currentOrder);
+		processor.fillOrder();
+		for(InventoryItem item : inventory.getInventory()) {
+			if(item.getItemID().contentEquals("S8825")) {
+				System.out.println(item.getOnHand());
+			}
+		}
+		//processor.writeTransactionRecord(record);
+		//System.out.println(processor.completedTime);
+		//processor.writeTransactionRecord();
+
+	}
+	
 }
 

@@ -26,6 +26,7 @@ public class CustomerOrder {
 	private boolean delivery;
 	private String estimatedTimeOfDelivery;
 
+	/*
 	private HashMap<Taco, Integer> tacoItemToOrderQuantity;
 	private HashMap<Drink, Integer> drinkItemToOrderQuantity;
 	private HashMap<SideDish, Integer> sideDishItemToOrderQuantity;
@@ -38,12 +39,7 @@ public class CustomerOrder {
 	private HashMap<Customer, Drink> customerToDrinkOrdersForDelivery;
 	private HashMap<Customer, SideDish> customerToSideDishOrdersForDelivery;
 
-	/**
-	 * Constructor for Orders
-	 * 
-	 * @param customer the customer who is ordering
-	 * @param delivery set true if order is delivery; set false if order is dine in
-	 */
+
 	public CustomerOrder(Customer customer, boolean delivery) {
 
 		// order object contains the customer and boolean value for delivery
@@ -73,6 +69,7 @@ public class CustomerOrder {
 			}
 		}
 	}
+	*/
 
 	/**
 	 * This method writes the customer order to CustomerOrders.csv for dine-in
@@ -152,7 +149,7 @@ public class CustomerOrder {
 			int tortillaQty, int riceBeansQty, int drPepperQty, int spkWaterQty, int pepsiQty, int pacificoQty) {
 		Inventory inv = new Inventory();
 		inv.populateInventory("Inventory.csv");
-		// menuReader.inventory = inv;
+		
 		Menu menu = new Menu();
 		menu.populateMenu("MenuList.csv", inv);
 
@@ -166,6 +163,9 @@ public class CustomerOrder {
 
 		return totalCost;
 	}
+	
+
+	
 
 	/**
 	 * Getter for customer
@@ -221,32 +221,6 @@ public class CustomerOrder {
 		this.estimatedTimeOfDelivery = estimatedTimeOfDelivery;
 	}
 
-	/**
-	 * Getter for the taco item to quantity hashmap
-	 * 
-	 * @return
-	 */
-	public HashMap<Taco, Integer> getTacoItemToOrderQuantity() {
-		return tacoItemToOrderQuantity;
-	}
-
-	/**
-	 * Getter for the drink item to quantity hashmap
-	 * 
-	 * @return
-	 */
-	public HashMap<Drink, Integer> getDrinkItemToOrderQuantity() {
-		return drinkItemToOrderQuantity;
-	}
-
-	/**
-	 * Getter for the side dish item to quantity hashmap
-	 * 
-	 * @return
-	 */
-	public HashMap<SideDish, Integer> getSideDishItemToOrderQuantity() {
-		return sideDishItemToOrderQuantity;
-	}
 
 	/**
 	 * Getter for isDelivery
