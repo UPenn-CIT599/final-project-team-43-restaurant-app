@@ -84,7 +84,7 @@ public class MenuController {
 
 
 		// Displays price of each food item in the menu GUI screen
-		beefTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(0).getPrice()));
+		beefTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(0).getCost()));
 		chickenTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(1).getPrice()));
 		veggieTacoPriceBox.setText("$" + Double.toString(menu.tacos.get(2).getPrice()));
 		

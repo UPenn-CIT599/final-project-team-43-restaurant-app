@@ -223,4 +223,16 @@ public class Customer {
 
 	}
 
+	/**
+	 * This method calculates a Customer's remaining funds after making a purchase
+	 * @param totalCost total cost of all food items
+	 * @param availableFunds available funds of the customer
+	 * @return the remaining funds of the customer
+	 */
+	public static double deductFunds(double totalCost, double availableFunds) {
+		return totalCost - availableFunds;
+	}
+	
+	
+	
 }

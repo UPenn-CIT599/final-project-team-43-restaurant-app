@@ -35,11 +35,9 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 
-		
 		//creates a new customer every time application is launched
 		Customer.getCustomer().setAvailableFunds(Customer.getCustomer().getAvailableFunds());
-		
-		
+
 		
 		//gives the customer a unique ID
 		double ID = Math.random() * 9999999;

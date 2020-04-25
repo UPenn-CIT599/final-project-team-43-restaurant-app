@@ -20,11 +20,7 @@ import javafx.stage.Stage;
 
 public class OrderPageController {
 
-	// total cost of the order in the order page
-	double totalCost;
-	
-	//total available funds of the customer for spending
-	double availableFunds;
+
 
 	@FXML
 	private Button btnBack, orderButton;
@@ -60,6 +56,8 @@ public class OrderPageController {
 	@FXML
 	public void orderClicked(ActionEvent event) throws Exception {
 		
+		
+		
 		Stage stage = (Stage) orderButton.getScene().getWindow();
 		Parent root = FXMLLoader.load(getClass().getResource("OrderPage.fxml"));
 		
@@ -78,7 +76,7 @@ public class OrderPageController {
 		String currentTime = time.format(now);
 
 		// stores customer's available funds in availableFunds
-		this.availableFunds = Customer.getCustomer().getAvailableFunds();
+		double availableFunds = Customer.getCustomer().getAvailableFunds();
 
 		// stores customer ID in customerID
 		String customerID = Customer.getCustomer().getCustomerID();
@@ -94,33 +92,44 @@ public class OrderPageController {
 		int spkWaterQty = Integer.parseInt(laCroixQuantity.getValue().toString());
 		int pepsiQty = Integer.parseInt(pepsiQuantity.getValue().toString());
 		int pacificoQty = Integer.parseInt(pacificoQuantity.getValue().toString());
+		
+		Inventory inv = new Inventory();
+		inv.populateInventory("Inventory.csv");
+		
+		Menu menu = new Menu();
+		menu.populateMenu("MenuList.csv", inv);
 
 		// calculates total cost of all items
-		this.totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty, tortillaQty,
+		double totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty, tortillaQty,
 				riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty);
-
+		
 		// removes commas from the customer-inputed address
 		String address = addressBox.getText().replaceAll(",", "");
 		
+		//by default, a order will be assumed to be a bad order
+		stage = (Stage) orderButton.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("BadOrder.fxml"));
 		
-		// if no service option is selected, order page screen is reloaded and nothing gets ordered
+		// if no service option is selected, bad order page is shown
 		if (event.getSource() == orderButton && serviceOption.getSelectionModel().isEmpty()) {
 			stage = (Stage) orderButton.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("OrderPage.fxml"));
+			root = FXMLLoader.load(getClass().getResource("BadOrder.fxml"));
 		}
 
 		// this if-block runs if the order is for dine in only
 		else if (event.getSource() == orderButton && serviceType.equals("Dine in") && availableFunds >= totalCost && totalCost != 0) {
 
 			stage = (Stage) orderButton.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
-
-			this.totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
+			root = FXMLLoader.load(getClass().getResource("OrderPlaced.fxml"));
+			/*
+			totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
 					tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty);
-
+*/
 			CustomerOrder.writeOrderDineIn(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost);
+			
+			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(totalCost, availableFunds));
 			
 			TableList.assignTableToOrder();
 		
@@ -130,16 +139,17 @@ public class OrderPageController {
 				&& totalCost != 0 && !address.isEmpty()) {
 
 			stage = (Stage) orderButton.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
-
-			this.totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
+			root = FXMLLoader.load(getClass().getResource("OrderPlaced.fxml"));
+/*
+			totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty,
 					tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty);
-
+*/
 			CustomerOrder.writeOrderDelivery(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost, address);
 
 		} 
+
 
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
