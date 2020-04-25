@@ -8,7 +8,7 @@ import javafx.fxml.FXMLLoader;
 
 /**
  * This class is in charge of running GUI for Manager Version
- * @author yinjiezhang, yangliu
+ * @author yinjiezhang
  *
  */
 public class Main extends Application {
@@ -32,6 +32,7 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+	
 
 		//creates a new customer every time application is launched
 		Customer.getCustomer().setAvailableFunds(Customer.getCustomer().getAvailableFunds());
