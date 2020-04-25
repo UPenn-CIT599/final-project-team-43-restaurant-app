@@ -74,7 +74,7 @@ public class OrderReader extends CSVReader {
 			if (side.getDescription().contentEquals("Tortilla Chips")){
 				order.sideOrder.put(side, chipsQty);
 			}
-			if (side.getDescription().contentEquals("Beans and Rice")){
+			if (side.getDescription().contentEquals("Rice and Beans")){
 				order.sideOrder.put(side, beansQty);
 			}
 		}
@@ -85,7 +85,7 @@ public class OrderReader extends CSVReader {
 			if (drink.getDescription().contentEquals("Sparkling Water")){
 				order.drinkOrder.put(drink, spklWtrQty);
 			}
-			if (drink.getDescription().contentEquals("Pepsi")){
+			if (drink.getDescription().contentEquals("Pepsi Cola")){
 				order.drinkOrder.put(drink, pepsiQty);
 			}
 			if (drink.getDescription().contentEquals("Pacifico Beer")){

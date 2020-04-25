@@ -39,6 +39,7 @@ public class MenuReader extends CSVReader{
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
 								if(product.getItemID().contentEquals(inventoryId)) {
+									//System.out.println(inventoryId);
 										item.getIngredients().put(product, portion);
 								}
 						}					
@@ -53,7 +54,8 @@ public class MenuReader extends CSVReader{
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
 								if(product.getItemID().contentEquals(inventoryId)) {
-										item.getIngredients().put(product, portion);
+									//System.out.println(inventoryId);	
+									item.getIngredients().put(product, portion);
 								}
 						}					
 				}
@@ -68,7 +70,8 @@ public class MenuReader extends CSVReader{
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
 								if(product.getItemID().contentEquals(inventoryId)) {
-										item.getIngredients().put(product, portion);
+									//System.out.println(inventoryId);
+									item.getIngredients().put(product, portion);
 								}
 						}		
 				}

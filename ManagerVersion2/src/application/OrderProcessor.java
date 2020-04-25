@@ -114,7 +114,7 @@ public class OrderProcessor {
 		return record;
 	}
 
-	public static String createInventoryUpdate(InventoryItem item) {
+	public String createInventoryUpdate(InventoryItem item) {
 		InventoryItem  product = item;
 		String inventoryRecord = (product.getItemID() + "," + product.getItemName() + "," + product.getPackSize()+ "," + product.getUnits() + "," + product.getVendorName() + "," + product.getPackPrice() + "," + product.getOnHand() + "," + product.getCalorie());
 		return inventoryRecord;
