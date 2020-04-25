@@ -14,7 +14,8 @@ class InventoryTest {
 	@BeforeAll
 	
 	static void setUpBeforeClass() throws Exception {
-		inventory = new Inventory("Inventory.csv");			
+		inventory = new Inventory();
+		inventory.populateInventory("Inventory.csv");
 		}
 
 

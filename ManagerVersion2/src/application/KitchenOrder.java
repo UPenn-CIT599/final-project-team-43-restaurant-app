@@ -176,7 +176,7 @@ public class KitchenOrder {
 		Menu menu = new Menu();
 		inventory.populateInventory("Inventory.csv");
 		menu.populateMenu("MenuList.csv", inventory);
-		/*
+		
 		for (Taco taco : menu.tacos) {
 			System.out.println(taco.description + " $" + taco.price);
 		}
@@ -186,7 +186,16 @@ public class KitchenOrder {
 		for (SideDish side : menu.sides) {
 			System.out.println(side.description + " $" + side.price);
 		}
-		*/
+		menu.populateMenu("MenuList.csv", inventory);
+		for (Taco taco : menu.tacos) {
+			System.out.println(taco.description + " $" + taco.price);
+		}
+		for (Drink drink : menu.drinks) {
+			System.out.println(drink.description + " $" + drink.price);
+		}
+		for (SideDish side : menu.sides) {
+			System.out.println(side.description + " $" + side.price);
+		}
 		currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
 		//System.out.println(currentOrder.serviceType);
 

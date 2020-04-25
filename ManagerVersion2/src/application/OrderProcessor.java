@@ -91,6 +91,7 @@ public class OrderProcessor {
 		String transRecord;
 		transRecord = createTransactionRecord();
 		writeTransactionRecord(transRecord);
+		//writeInventory(this.inventory);
 	}
 
 	public String createTransactionRecord() {
@@ -113,12 +114,13 @@ public class OrderProcessor {
 		return record;
 	}
 
-	public String createInventoryUpdate(InventoryItem item) {
-		InventoryItem product = new InventoryItem();
-		product = item;
-		String inventoryRecord;
-		
+	public static String createInventoryUpdate(InventoryItem item) {
+		InventoryItem  product = item;
+		String inventoryRecord = (product.getItemID() + "," + product.getItemName() + "," + product.getPackSize()+ "," + product.getUnits() + "," + product.getVendorName() + "," + product.getPackPrice() + "," + product.getOnHand() + "," + product.getCalorie());
+		return inventoryRecord;
 	}
+		
+	
 		
 	public static void writeTransactionRecord(String record) {
 		String transRecord = record;
@@ -146,21 +148,19 @@ public class OrderProcessor {
 	}
 
 	public static void writeInventory(Inventory inventory) {
-
-		Inventory inventoryRecord = inventory;
+		Inventory inv = inventory;
+		String inventoryRecord;
 		try {
 			Scanner in = new Scanner("Inventory.csv");
-			FileWriter fw = new FileWriter("Inventory.csv", true);
+			FileWriter fw = new FileWriter("Inventory.csv");
 			BufferedWriter bw = new BufferedWriter(fw);
 
 			in.nextLine();
 			bw.newLine();
-
-			while (in.hasNextLine()) {
-				in.nextLine();
-				bw.newLine();
+			for (InventoryItem item : inv.getInventory()) {
+				inventoryRecord = createInventoryUpdate(item);
+				bw.write(inventoryRecord);
 			}
-			bw.write(InventoryRecord);
 			bw.flush();
 			bw.close();
 			in.close();

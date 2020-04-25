@@ -78,16 +78,9 @@ public class Inventory {
 		double cost;
 		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
 		for (InventoryItem product : createProductOrder()){
-			buyProduct(product, 1);
-		
-		
-		
+			buyProduct(product, 1);		
 		}
-<<<<<<< HEAD
 		return orders;
-=======
-	return orders;	
->>>>>>> 087cab35d2b39a429892953d0fac2eb8f400cba0
 	}
 	/**
 	 * This method adds item to the inventory list

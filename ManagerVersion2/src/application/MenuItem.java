@@ -19,10 +19,10 @@ public abstract class MenuItem {
 	
 	
 	public MenuItem() {
-		price = .00;
-		cost = 0.00;
-		setDescription("");
-		ingredients = new HashMap<InventoryItem, Double>();
+		this.price = 0.00;
+		this.cost = 0.00;
+		this.setDescription("");
+		this.ingredients = new HashMap<InventoryItem, Double>();
 		
 	}
 	/**
@@ -63,8 +63,7 @@ public abstract class MenuItem {
 	public double getPrice() {
 		return price;
 	}
-		
-		
+			
 	public void addItem(String description) {
 	
 	}
