@@ -1,11 +1,12 @@
 package application;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
+
 
 /**
  * 
- * @author  
+ * @author porth 
  *
  */
 public abstract class MenuItem {
@@ -14,16 +15,17 @@ public abstract class MenuItem {
 	double price;
 	double cost;
 	String description;
-	
+	double calories;
 	HashMap<InventoryItem, Double> ingredients; 
-	
+	int calorieCount;
 	
 	public MenuItem() {
 		this.price = 0.00;
 		this.cost = 0.00;
 		this.setDescription("");
 		this.ingredients = new HashMap<InventoryItem, Double>();
-		
+		this.calories = 0.00;
+		this.calorieCount = 0;
 	}
 	/**
 	 * iterates over ingredients in item, calculates unit price time portion for each
@@ -38,6 +40,21 @@ public abstract class MenuItem {
 	public double getCost() {
 			return cost;
 		}
+	
+	/**
+	 * Method to calculate calorie content of a menu item
+	 */
+	public void setCalories() {
+		for (InventoryItem ingredient : ingredients.keySet()) {
+			calories += ingredient.getCalorie() * ingredients.get(ingredient);
+		}
+			calorieCount = (int) Math.round(calories);
+	}
+	
+	//getter for calorie content
+	public int getCalories() {
+		return calorieCount;
+	}
 	/**
 	 * method to set price of a menu item by multiplying its cost by a multiplier
 	 * prices are then rounded to the nearest $.25 (or $.95)

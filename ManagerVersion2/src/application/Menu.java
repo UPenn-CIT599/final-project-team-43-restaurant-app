@@ -35,14 +35,17 @@ public class Menu {
 		for (Drink drink : this.drinks) {
 			drink.setCost();
 			drink.setPrice();
+			drink.setCalories();
 		}
 		for (Taco taco : this.tacos) {
 			taco.setCost();
 			taco.setPrice();
+			taco.setCalories();
 		}
 		for (SideDish side : this.sides) {
 			side.setCost();
 			side.setPrice();
+			side.setCalories();
 		}
 	}
 		//getter returns Drink objects
