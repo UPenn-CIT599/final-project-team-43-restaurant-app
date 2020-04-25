@@ -23,7 +23,7 @@ public class OrderPageController {
 
 
 	@FXML
-	private Button btnBack, orderButton;
+	private Button btnBack, orderButton, btnCheckPrice;
 
 	@FXML
 	private TextField availFunds, totalPriceBox, addressBox;
@@ -129,7 +129,7 @@ public class OrderPageController {
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost);
 			
-			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(totalCost, availableFunds));
+			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(availableFunds, totalCost));
 			
 			TableList.assignTableToOrder();
 		
@@ -147,6 +147,8 @@ public class OrderPageController {
 			CustomerOrder.writeOrderDelivery(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost, address);
+			
+			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(availableFunds, totalCost));
 
 		} 
 
@@ -155,6 +157,42 @@ public class OrderPageController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	
+	@FXML
+	public void checkPrices(ActionEvent event) throws Exception {
+		if (event.getSource() == btnCheckPrice) {
+			int beefTQty = Integer.parseInt(beefTacoQuantity.getValue().toString());
+			int chickenTQty = Integer.parseInt(chickenTacoQuantity.getValue().toString());
+			int veggieTQty = Integer.parseInt(veggieTacoQuantity.getValue().toString());
+			int nachosQty = Integer.parseInt(nachosQuantity.getValue().toString());
+			int tortillaQty = Integer.parseInt(tortillaQuantity.getValue().toString());
+			int riceBeansQty = Integer.parseInt(riceBeansQuantity.getValue().toString());
+			int drPepperQty = Integer.parseInt(drPepperQuantity.getValue().toString());
+			int spkWaterQty = Integer.parseInt(laCroixQuantity.getValue().toString());
+			int pepsiQty = Integer.parseInt(pepsiQuantity.getValue().toString());
+			int pacificoQty = Integer.parseInt(pacificoQuantity.getValue().toString());
+			
+			Inventory inv = new Inventory();
+			inv.populateInventory("Inventory.csv");
+			
+			Menu menu = new Menu();
+			menu.populateMenu("MenuList.csv", inv);
+
+			// calculates total cost of all items
+			double totalCost = CustomerOrder.calculateTotalPrice(beefTQty, chickenTQty, veggieTQty, nachosQty, tortillaQty,
+					riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty);
+			totalPriceBox.setText("$" + Double.toString((totalCost)));
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 
 	@FXML
 	public void display() {

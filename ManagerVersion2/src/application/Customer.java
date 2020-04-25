@@ -229,8 +229,8 @@ public class Customer {
 	 * @param availableFunds available funds of the customer
 	 * @return the remaining funds of the customer
 	 */
-	public static double deductFunds(double totalCost, double availableFunds) {
-		return totalCost - availableFunds;
+	public static double deductFunds(double availableFunds, double totalCost) {
+		return availableFunds - totalCost;
 	}
 	
 	

@@ -10,11 +10,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="615.0" prefWidth="746.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CustomerHomePageController">
+<AnchorPane prefHeight="615.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CustomerHomePageController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="738.0">
         <items>
-          <Button mnemonicParsing="false" text="About us" />
             <Button fx:id="btnViewMenu" mnemonicParsing="false" onAction="#handleButtonAction" text="View Menu" />
             <Button fx:id="btnCReservation" mnemonicParsing="false" onAction="#handleButtonAction" text="Reservations" />
             <Button fx:id="btnOrder" mnemonicParsing="false" onAction="#handleButtonAction" text="Place an Order" />
