@@ -55,7 +55,7 @@ public class InventoryReader extends CSVReader {
 		String vendor = columnInfo[4];
 		double price = Double.parseDouble(columnInfo[5]);
 		double onHand = Double.parseDouble(columnInfo[6]);
-		int calories = Integer.parseInt(columnInfo[7]);
+		double calories = Double.parseDouble(columnInfo[7]);
 		InventoryItem item = new InventoryItem(itemId, name, calories, units, packSize, price, onHand, vendor);
 		inventoryList.add(item);
 

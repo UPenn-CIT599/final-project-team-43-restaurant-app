@@ -38,7 +38,6 @@ public class EmployeeList extends CSVReader{
 		double salary = Double.parseDouble(columnInfo[2]);
 		boolean onDuty = Boolean.parseBoolean(columnInfo[3]);
 		
-		
 		EmployeeControl employee;
 		employee = new EmployeeControl(name, attendanceHours, salary, onDuty);
 		
@@ -109,7 +108,7 @@ public class EmployeeList extends CSVReader{
 	/**
 	 * Assign an available employee to the customer who just ordered
 	 */
-
+/*
 	public static EmployeeControl assignEmployeeToCustomer() {
 		EmployeeList list = new EmployeeList("Employee List.csv");
 		String customerID = Customer.getCustomer().getCustomerID();
@@ -119,7 +118,8 @@ public class EmployeeList extends CSVReader{
 				break;
 			}
 		}
-	}
+		*/
+	
 	
 	/**
 	 * run to initiate employee list
@@ -129,8 +129,8 @@ public class EmployeeList extends CSVReader{
 		EmployeeList el = new EmployeeList();
 		el.generateEmployeeList();
 	}*/
+}	
 	
 	
 	
-	
-}
+

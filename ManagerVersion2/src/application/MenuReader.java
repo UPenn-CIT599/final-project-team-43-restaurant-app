@@ -25,13 +25,12 @@ public class MenuReader extends CSVReader{
 		// TODO Auto-generated method stub
 		String itemType = columnInfo[0];
 		String description = columnInfo[1];
-		String inventoryId = "";
-		
+		String inventoryId = "";	
 		double portion = 0.0;
-		
-		if(!columnInfo[0].contentEquals("")){
-			//System.out.println(description);
-			if(columnInfo[0].toLowerCase().contentEquals("drink")) {
+		//checks to see if item is a drink and created new drink item to hold ingredients
+		//column[0]
+		if(!itemType.contentEquals("")){
+			if(itemType.toLowerCase().contentEquals("drink")) {
 				Drink item = new Drink();
 				item.setDescription(description);
 				for(int i = 3; i < columnInfo.length; i += 3) {
@@ -39,30 +38,31 @@ public class MenuReader extends CSVReader{
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
 								if(product.getItemID().contentEquals(inventoryId)) {
-									//System.out.println(inventoryId);
 										item.getIngredients().put(product, portion);
 								}
 						}					
 				}
+				//adds drink to drink HashMap in Menu
 				menu.drinks.add(item);
 			}
-			else if(columnInfo[0].toLowerCase().contentEquals("taco")) {
+			//checks for taco items and creates them
+			else if(itemType.toLowerCase().contentEquals("taco")) {
 				Taco item = new Taco();
 				item.setDescription(description);
 				for(int i = 3; i < columnInfo.length; i += 3) {
 					inventoryId = columnInfo[i];
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
-								if(product.getItemID().contentEquals(inventoryId)) {
-									//System.out.println(inventoryId);	
+								if(product.getItemID().contentEquals(inventoryId)) {	
 									item.getIngredients().put(product, portion);
 								}
 						}					
 				}
+				//add taco to Tacos menu HashMap
 				menu.tacos.add(item);
 			}
-		
-			else if(columnInfo[0].contentEquals("SideDish")) {
+			//Creates SideDish items for remaining Menu List
+			else if(itemType.contentEquals("SideDish")) {
 				SideDish item = new SideDish();	
 				item.setDescription(description);
 				for(int i = 3; i < columnInfo.length; i += 3) {
@@ -70,13 +70,14 @@ public class MenuReader extends CSVReader{
 					portion = Double.parseDouble(columnInfo[i + 1]);
 						for (InventoryItem product : inventory.getInventory()) {
 								if(product.getItemID().contentEquals(inventoryId)) {
-									//System.out.println(inventoryId);
 									item.getIngredients().put(product, portion);
 								}
 						}		
 				}
+				//add to side dish menu HashMap
 				menu.sides.add(item);
 			}
+			//error message if itemtype is described improperly
 			else {
 				System.out.println("Invalid MenuItem");
 			}

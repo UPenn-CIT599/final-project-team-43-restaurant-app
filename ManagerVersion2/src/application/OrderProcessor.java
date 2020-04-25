@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 import java.time.LocalTime;
@@ -14,7 +14,7 @@ public class OrderProcessor {
 	KitchenOrder order;
 	// Menu menu;
 	Inventory inventory;
-	private EmployeeList empList = new EmployeeList("Employee List.csv");
+	//private EmployeeList empList = new EmployeeList("Employee List.csv");
 	// private CSVReader reader;
 	private Boolean isComplete;
 	private String paymentMethod;
@@ -91,7 +91,8 @@ public class OrderProcessor {
 		String transRecord;
 		transRecord = createTransactionRecord();
 		writeTransactionRecord(transRecord);
-		//writeInventory(this.inventory);
+		createInventoryUpdate(this.inventory);
+		
 	}
 
 	public String createTransactionRecord() {
@@ -110,18 +111,41 @@ public class OrderProcessor {
 				+ this.order.getQuantitiesAsString().get("beerQty") + "," + this.order.getTotalBill() + ","
 				+ this.isComplete + "," + this.completedTime + "," + "employeeName goes here" + ","
 				+ this.paymentMethod);
-		System.out.println(record);
+		//System.out.println(record);
 		return record;
 	}
 
-	public String createInventoryUpdate(InventoryItem item) {
-		InventoryItem  product = item;
-		String inventoryRecord = (product.getItemID() + "," + product.getItemName() + "," + product.getPackSize()+ "," + product.getUnits() + "," + product.getVendorName() + "," + product.getPackPrice() + "," + product.getOnHand() + "," + product.getCalorie());
-		return inventoryRecord;
+	public ArrayList<String> createInventoryUpdate(Inventory inv) {
+		ArrayList<String> inventoryUpdates = new ArrayList<String>();
+		Inventory inventory = inv;
+		String inventoryRecord;
+		for (InventoryItem product : inventory.getInventory()) {
+			inventoryRecord = (product.getItemID() + "," + product.getItemName() + "," + Double.toString(product.getPackSize()) + ","
+					+ (product.getUnits()) + "," + product.getVendorName() + "," + Double.toString(product.getPackPrice()) + ","
+					+ Double.toString(product.getOnHand()) + "," + Double.toString(product.getCalorie()));
+			inventoryUpdates.add(inventoryRecord);
+			System.out.println(inventoryRecord);
+		}
+		return inventoryUpdates;
 	}
-		
-	
-		
+
+	/*
+	public static void createInventoryUpdate(Inventory inv) {
+		Inventory inventory = inv;
+		String inventoryRecord;
+		for (InventoryItem product : inventory.getInventory()) {
+			inventoryRecord = (product.getItemID() + "," + product.getItemName() + "," + product.getPackSize() + ","
+					+ product.getUnits() + "," + product.getVendorName() + "," + product.getPackPrice() + ","
+					+ product.getOnHand() + "," + product.getCalorie());
+
+			System.out.println(inventoryRecord);
+		}
+	}
+	*/
+	/**
+	 * Method to append transaction record to end of TransactionRecord.csv file
+	 * @param record
+	 */
 	public static void writeTransactionRecord(String record) {
 		String transRecord = record;
 		try {
@@ -147,24 +171,24 @@ public class OrderProcessor {
 		}
 	}
 
-	public static void writeInventory(Inventory inventory) {
-		Inventory inv = inventory;
-		String inventoryRecord;
+	public void writeInventory(ArrayList<String> changes) {
+		ArrayList<String> updates = new ArrayList<String>();
+		updates = changes;
+
 		try {
 			Scanner in = new Scanner("Inventory.csv");
 			FileWriter fw = new FileWriter("Inventory.csv");
 			BufferedWriter bw = new BufferedWriter(fw);
-
-			in.nextLine();
+			//in.nextLine();
+			bw.write("ItemId,Description,Pack Size,Units,Vendor,Price,On Hand Qty,Calories/Unit");
 			bw.newLine();
-			for (InventoryItem item : inv.getInventory()) {
-				inventoryRecord = createInventoryUpdate(item);
-				bw.write(inventoryRecord);
+			for (String record : updates) {
+				bw.write(record);
+				bw.newLine();
 			}
 			bw.flush();
 			bw.close();
 			in.close();
-
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

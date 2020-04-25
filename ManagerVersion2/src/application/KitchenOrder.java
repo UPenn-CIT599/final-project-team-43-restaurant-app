@@ -2,6 +2,7 @@ package application;
 
 import java.io.FileNotFoundException;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class KitchenOrder {
@@ -175,40 +176,11 @@ public class KitchenOrder {
 		Inventory inventory = new Inventory();
 		Menu menu = new Menu();
 		inventory.populateInventory("Inventory.csv");
-		menu.populateMenu("MenuList.csv", inventory);
-		
-		for (Taco taco : menu.tacos) {
-			System.out.println(taco.description + " $" + taco.price);
-		}
-		for (Drink drink : menu.drinks) {
-			System.out.println(drink.description + " $" + drink.price);
-		}
-		for (SideDish side : menu.sides) {
-			System.out.println(side.description + " $" + side.price);
-		}
-		menu.populateMenu("MenuList.csv", inventory);
-		for (Taco taco : menu.tacos) {
-			System.out.println(taco.description + " $" + taco.price);
-		}
-		for (Drink drink : menu.drinks) {
-			System.out.println(drink.description + " $" + drink.price);
-		}
-		for (SideDish side : menu.sides) {
-			System.out.println(side.description + " $" + side.price);
-		}
+		menu.populateMenu("MenuList.csv", inventory);		
 		currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
-		//System.out.println(currentOrder.serviceType);
-
 		OrderProcessor processor = new OrderProcessor(currentOrder);
 		processor.fillOrder();
-		for(InventoryItem item : inventory.getInventory()) {
-			if(item.getItemID().contentEquals("S8825")) {
-				System.out.println(item.getOnHand());
-			}
-		}
-		//processor.writeTransactionRecord(record);
-		//System.out.println(processor.completedTime);
-		//processor.writeTransactionRecord();
+		processor.writeInventory(processor.createInventoryUpdate(inventory));
 
 	}
 	
