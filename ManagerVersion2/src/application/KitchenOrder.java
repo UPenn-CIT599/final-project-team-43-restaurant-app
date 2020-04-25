@@ -169,13 +169,14 @@ public class KitchenOrder {
 		return newOrder;
 
 	}
-/*
+
 	public static void main(String[] args) throws FileNotFoundException {
 		KitchenOrder currentOrder = new KitchenOrder();
 		Inventory inventory = new Inventory();
 		Menu menu = new Menu();
 		inventory.populateInventory("Inventory.csv");
 		menu.populateMenu("MenuList.csv", inventory);
+		/*
 		for (Taco taco : menu.tacos) {
 			System.out.println(taco.description + " $" + taco.price);
 		}
@@ -185,16 +186,22 @@ public class KitchenOrder {
 		for (SideDish side : menu.sides) {
 			System.out.println(side.description + " $" + side.price);
 		}
+		*/
 		currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
-		System.out.println(currentOrder.serviceType);
+		//System.out.println(currentOrder.serviceType);
 
 		OrderProcessor processor = new OrderProcessor(currentOrder);
 		processor.fillOrder();
+		for(InventoryItem item : inventory.getInventory()) {
+			if(item.getItemID().contentEquals("S8825")) {
+				System.out.println(item.getOnHand());
+			}
+		}
 		//processor.writeTransactionRecord(record);
 		//System.out.println(processor.completedTime);
 		//processor.writeTransactionRecord();
 
 	}
-	*/
+	
 }
 

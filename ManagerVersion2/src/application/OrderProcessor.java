@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 public class OrderProcessor {
 	KitchenOrder order;
-	Menu menu;
+	// Menu menu;
 	Inventory inventory;
 	private EmployeeList empList = new EmployeeList("Employee List.csv");
 	// private CSVReader reader;
@@ -22,12 +22,15 @@ public class OrderProcessor {
 	private EmployeeControl employee;
 
 	public OrderProcessor(KitchenOrder currentOrder) throws FileNotFoundException {
-
+		Inventory inventory = new Inventory();
+		// Menu menu = new Menu();
+		KitchenOrder order = new KitchenOrder();
+		order = currentOrder;
 		// this.employee = empList.assignEmployeeToCustomer();
 
 		this.inventory = inventory;
-		this.order = currentOrder;
-		this.empList = empList;
+		this.order = order;
+		// this.empList = empList;
 		this.isComplete = false;
 		this.paymentMethod = paymentMethod;
 	}
@@ -92,23 +95,31 @@ public class OrderProcessor {
 
 	public String createTransactionRecord() {
 		String record;
-		record = (this.order.getOrderId() + "," + this.order.getCustomerId() + "," + this.order.getServiceType()
-		+ "," + this.order.getOrderDate() + "," + this.order.getOrderTime() + ","
-		+ this.order.getQuantitiesAsString().get("bfTacoQty") + ","
-		+ this.order.getQuantitiesAsString().get("chkTacoQty") + ","
-		+ this.order.getQuantitiesAsString().get("vegTacoQty") + ","
-		+ this.order.getQuantitiesAsString().get("nachosQty") + ","
-		+ this.order.getQuantitiesAsString().get("chipsQty") + ","
-		+ this.order.getQuantitiesAsString().get("beansQty") + ","
-		+ this.order.getQuantitiesAsString().get("drPQty") + ","
-		+ this.order.getQuantitiesAsString().get("spklWtrQty") + ","
-		+ this.order.getQuantitiesAsString().get("pepsiQty") + ","
-		+ this.order.getQuantitiesAsString().get("beerQty") + "," + this.order.getTotalBill() + ","
-		+ this.isComplete + "," + this.completedTime + "," + "employeeName goes here" + ","
-		+ this.paymentMethod);
+		record = (this.order.getOrderId() + "," + this.order.getCustomerId() + "," + this.order.getServiceType() + ","
+				+ this.order.getOrderDate() + "," + this.order.getOrderTime() + ","
+				+ this.order.getQuantitiesAsString().get("bfTacoQty") + ","
+				+ this.order.getQuantitiesAsString().get("chkTacoQty") + ","
+				+ this.order.getQuantitiesAsString().get("vegTacoQty") + ","
+				+ this.order.getQuantitiesAsString().get("nachosQty") + ","
+				+ this.order.getQuantitiesAsString().get("chipsQty") + ","
+				+ this.order.getQuantitiesAsString().get("beansQty") + ","
+				+ this.order.getQuantitiesAsString().get("drPQty") + ","
+				+ this.order.getQuantitiesAsString().get("spklWtrQty") + ","
+				+ this.order.getQuantitiesAsString().get("pepsiQty") + ","
+				+ this.order.getQuantitiesAsString().get("beerQty") + "," + this.order.getTotalBill() + ","
+				+ this.isComplete + "," + this.completedTime + "," + "employeeName goes here" + ","
+				+ this.paymentMethod);
 		System.out.println(record);
 		return record;
 	}
+
+	public String createInventoryUpdate(InventoryItem item) {
+		InventoryItem product = new InventoryItem();
+		product = item;
+		String inventoryRecord;
+		
+	}
+		
 	public static void writeTransactionRecord(String record) {
 		String transRecord = record;
 		try {
@@ -124,6 +135,32 @@ public class OrderProcessor {
 				bw.newLine();
 			}
 			bw.write(transRecord);
+			bw.flush();
+			bw.close();
+			in.close();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void writeInventory(Inventory inventory) {
+
+		Inventory inventoryRecord = inventory;
+		try {
+			Scanner in = new Scanner("Inventory.csv");
+			FileWriter fw = new FileWriter("Inventory.csv", true);
+			BufferedWriter bw = new BufferedWriter(fw);
+
+			in.nextLine();
+			bw.newLine();
+
+			while (in.hasNextLine()) {
+				in.nextLine();
+				bw.newLine();
+			}
+			bw.write(InventoryRecord);
 			bw.flush();
 			bw.close();
 			in.close();
