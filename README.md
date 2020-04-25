@@ -5,7 +5,8 @@ A program to simulate the operation of a fast serve taco restaurant.
 
 ## Getting Started
 
-Load project into IDE
+View the pdf file called "Taco Restaurant Flow Chart" to see an overview of our program.
+Load project into IDE.
 Find tacoRunner class and  select run.
 
 ### Prerequisites
