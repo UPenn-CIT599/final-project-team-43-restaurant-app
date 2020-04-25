@@ -13,38 +13,38 @@
       <Text fill="#db160d" layoutX="26.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 1. Select Service Option:" />
       <ChoiceBox fx:id="serviceOption" layoutX="26.0" layoutY="127.0" prefWidth="150.0" />
       <Text fill="#e41111" layoutX="29.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 2. Choose quantity of tacos to order:" />
-      <Text layoutX="146.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="146.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="146.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="29.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beef Taco" />
-      <Text layoutX="29.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Taco" />
-      <Text layoutX="29.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veggie Taco" />
-      <ChoiceBox fx:id="beefTacoQuantity" layoutX="179.0" layoutY="221.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="chickenTacoQuantity" layoutX="179.0" layoutY="252.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="veggieTacoQuantity" layoutX="179.0" layoutY="283.0" prefWidth="150.0" />
+      <Text layoutX="228.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="228.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="228.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="29.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beef Taco   ($3.50 each)" />
+      <Text layoutX="29.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicken Taco   ($3.75 each)" />
+      <Text layoutX="29.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veggie Taco   ($4.50 each)" />
+      <ChoiceBox fx:id="beefTacoQuantity" layoutX="261.0" layoutY="224.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="chickenTacoQuantity" layoutX="261.0" layoutY="255.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="veggieTacoQuantity" layoutX="261.0" layoutY="286.0" prefWidth="150.0" />
       <Text fill="#da0f0f" layoutX="30.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 3. Choose quantity of side dishes to order:" wrappingWidth="298.23291015625" />
-      <Text layoutX="26.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachos" />
-      <ChoiceBox fx:id="nachosQuantity" layoutX="176.0" layoutY="367.0" prefWidth="150.0" />
-      <Text layoutX="26.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tortilla Chips" />
-      <ChoiceBox fx:id="tortillaQuantity" layoutX="176.0" layoutY="401.0" prefWidth="150.0" />
-      <Text layoutX="26.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rice and beans" />
-      <ChoiceBox fx:id="riceBeansQuantity" layoutX="176.0" layoutY="436.0" prefWidth="150.0" />
-      <Text layoutX="146.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="146.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="146.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="26.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachos   ($4.95 each)" />
+      <ChoiceBox fx:id="nachosQuantity" layoutX="258.0" layoutY="370.0" prefWidth="150.0" />
+      <Text layoutX="26.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tortilla Chips   ($2.25 each)" />
+      <ChoiceBox fx:id="tortillaQuantity" layoutX="258.0" layoutY="404.0" prefWidth="150.0" />
+      <Text layoutX="26.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rice and beans   ($2.50 each)" />
+      <ChoiceBox fx:id="riceBeansQuantity" layoutX="258.0" layoutY="439.0" prefWidth="150.0" />
+      <Text layoutX="228.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="228.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="228.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
       <Text fill="#e81818" layoutX="468.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 4. Select your drinks:" />
-      <Text layoutX="585.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="585.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="468.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr. Pepper" />
-      <Text layoutX="468.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La Croix Spk. Water" />
-      <ChoiceBox fx:id="drPepperQuantity" layoutX="618.0" layoutY="124.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="laCroixQuantity" layoutX="618.0" layoutY="155.0" prefWidth="150.0" />
-      <Text layoutX="585.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="585.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
-      <Text layoutX="468.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pepsi Cola" />
-      <Text layoutX="468.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pacifico Beer" />
-      <ChoiceBox fx:id="pepsiQuantity" layoutX="618.0" layoutY="187.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="pacificoQuantity" layoutX="618.0" layoutY="218.0" prefWidth="150.0" />
+      <Text layoutX="667.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="667.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="468.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dr. Pepper   ($2.75 each)" />
+      <Text layoutX="468.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La Croix Spk. Water   ($2.50 each)" />
+      <ChoiceBox fx:id="drPepperQuantity" layoutX="700.0" layoutY="127.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="laCroixQuantity" layoutX="700.0" layoutY="158.0" prefWidth="150.0" />
+      <Text layoutX="667.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="667.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" />
+      <Text layoutX="468.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pepsi Cola   ($2.75 each)" />
+      <Text layoutX="468.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pacifico Beer   ($3.75 each)" />
+      <ChoiceBox fx:id="pepsiQuantity" layoutX="700.0" layoutY="190.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="pacificoQuantity" layoutX="700.0" layoutY="221.0" prefWidth="150.0" />
       <Text fill="#3c47e1" layoutX="317.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Placement" textAlignment="CENTER">
          <font>
             <Font name="Times Roman" size="41.0" />
