@@ -32,8 +32,9 @@ public abstract class MenuItem {
 	 * and updates the total cost
 	 */
 	public void setCost() {
+		cost = 0;
 		for (InventoryItem ingredient : ingredients.keySet()) {
-			cost += ingredient.getUnitPrice() * ingredients.get(ingredient);
+			cost += ingredient.getUnitPrice() * ingredients.get(ingredient);			
 		}
 	}
 	//getter for cost
@@ -45,6 +46,7 @@ public abstract class MenuItem {
 	 * Method to calculate calorie content of a menu item
 	 */
 	public void setCalories() {
+		calorieCount = 0;
 		for (InventoryItem ingredient : ingredients.keySet()) {
 			calories += ingredient.getCalorie() * ingredients.get(ingredient);
 		}
