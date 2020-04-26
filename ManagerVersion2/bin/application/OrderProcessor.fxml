@@ -8,6 +8,7 @@
       <Button fx:id="back" layoutX="170.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleButtonAction" text="BACK TO CUSTOMER" />
       <Button fx:id="orderFill" layoutX="170.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="152.0" text="FILL ORDER" />
       <Button fx:id="viewInventory" layoutX="170.0" layoutY="107.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="152.0" text="VIEW INVENTORY" />
-      <Button fx:id="refillProduct" layoutX="170.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="152.0" text="ORDER PRODUCTS" />
+      <Button fx:id="refillProduct" layoutX="170.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="152.0" text="ORDER PRODUCTS" />
+      <Button fx:id="managerLogin" layoutX="170.0" layoutY="272.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="152.0" text="MANAGER LOGIN" />
    </children>
 </AnchorPane>

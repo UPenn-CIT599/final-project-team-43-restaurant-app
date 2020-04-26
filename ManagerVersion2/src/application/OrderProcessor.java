@@ -123,7 +123,7 @@ public class OrderProcessor {
 	 * @param inv
 	 * @return
 	 */
-	public static ArrayList<String> createInventoryUpdate(Inventory inv) {
+	public ArrayList<String> createInventoryUpdate(Inventory inv) {
 		ArrayList<String> inventoryUpdates = new ArrayList<String>();
 		Inventory inventory = inv;
 		String inventoryRecord;
