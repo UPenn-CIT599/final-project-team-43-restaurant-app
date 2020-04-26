@@ -129,9 +129,18 @@ public class OrderPageController {
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost);
 			
+			BankAccount.getBankAccount().makeDeposit(totalCost);
+			
 			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(availableFunds, totalCost));
 			
 			TableList.assignTableToOrder();
+			
+			
+			
+			
+			
+			
+			
 		
 		} 
 		// this if-block runs if the order is for delivery only
@@ -148,7 +157,16 @@ public class OrderPageController {
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost, address);
 			
+			BankAccount.getBankAccount().makeDeposit(totalCost);
+			
 			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(availableFunds, totalCost));
+			
+			
+			
+			
+			
+			
+			
 
 		} 
 
@@ -198,6 +216,7 @@ public class OrderPageController {
 	public void display() {
 		availFunds = new TextField(); // textfields need to be initialized in display method
 		totalPriceBox = new TextField();
+
 	}
 
 	@FXML
