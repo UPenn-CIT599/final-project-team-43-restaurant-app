@@ -27,8 +27,8 @@ import javafx.event.ActionEvent;
 public class InventoryController implements Initializable {
 	@FXML
 	private Button btn2;
-	
-	//set up TableView for Inventory interface
+
+	// set up TableView for Inventory interface
 	@FXML
 	private TableView<InventoryItem> list;
 	@FXML
@@ -51,18 +51,14 @@ public class InventoryController implements Initializable {
 	private TableColumn<InventoryItem, Double> reorderPoint;
 	@FXML
 	private TableColumn<InventoryItem, String> vendorName;
-	
-	
-	
+
 	ObservableList<InventoryItem> obList;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		InventoryReader in = new InventoryReader("Inventory.csv");
-		obList = FXCollections.observableArrayList(
-				in.getInventoryList()
-			    );
-		
+		obList = FXCollections.observableArrayList(in.getInventoryList());
+
 		itemID.setCellValueFactory(new PropertyValueFactory<InventoryItem, String>("itemID"));
 		itemName.setCellValueFactory(new PropertyValueFactory<InventoryItem, String>("itemName"));
 		calorie.setCellValueFactory(new PropertyValueFactory<InventoryItem, Double>("calorie"));
@@ -73,14 +69,10 @@ public class InventoryController implements Initializable {
 		onHand.setCellValueFactory(new PropertyValueFactory<InventoryItem, Double>("onHand"));
 		reorderPoint.setCellValueFactory(new PropertyValueFactory<InventoryItem, Double>("reorderPoint"));
 		vendorName.setCellValueFactory(new PropertyValueFactory<InventoryItem, String>("vendorName"));
-		
-		
-		
+
 		list.setItems(obList);
-		
-		
+
 	}
-	
 
 	// Event Listener on Button[#btn2].onAction
 	@FXML

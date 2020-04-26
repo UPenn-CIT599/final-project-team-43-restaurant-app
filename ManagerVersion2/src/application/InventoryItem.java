@@ -49,8 +49,8 @@ public class InventoryItem {
 		this.onHand = new SimpleDoubleProperty(onHand);
 		this.vendorName = new SimpleStringProperty(vendor);
 
-		this.unitPrice = new SimpleDoubleProperty(Math.round(price / packSize * 100)/100.0);
-		this.reorderPoint = new SimpleDoubleProperty(Math.round(packSize * .20 * 100)/100.0);
+		this.unitPrice = new SimpleDoubleProperty(Math.round(price / packSize * 100) / 100.0);
+		this.reorderPoint = new SimpleDoubleProperty(Math.round(packSize * .20 * 100) / 100.0);
 
 	}
 
@@ -117,9 +117,10 @@ public class InventoryItem {
 	public void setOnHand(double onHand) {
 		this.onHand = new SimpleDoubleProperty(onHand);
 	}
-	//method to reduce onHand quantity as orders are filled 
+
+	// method to reduce onHand quantity as orders are filled
 	public void reduceOnHand(double amount) {
-		
+
 		this.onHand = new SimpleDoubleProperty(this.onHand.get() - amount);
 	}
 

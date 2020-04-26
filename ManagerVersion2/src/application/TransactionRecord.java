@@ -1,18 +1,22 @@
 package application;
+
 import java.util.ArrayList;
 import java.util.Random;
+
 /**
  * This class has all the transaction records for the restaurant
+ * 
  * @author yinjiezhang
  *
  */
 public class TransactionRecord extends CSVReader {
-	
+
 	private ArrayList<TransactionItem> realTimeTransactionRecord = new ArrayList<>();
-	
+
 	/**
-	 * constructor
-	 * use readFile method from CSVReader parent class to generate realTimeTransactionRecord arraylist
+	 * constructor use readFile method from CSVReader parent class to generate
+	 * realTimeTransactionRecord arraylist
+	 * 
 	 * @param fileName
 	 */
 	public TransactionRecord(String fileName) {
@@ -23,39 +27,36 @@ public class TransactionRecord extends CSVReader {
 		return realTimeTransactionRecord;
 	}
 
-
-
 	/**
-	 * This putData method extends from CSVReader, can use information reading from "CustomerOrders.csv" to generate
-	 * its own arraylist for manager system presenting
+	 * This putData method extends from CSVReader, can use information reading from
+	 * "CustomerOrders.csv" to generate its own arraylist for manager system
+	 * presenting
 	 */
 	@Override
 	public void putData(String[] columnInfo) {
 		String customerID = columnInfo[1];
-		
+
 		String date = columnInfo[3];
-		
+
 		String time = columnInfo[4];
-		
+
 		double transactionAmount = 0.0;
-		if(columnInfo.length > 18 && !columnInfo[18].isEmpty()) {
+		if (columnInfo.length > 18 && !columnInfo[18].isEmpty()) {
 			transactionAmount = Double.parseDouble(columnInfo[18]);
 		}
-		
-		
-		//creating random paymentMethod
+
+		// creating random paymentMethod
 		Random rd = new Random();
-		String []banks = {"Visa", "Amex", "Discovery", "MasterCard"};
+		String[] banks = { "Visa", "Amex", "Discovery", "MasterCard" };
 		String paymentMethod = banks[rd.nextInt(4)];
-		
-		if(!date.isEmpty() || !time.isEmpty()) {
+
+		if (!date.isEmpty() || !time.isEmpty()) {
 			TransactionItem transaction;
 			transaction = new TransactionItem(customerID, date, time, transactionAmount, paymentMethod);
-			
+
 			realTimeTransactionRecord.add(transaction);
 		}
-		
+
 	}
-	
-	
+
 }

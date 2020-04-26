@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Class to read data from .csv file into an ArrayList of InventoryItem objects
  * Subclass of abstract class FileReader
+ * 
  * @author porth, yinjiez
  *
  */
@@ -19,7 +20,7 @@ public class InventoryReader extends CSVReader {
 	 * variable to store inventory items
 	 */
 	public InventoryReader(String fileName) {
-		
+
 		readFile(fileName);
 	}
 
@@ -60,29 +61,30 @@ public class InventoryReader extends CSVReader {
 		inventoryList.add(item);
 
 	}
+
 	/**
-	 * Method to iterate over inventory to find items in need of reorder.
-	 * If onHand quantity is less than the reorderPoint the item is added
-	 * to the list of items to order.
+	 * Method to iterate over inventory to find items in need of reorder. If onHand
+	 * quantity is less than the reorderPoint the item is added to the list of items
+	 * to order.
+	 * 
 	 * @return ArrayList itemsToOrder
 	 */
 	public ArrayList<InventoryItem> createProductOrder() {
-		
-	List<InventoryItem> itemsToOrder = new ArrayList<InventoryItem>();
-		for(InventoryItem product : inventoryList) {
-			if (product.getReorderPoint() > product.getOnHand()){
-					itemsToOrder.add(product);				
-			}			
+
+		List<InventoryItem> itemsToOrder = new ArrayList<InventoryItem>();
+		for (InventoryItem product : inventoryList) {
+			if (product.getReorderPoint() > product.getOnHand()) {
+				itemsToOrder.add(product);
+			}
 		}
-		Collections.sort(
-				itemsToOrder,
-				(item1, item2) -> item1.getVendorName().compareTo(item2.getVendorName()));
-		
+		Collections.sort(itemsToOrder, (item1, item2) -> item1.getVendorName().compareTo(item2.getVendorName()));
+
 		return (ArrayList<InventoryItem>) itemsToOrder;
 	}
-	
+
 	/**
 	 * Method to replenish depleted products
+	 * 
 	 * @param product
 	 * @param units
 	 * @return
@@ -94,6 +96,5 @@ public class InventoryReader extends CSVReader {
 		product.setOnHand(available);
 		return cost;
 	}
-	
-	
+
 }

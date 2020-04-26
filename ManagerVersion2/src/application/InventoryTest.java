@@ -19,7 +19,7 @@ class InventoryTest {
 		}
 
 
-	@Test //checks to see if correct number of products are added to productorder
+	@Test //checks to see if correct number of products are added to product order
 	void testCreateProductOrder() {
 		ArrayList<InventoryItem> order = inventory.createProductOrder();
 		int numProducts = order.size();

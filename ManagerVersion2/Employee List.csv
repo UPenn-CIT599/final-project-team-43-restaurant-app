@@ -1,3 +1,13 @@
 name,attendanceHours,salary,onDuty
 Draco Malfoy,129,2924.15,true
 Albus Dumbledore,10,570.81,true
+Ron Weasley,46,1265.96,false
+Romilda Vane,123,368.82,true
+Ben Rodriguez,52,3135.03,true
+Albus Dumbledore,20,1141.28,false
+Minerva McGonagall,93,3309.06,true
+Dean Thomas,83,1419.69,true
+Ben Rodriguez,124,249.47,true
+Albus Dumbledore,116,1568.97,false
+George Weasley,107,3217.03,false
+Fred Weasley,75,2823.38,true
