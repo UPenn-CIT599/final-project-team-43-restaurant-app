@@ -34,6 +34,9 @@ public class Main extends Application {
 
 		// creates a new customer every time application is launched
 		Customer.getCustomer().setAvailableFunds(Customer.getCustomer().getAvailableFunds());
+		
+		//create a new bank account
+		//BankAccount.getBankAccount().setBalance(1000);
 
 		// gives the customer a unique ID
 		double ID = Math.random() * 9999999;

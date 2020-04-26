@@ -3,13 +3,8 @@ package application;
 //Class to hold the funds available to the restaurant
 public class BankAccount {
 	private double balance;
+	private static BankAccount bankAccount = new BankAccount();
 
-	/**
-	 * Constructor sets initial balance to $1000.00
-	 */
-	public BankAccount() {
-		this.balance = 1000.00;
-	}
 
 	// method to make deposits from sales
 	public void makeDeposit(double amount) {
@@ -25,4 +20,17 @@ public class BankAccount {
 	public double getBalance() {
 		return this.balance;
 	}
+	
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public static BankAccount getBankAccount() {
+		return bankAccount;
+	}
+
+	public static void setBankAccount(BankAccount bankAccount) {
+		BankAccount.bankAccount = bankAccount;
+	}
+
 }
