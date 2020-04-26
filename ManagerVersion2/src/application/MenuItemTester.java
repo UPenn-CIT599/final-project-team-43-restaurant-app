@@ -7,22 +7,39 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class MenuItemTester {
-
+	static Inventory inventory;
+	static Menu menu;
+	static MenuItem testDish;
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		Inventory inventory = new Inventory();
-		Menu menu = new Menu();
+		inventory = new Inventory();
+		menu = new Menu();
 		inventory.populateInventory("Inventory.csv");
 		menu.populateMenu("MenuList.csv", inventory);			
+		for (SideDish side : menu.getSides()) {
+			if (side.description.contentEquals("Nachos")){
+				testDish = side;
+			}
+		}
 	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-	}
-
+ 
+	//test to see if MenuItem.setCost calculates the correct item cost
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testSetCost() {
+		double testCost = testDish.getCost();
+		assertEquals(1.074, testCost, .01, "Incorrect cost, expected 1.074");
 	}
-
+	//test to see if MenuItem.setPrice calculates the correct price
+	@Test
+	void testSetPrice() {
+		double testPrice = testDish.getPrice();
+		assertEquals(4.95, testPrice, "Incorrect price, expected 4.95");
+	}
+	// test to see if MenuItem.setCalories calculates the correct calorie count
+	@Test
+	void testSetCalories() {
+		double testCalories = testDish.getCalories();
+		assertEquals(592, testCalories, "Incorrect cost, expected 1.074");
+	}
 }
