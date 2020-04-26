@@ -87,6 +87,9 @@ public class ReviewsController {
 			
 			//writes the new review to the restaurantreviews.csv file
 			newReview.addReview();
+			
+			//sets the review to the Customer
+			Customer.getCustomer().setReview(newReview);
 
 			
 			stage = (Stage) btnWriteReview.getScene().getWindow();
