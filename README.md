@@ -27,6 +27,19 @@ Reservations:  If you would like to place a reservation, click on the "Reservati
 
 Reviews:  If you would like to write a review, or view previous reviews of our restaurant, click on "Our Reviews" in the customer home page.  Simply select 1-5 from the stars drop down box and also a message of your experience and click "Write a Review".  This will save your review into our "restaurantreviews.csv" file, which will then be read for the new review entry and displayed in the review table.
 
+Manager Login: From the customer home page, you can find a button at the bottom left corner which will guide you to the manger login page. From there, you can login by entering the User Email account: manager@taco.edu  and the password: 05042020 You can find them setting up in LoginController.java from our code. (If you have problem on login, you can try copy-paste the email address and password from source code.) And if either of them cannot match our setting, it’ll empty your input and stay on the login page. After your login, it guides you to the manager main page.
+
+Manager Main: There’re four parts showing on this page, from which, you can go to the four specific pages.
+
+Table: This interface shows the table allocation to the manager. Once a customer places an order, we’ll allot an available table to him and this interface will change and show which table has been occupied.
+
+Employees: This interface will read from our back-end database about EmployeeList, and show their information such as: name, salary, attendant hours and on duty or not. And there’s a button on top of the page which enables manger to add new employees.
+
+Transaction: This interface help manager monitors transactions in the restaurant in a real-time manner. It’ll extract and select useful data from our database about transaction and show them on the page.
+
+Inventory: This interface help manager monitors inventory status for the stock in the restaurant in a real-time manner. It’ll extract and select useful data from our database about inventory and show them on the page.
+
+
 
 ### Tests
 
@@ -45,13 +58,10 @@ Andrew Porth avporth@seas.upenn.edu
 Yinjie Zhang yinjiez@seas.upenn.edu
 
 ## Acknowledgements
-
-
-=======
+We would like to express our special thanks to our own TA: Kevin Kaiwen Wei for his valuable guidance and suggestions. Also, thanks to everyone in our team!
 
 
 
 
 manager login user name: manager@taco.edu
               password: 05042020
->>>>>>> branch 'master' of https://github.com/UPenn-CIT599/final-project-team-43-restaurant-app.git
