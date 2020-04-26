@@ -12,10 +12,8 @@ import java.time.format.DateTimeFormatter;
 
 public class OrderProcessor {
 	KitchenOrder order;
-	// Menu menu;
 	Inventory inventory;
-	//private EmployeeList empList = new EmployeeList("Employee List.csv");
-	// private CSVReader reader;
+	// private EmployeeList empList = new EmployeeList("Employee List.csv");
 	private Boolean isComplete;
 	private String paymentMethod;
 	private String completedTime;
@@ -23,16 +21,14 @@ public class OrderProcessor {
 
 	public OrderProcessor(KitchenOrder currentOrder) throws FileNotFoundException {
 		Inventory inventory = new Inventory();
-		// Menu menu = new Menu();
 		KitchenOrder order = new KitchenOrder();
 		order = currentOrder;
 		// this.employee = empList.assignEmployeeToCustomer();
-
-		this.inventory = inventory;
-		this.order = order;
 		// this.empList = empList;
+		this.inventory = inventory;
+		this.order = order;		
 		this.isComplete = false;
-		this.paymentMethod = paymentMethod;
+		this.paymentMethod = "";
 	}
 
 	/**
@@ -41,7 +37,6 @@ public class OrderProcessor {
 	 * if order is completed and calls writeTransactionRecord to write to
 	 * TransactionRecord.csv
 	 * 
-	 * @param currentOrder
 	 * @return
 	 * @throws FileNotFoundException
 	 */
@@ -51,8 +46,10 @@ public class OrderProcessor {
 		// String employeeName = this.employee.getName();
 		String[] banks = { "Visa", "Amex", "Discovery", "MasterCard", "Cash" };
 		Random rd = new Random();
+		//formatter for time
 		DateTimeFormatter time = DateTimeFormatter.ofPattern("HH:mm");
 		LocalTime orderTime = this.order.getOrderTime();
+		//variable to hold random amount of time to simulate order preparation
 		long secondsToAdd = 0;
 		// iterates through taco types and quantities reducing associated inventoryItems
 		for (Taco tacoType : this.order.getTacoOrder().keySet()) {
@@ -86,15 +83,19 @@ public class OrderProcessor {
 		// assigns random paymentMethod to transaction
 		this.paymentMethod = banks[rd.nextInt(5)];
 		this.isComplete = true;
-		// writeTransactionRecord(this.order, this.isComplete, this.completedTime,
-		// employeeName, this.paymentMethod);
+		//Created a string with transaction details and writes it to file
 		String transRecord;
 		transRecord = createTransactionRecord();
 		writeTransactionRecord(transRecord);
 		createInventoryUpdate(this.inventory);
-		
+
 	}
 
+	/**
+	 * Method to create a string to write to the TransactioRecord.csv file
+	 * 
+	 * @return
+	 */
 	public String createTransactionRecord() {
 		String record;
 		record = (this.order.getOrderId() + "," + this.order.getCustomerId() + "," + this.order.getServiceType() + ","
@@ -111,17 +112,25 @@ public class OrderProcessor {
 				+ this.order.getQuantitiesAsString().get("beerQty") + "," + this.order.getTotalBill() + ","
 				+ this.isComplete + "," + this.completedTime + "," + "employeeName goes here" + ","
 				+ this.paymentMethod);
-		//System.out.println(record);
+		// System.out.println(record);
 		return record;
 	}
 
-	public ArrayList<String> createInventoryUpdate(Inventory inv) {
+	/**
+	 * Method to generate an ArrayList of inventory updates to remove product sold
+	 * from inventory
+	 * 
+	 * @param inv
+	 * @return
+	 */
+	public static ArrayList<String> createInventoryUpdate(Inventory inv) {
 		ArrayList<String> inventoryUpdates = new ArrayList<String>();
 		Inventory inventory = inv;
 		String inventoryRecord;
 		for (InventoryItem product : inventory.getInventory()) {
-			inventoryRecord = (product.getItemID() + "," + product.getItemName() + "," + Double.toString(product.getPackSize()) + ","
-					+ (product.getUnits()) + "," + product.getVendorName() + "," + Double.toString(product.getPackPrice()) + ","
+			inventoryRecord = (product.getItemID() + "," + product.getItemName() + ","
+					+ Double.toString(product.getPackSize()) + "," + (product.getUnits()) + ","
+					+ product.getVendorName() + "," + Double.toString(product.getPackPrice()) + ","
 					+ Double.toString(product.getOnHand()) + "," + Double.toString(product.getCalorie()));
 			inventoryUpdates.add(inventoryRecord);
 			System.out.println(inventoryRecord);
@@ -129,22 +138,10 @@ public class OrderProcessor {
 		return inventoryUpdates;
 	}
 
-	/*
-	public static void createInventoryUpdate(Inventory inv) {
-		Inventory inventory = inv;
-		String inventoryRecord;
-		for (InventoryItem product : inventory.getInventory()) {
-			inventoryRecord = (product.getItemID() + "," + product.getItemName() + "," + product.getPackSize() + ","
-					+ product.getUnits() + "," + product.getVendorName() + "," + product.getPackPrice() + ","
-					+ product.getOnHand() + "," + product.getCalorie());
-
-			System.out.println(inventoryRecord);
-		}
-	}
-	*/
 	/**
 	 * Method to append transaction record to end of TransactionRecord.csv file
-	 * @param record
+	 * 
+	 * @param record a String of comma separated transaction details
 	 */
 	public static void writeTransactionRecord(String record) {
 		String transRecord = record;
@@ -171,6 +168,12 @@ public class OrderProcessor {
 		}
 	}
 
+	/**
+	 * Method to write and ArrayList of strings representing changes to Inventory to
+	 * the Inventory.csv file
+	 * 
+	 * @param changes
+	 */
 	public void writeInventory(ArrayList<String> changes) {
 		ArrayList<String> updates = new ArrayList<String>();
 		updates = changes;
@@ -179,7 +182,7 @@ public class OrderProcessor {
 			Scanner in = new Scanner("Inventory.csv");
 			FileWriter fw = new FileWriter("Inventory.csv");
 			BufferedWriter bw = new BufferedWriter(fw);
-			//in.nextLine();
+			// in.nextLine();
 			bw.write("ItemId,Description,Pack Size,Units,Vendor,Price,On Hand Qty,Calories/Unit");
 			bw.newLine();
 			for (String record : updates) {

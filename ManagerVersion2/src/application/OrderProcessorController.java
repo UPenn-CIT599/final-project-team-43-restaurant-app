@@ -12,18 +12,18 @@ import javafx.scene.control.TableView;
 
 public class OrderProcessorController {
 	@FXML
-	private Button btn2;
+	private Button back, viewInventory, fillOrder, refillProduct;
 	
 	// Event Listener on Button[#btn2].onAction
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
-		Stage stage = (Stage) btn2.getScene().getWindow();
+		Stage stage = (Stage) back.getScene().getWindow();
 
 		Parent root = FXMLLoader.load(getClass().getResource("OrderProcessor.fxml"));
 
-		if (event.getSource() == btn2) {
-			stage = (Stage) btn2.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		if (event.getSource() == back) {
+			stage = (Stage) back.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
 		}
 
 		Scene scene = new Scene(root);
