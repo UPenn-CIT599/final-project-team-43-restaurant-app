@@ -177,7 +177,7 @@ public class KitchenOrder {
 		Menu menu = new Menu();
 		inventory.populateInventory("Inventory.csv");
 		menu.populateMenu("MenuList.csv", inventory);		
-		currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
+		currentOrder = currentOrder.fetchOrder("CustomerOrdersTest.csv", menu);
 		OrderProcessor processor = new OrderProcessor(currentOrder);
 		processor.fillOrder();
 		processor.writeInventory(processor.createInventoryUpdate(inventory));

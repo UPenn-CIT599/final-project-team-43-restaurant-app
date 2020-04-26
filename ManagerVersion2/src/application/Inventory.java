@@ -67,11 +67,12 @@ public class Inventory {
 	 * @param units
 	 * @return
 	 */
-	public void buyProduct(InventoryItem product, int units) {
+	public double buyProduct(InventoryItem product, int units) {
 		double cost = product.getPackPrice() * units;
 		double available = product.getOnHand();
 		available += (product.getPackSize() * units);
 		product.setOnHand(available);
+		return cost;
 	}
 	
 	public ArrayList<PurchaseOrder> replenishInventory() {

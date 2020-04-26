@@ -53,7 +53,8 @@ public abstract class CSVReader {
 	}
 /**
  * ReadLine method creates BufferedReader to read last line of 
- * text 
+ * text, will also skip lines that consist of reservations without 
+ * associated orders, if encountered
  * @param fileName
  * @throws FileNotFoundException
  */
@@ -62,21 +63,29 @@ public abstract class CSVReader {
 
 		rdr = new BufferedReader(new FileReader(fileName));
 		try {
-			//skip the first line
-			//rdr.readLine();
-			//read the second line and assign to itemRow
+
 			ArrayList<String> lines = new ArrayList<String>();
 			String itemRow = rdr.readLine();
 			//if row has contents split into fields
 			while (itemRow != null) {
 				itemRow = rdr.readLine();
 				lines.add(itemRow);
+				//System.out.println(lines.size());
 			}
-			itemRow = lines.get(lines.size() -2);
-			String[] columnInfo = itemRow.split(",");
-			putData(columnInfo);
-			
-			rdr.close();
+				//int i = 2; 
+				itemRow = lines.get(lines.size() - 2);
+				String[] columnInfo = itemRow.split(",");
+				/*
+				String testForData = columnInfo[2];
+				while(testForData.contentEquals("") && i < (lines.size()- 1)){
+					i++;
+					itemRow = lines.get(lines.size() - i);
+					columnInfo = itemRow.split(",");
+					testForData = columnInfo[2];
+				}
+				*/
+				putData(columnInfo);
+				rdr.close();
 		}
 
 		catch (IOException e) {
