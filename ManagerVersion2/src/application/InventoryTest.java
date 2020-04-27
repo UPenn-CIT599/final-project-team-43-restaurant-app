@@ -23,7 +23,7 @@ class InventoryTest {
 
 	@Test //checks to see if correct number of products are added to product order
 	void testCreateProductOrder() {
-		ArrayList<InventoryItem> order = inventory.createProductOrder();
+		ArrayList<PurchaseOrder> order = inventory.createProductOrder();
 		int numProducts = order.size();
 		assertEquals(3, numProducts, "Incorrect number of products, expected 3");
 	}
@@ -37,9 +37,7 @@ class InventoryTest {
 				testItem = item;	
 			}
 		}
-		double testCost = inventory.buyProduct(testItem, 2);
-		double available = testItem.getOnHand();		
-		assertEquals(9.70, testCost, "Incorrect cost of goods, expected 9.70");
+		double available = inventory.buyProduct(testItem, 10);
 		assertEquals(12.2, available, "Incorrect quanity on hand, expected 12.2");
 	}
 	
