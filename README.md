@@ -52,7 +52,7 @@ When the order is processed, the appropriate amount of the components of each me
 
 ### Tests
 
-There are several JUnit test classes: They are InventoryTest.java, EmployeeListTest.java, CustomerTest.java, CustomerOrderTest.java, OrderProcessorTest.java, MenuItemTester.java, InventoryReaderTest.java. Each test class implements a few tests.
+There are several JUnit test classes: They are CustomerTest.java, CustomerOrderTest.java, EmployeeListTest.java, InventoryTest.java, InventoryReaderTest.java, MenuItemTester.java, OrderProcessorTest.java and TransactionRecordTest.java. Each test class implements a few tests.
 Tests are run using InventoryTestFile.csv. and CustomerOrdersTest.csv. MenuList.csv is also used.
  
 
