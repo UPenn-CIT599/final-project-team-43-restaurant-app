@@ -125,6 +125,14 @@ public class OrderProcessor {
 				+ this.paymentMethod);
 		return record;
 	}
+	//getter for order
+	public KitchenOrder getOrder() {
+		return order;
+	}
+	//getter for isComplete value
+	public Boolean getIsComplete() {
+		return isComplete;
+	}
 
 	/**
 	 * Method to generate an ArrayList of inventory updates to remove product sold
