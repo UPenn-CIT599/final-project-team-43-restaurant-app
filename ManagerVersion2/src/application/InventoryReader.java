@@ -1,8 +1,6 @@
 package application;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Class to read data from .csv file into an ArrayList of InventoryItem objects

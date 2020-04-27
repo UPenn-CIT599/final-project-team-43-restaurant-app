@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MainController">
    <top>
       <Label text="Welcome to the Manager System!" textFill="#066879" translateY="35.0" BorderPane.alignment="CENTER">
          <font>
@@ -66,6 +66,12 @@
                   <Image url="@../../waiter.png" />
                </image>
             </ImageView>
+            <TextField fx:id="bankAmount" layoutX="339.0" layoutY="413.0" prefHeight="27.0" prefWidth="135.0" />
+            <Label layoutX="338.0" layoutY="388.0" prefHeight="25.0" prefWidth="145.0" text="BankAccount Balance:" textAlignment="CENTER">
+               <font>
+                  <Font name="Copperplate" size="12.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

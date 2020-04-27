@@ -2,22 +2,30 @@ package application;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 
 /**
  * This class controls the Main FXML File
  * 
- * @author yangliu
+ * @author yangliu, yinjiez
  *
  */
-public class MainController {
+public class MainController implements Initializable {
 	@FXML
 	private Button btnTable, btnTransaction, btnEmployees, btnInventory, btn1;
+	
+	@FXML
+	private TextField bankAmount;
 
 	// Event Listener on Button[#btnTable, btnTransaction, btnEmployees, btnInventory, btn1].onAction
 	@FXML
@@ -47,6 +55,17 @@ public class MainController {
 		stage.setScene(scene);
 		stage.show();
 
+	}
+	
+	@FXML
+	public void display() {
+		bankAmount = new TextField(); // textfields need to be initialized in display method
+	}
+	
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		bankAmount.setText(BankAccount.getBankAccount().getBalance());
+		
 	}
 
 }

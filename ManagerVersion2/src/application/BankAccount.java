@@ -4,30 +4,34 @@ package application;
  * Class to creat a Bank Account object holding funds available to the
  * restaurant
  * 
- * @author porth
+ * @author porth, yinjiez
  *
  */
 public class BankAccount {
-	private double balance;
+	private String balance;
 	private static BankAccount bankAccount = new BankAccount();
 
 	// method to make deposits from sales
 	public void makeDeposit(double amount) {
-		this.balance += amount;
+		double balanceDouble = Double.parseDouble(this.balance);
+		balanceDouble += amount;
+		this.balance = String.valueOf(balanceDouble);
 	}
 
 	// method to withdraw funds for payments
 	public void makePayment(double amount) {
-		this.balance -= amount;
+		double balanceDouble = Double.parseDouble(this.balance);
+		balanceDouble -= amount;
+		this.balance = String.valueOf(balanceDouble);
 	}
 
 	// getter for balance
-	public double getBalance() {
+	public String getBalance() {
 		return this.balance;
 	}
 
 	// setter for balance
-	public void setBalance(double balance) {
+	public void setBalance(String balance) {
 		this.balance = balance;
 	}
 
