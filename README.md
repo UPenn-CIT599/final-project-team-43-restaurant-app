@@ -7,7 +7,8 @@ A program to simulate the operation of a fast serve taco restaurant.
 
 View the pdf file called "Taco Restaurant Flow Chart" to see an overview of our program.
 Load project into IDE.
-Find tacoRunner class and  select run.
+
+Find Main.java class and  select run.
 
 ### Prerequisites
 
@@ -23,6 +24,7 @@ When you first open up the application, you will see the customer home page. You
 
 Ordering:  After checking the menu, you can either go back to the customer home page or order now.  Clicking on "Order Now" will bring to our order page.  Here, you will need to select a service type, your food and drinks, and your delivery address as well if you selected the service type "Delivery".  After selecting all the items you would like, click on the "Check Price" button to confirm the total price of all the items in your cart.  The available funds assigned to each customer is basically a random number that ranges from $30-$40.  Do not allow your total cost to exceed your available funds as you will go into our bad order page if you click place order!  Also, be sure to enter your delivery address if you selected "Delivery" or you will also be confronted with the Bad Order page and will need to restart your order entry. Successful orders will bring you to the window that states "Your order has been placed".  When you see this window, check the "CustomerOrders.csv" file and you will notice that your most recent order is recorded into the last line of the file.  This is how we keep a record of all the orders that were placed and will be used by the other classes in our program.  Additionally, if you would like to check how much funds you have left after making your order, simply click the "Place an Order" button on the customer homepage and inspect your available funds box.  It should be the difference of your initial funds minus the cost of the order that was just placed (funds can reset by taking the role of a new customer, which is essentially re-running the program). 
 
+
 Reservations:  If you would like to place a reservation, click on the "Reservations" button in the customer home page.  Choose the date and time you would like to reserve a seat for "Dine in" service and click "Make Reservation".  The time is the local time of your area, so make sure to choose a day/time combination that is in the future or else you will be asked to remake a reservation.  Successful reservations will not only show a window that confirms the day/time of your order, and will will also write your reservation into the "CustomerOrders.csv" file.
 
 Reviews:  If you would like to write a review, or view previous reviews of our restaurant, click on "Our Reviews" in the customer home page.  Simply select 1-5 from the stars drop down box and also a message of your experience and click "Write a Review".  This will save your review into our "restaurantreviews.csv" file, which will then be read for the new review entry and displayed in the review table.
@@ -35,15 +37,24 @@ Table: This interface shows the table allocation to the manager. Once a customer
 
 Employees: This interface will read from our back-end database about EmployeeList, and show their information such as: name, salary, attendant hours and on duty or not. And there’s a button on top of the page which enables manger to add new employees.
 
-Transaction: This interface help manager monitors transactions in the restaurant in a real-time manner. It’ll extract and select useful data from our database about transaction and show them on the page.
+Transaction: This interface help manager monitors transactions in the restaurant in a real-time manner. 
+
 
 Inventory: This interface help manager monitors inventory status for the stock in the restaurant in a real-time manner. It’ll extract and select useful data from our database about inventory and show them on the page.
 
+Initialization and behind the interface. When the program starts, the menu is populated by reading lines containing menu items, their component ingredients, and the amount of each ingredient contained in a typical serving. Using this data and information from the inventory database, the cost, sale price, and calorie content of each menu item is calculated for display on the menu and order page.
+
+Each time an order is placed, a new line is appended to the TransactionRecord.csv file. It captures information from the order, and it also records an order completion time, successful completion of the order and the name of the employee associated with the order.
+Some of this data can be conveniently viewed in the Transactions window.
+
+When the order is processed, the appropriate amount of the components of each menu item on the order is subtracted from inventory, so that new product may be purchased when inventory reaches a specified level. The inventory file is refreshed for view in the Manager interface.
 
 
 ### Tests
 
-Tbd
+There are several JUnit test classes: They are InventoryTest.java, EmployeeListTest.java, CustomerTest.java, CustomerOrderTest.java, OrderProcessorTest.java, MenuItemTester.java, InventoryReaderTest.java. Each test class implements a few tests.
+Tests are run using InventoryTestFile.csv. and CustomerOrdersTest.csv. MenuList.csv is also used.
+ 
 
 ## Built With
 
