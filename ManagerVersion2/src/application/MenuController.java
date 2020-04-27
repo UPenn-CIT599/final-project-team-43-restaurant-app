@@ -29,12 +29,21 @@ public class MenuController {
 			chickenTacoCalorieBox, veggieTacoCalorieBox, drPepperCalorieBox, laCroixCalorieBox, pepsiCalorieBox,
 			pacificoCalorieBox, nachosCalorieBox, tortillaCalorieBox, riceAndBeansCalorieBox;
 
+	/**
+	 * This method is called when either the "Back" or "Order Now" buttons are
+	 * clicked
+	 * 
+	 * @param event The event of clicking on the "Back" or "Order Now" buttons
+	 * @throws Exception
+	 */
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
 		Stage stage = (Stage) btnBack1.getScene().getWindow();
 
 		Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 
+		// First three if-blocks bring customer to the customer home page if the "Back"
+		// button is clicked
 		if (event.getSource() == btnBack1) {
 			stage = (Stage) btnBack1.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
@@ -44,7 +53,10 @@ public class MenuController {
 		} else if (event.getSource() == btnBack3) {
 			stage = (Stage) btnBack2.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
-		} else if (event.getSource() == btnOrder1) {
+		}
+		// The last three if-blocks bring the customer to the order page if the "Order
+		// Now" button is clicked
+		else if (event.getSource() == btnOrder1) {
 			stage = (Stage) btnOrder1.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("OrderPage.fxml"));
 		} else if (event.getSource() == btnOrder2) {
@@ -61,6 +73,9 @@ public class MenuController {
 
 	}
 
+	/**
+	 * Initialization of textfields for display are put into the display method
+	 */
 	@FXML
 	public void display() {
 		beefTacoPriceBox = new TextField();
@@ -85,6 +100,9 @@ public class MenuController {
 		riceAndBeansCalorieBox = new TextField();
 	}
 
+	/**
+	 * This method is called whenever the Menu.FXML file is loaded successfully
+	 */
 	@FXML
 	public void initialize() {
 
@@ -107,17 +125,17 @@ public class MenuController {
 		nachosPriceBox.setText("$" + Double.toString(menu.sides.get(0).getPrice()));
 		tortillaPriceBox.setText("$" + Double.toString(menu.sides.get(1).getPrice()));
 		riceAndBeansPriceBox.setText("$" + Double.toString(menu.sides.get(2).getPrice()));
-		
+
 		beefTacoCalorieBox.setText(Integer.toString(menu.tacos.get(0).getCalories()) + " calories");
 		chickenTacoCalorieBox.setText(Integer.toString(menu.tacos.get(1).getCalories()) + " calories");
 		veggieTacoCalorieBox.setText(Integer.toString(menu.tacos.get(2).getCalories()) + " calories");
-		
+
 		drPepperCalorieBox.setText(Integer.toString(menu.drinks.get(0).getCalories()) + " calories");
 		laCroixCalorieBox.setText(Integer.toString(menu.drinks.get(1).getCalories()) + " calories");
 		pepsiCalorieBox.setText(Integer.toString(menu.drinks.get(2).getCalories()) + " calories");
-		pacificoCalorieBox.setText(Integer.toString(menu.drinks.get(3).getCalories()) + " calories"); 
-		
-		nachosCalorieBox.setText(Integer.toString(menu.sides.get(0).getCalories()) + " calories"); 
+		pacificoCalorieBox.setText(Integer.toString(menu.drinks.get(3).getCalories()) + " calories");
+
+		nachosCalorieBox.setText(Integer.toString(menu.sides.get(0).getCalories()) + " calories");
 		tortillaCalorieBox.setText(Integer.toString(menu.sides.get(1).getCalories()) + " calories");
 		riceAndBeansCalorieBox.setText(Integer.toString(menu.sides.get(2).getCalories()) + " calories");
 

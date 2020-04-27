@@ -8,10 +8,24 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
+/**
+ * This class controls the Bad Order page (the window that shows when an invalid
+ * order is made).
+ * 
+ * @author yangliu
+ *
+ */
 public class BadOrderController {
 	@FXML
 	private Button btnBack;
 
+	/**
+	 * This method is called when the "Back" button is clicked on the bad order page
+	 * and brings the customer back to the order page
+	 * 
+	 * @param event The event of clicking the "Back" button
+	 * @throws Exception
+	 */
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
 		Stage stage = (Stage) btnBack.getScene().getWindow();

@@ -19,10 +19,8 @@ public class Customer {
 	private double availableFunds; // Funds that the customer has available to spend
 
 	private String reservationID; // the customer's reservationID set upon making reservation
-	private String reservationDate;
-	private String reservationTime;
-
-	private Menu menu;
+	private String reservationDate; // the customer's reservation date set upon making reservation
+	private String reservationTime; // the customer's reservation time (local) set upon making reservation
 
 	private static Customer customer = new Customer();
 
@@ -54,7 +52,6 @@ public class Customer {
 		this.availableFunds = availableFunds;
 	}
 
-
 	/**
 	 * Getter for the review that the customer gave
 	 * 
@@ -73,49 +70,95 @@ public class Customer {
 		this.review = review;
 	}
 
+	/**
+	 * Getter for the customer
+	 * 
+	 * @return
+	 */
 	public static Customer getCustomer() {
 		return customer;
 	}
 
-	public Menu getMenu() {
-		return menu;
-	}
-
+	/**
+	 * Getter for the customer ID
+	 * 
+	 * @return customerID
+	 */
 	public String getCustomerID() {
 		return customerID;
 	}
 
+	/**
+	 * Setter for the customer ID
+	 * 
+	 * @param customerID customer ID to set
+	 */
 	public void setCustomerID(String customerID) {
 		this.customerID = customerID;
 	}
 
+	/**
+	 * Getter for the reservation ID
+	 * 
+	 * @return reervationID
+	 */
 	public String getReservationID() {
 		return reservationID;
 	}
 
+	/**
+	 * Setter for reservationID
+	 * 
+	 * @param reservationID Reservation ID to set
+	 */
 	public void setReservationID(String reservationID) {
 		this.reservationID = reservationID;
 	}
 
+	/**
+	 * Getter for the customer's reservation date
+	 * 
+	 * @return reservation date
+	 */
 	public String getReservationDate() {
 		return reservationDate;
 	}
 
+	/**
+	 * Setter for the customer's reservation date
+	 * 
+	 * @param reservationDate Reservation date to set
+	 */
 	public void setReservationDate(String reservationDate) {
 		this.reservationDate = reservationDate;
 	}
 
+	/**
+	 * Getter for the customer's reservation time
+	 * 
+	 * @return reservationTime
+	 */
 	public String getReservationTime() {
 		return reservationTime;
 	}
 
+	/**
+	 * Setter for the customer's reservation time
+	 * 
+	 * @param reservationTime Reservation time to set
+	 */
 	public void setReservationTime(String reservationTime) {
 		this.reservationTime = reservationTime;
 	}
 
-
-
-	//Writes reservation to CustomerOrders.csv
+	/**
+	 * This method writes a reservation to CustomerOrder.csv
+	 * 
+	 * @param customerID    CustomerID String value
+	 * @param reservationID ReservationID String value
+	 * @param date          date of reservation
+	 * @param time          time of reservation (local time)
+	 */
 	public static void writeReservation(String customerID, String reservationID, String date, String time) {
 		try {
 			Scanner in = new Scanner("CustomerOrders.csv");
@@ -144,14 +187,13 @@ public class Customer {
 
 	/**
 	 * This method calculates a Customer's remaining funds after making a purchase
-	 * @param totalCost total cost of all food items
+	 * 
+	 * @param totalCost      total cost of all food items
 	 * @param availableFunds available funds of the customer
 	 * @return the remaining funds of the customer
 	 */
 	public static double deductFunds(double availableFunds, double totalCost) {
 		return availableFunds - totalCost;
 	}
-	
-	
-	
+
 }

@@ -42,6 +42,13 @@ public class CustomerReservationController {
 	ObservableList<String> availableTimes = FXCollections.observableArrayList("09:00", "10:00", "11:00", "12:00",
 			"13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00");
 
+	/**
+	 * This method is called when the "Back" button is clicked on the customer
+	 * reservation page and brings the customer back to the customer home page
+	 * 
+	 * @param event The event of clicking the "Back" button
+	 * @throws Exception
+	 */
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
 
@@ -60,6 +67,13 @@ public class CustomerReservationController {
 
 	}
 
+	/**
+	 * This method is called when the customer clicks on the "Make Reservation"
+	 * button.
+	 * 
+	 * @param event The event of clicking the "Make Reservation" button
+	 * @throws Exception
+	 */
 	@FXML
 	public void makeReservation(ActionEvent event) throws Exception {
 
@@ -114,13 +128,16 @@ public class CustomerReservationController {
 				String resDate = Customer.getCustomer().getReservationDate();
 				String resTime = Customer.getCustomer().getReservationTime();
 
+				// writes the reservation information into the CustomerOrders.csv file
 				Customer.writeReservation(customerID, reservationID, resDate, resTime);
 
+				// Brings the customer to the ReservationConfirmation page
 				stage = (Stage) btnReservation.getScene().getWindow();
 				root = FXMLLoader.load(getClass().getResource("ReservationConfirmation.fxml"));
 			}
 		}
 
+		// unsuccessful reservations will bring the customer to the bad reservation page
 		else {
 			stage = (Stage) btnReservation.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("BadReservation.fxml"));
@@ -132,9 +149,18 @@ public class CustomerReservationController {
 
 	}
 
+	/**
+	 * This method is called whenever the CustomerReservation.FXML file is loaded
+	 * successfully
+	 */
 	@FXML
 	public void initialize() {
+
+		// sets the reservation time choice box to display the available times
+		// observable list
 		reservationTimeCBox.setItems(availableTimes);
+
+		// sets the default value of the reservation date to the current day
 		reservationDateBox.setValue(LocalDate.now());
 	}
 

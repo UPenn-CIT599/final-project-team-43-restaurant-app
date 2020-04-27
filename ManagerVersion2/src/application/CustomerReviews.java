@@ -89,6 +89,12 @@ public class CustomerReviews {
 
 	}
 
+	/**
+	 * This method retrieves all the reviews that were written by the customers from
+	 * restaurantreviews.csv
+	 * 
+	 * @return an ArrayList of strings containing restaurant review information
+	 */
 	public static ArrayList<String[]> obtainAllReviews() {
 		ArrayList<String[]> reviewList = new ArrayList<String[]>();
 		File file = new File("restaurantreviews.csv");
@@ -108,22 +114,8 @@ public class CustomerReviews {
 			e.printStackTrace();
 		}
 		return reviewList;
-		
+
 	}
-	
 
-
-	// Below is the test for add review.
-	/*
-	 * 
-	 * public static void main(String[] args) {
-	 * 
-	 * Customer a = new Customer(); CustomerReviews review = new CustomerReviews();
-	 * review.setMessageReview("Test review"); review.setScoreOutOfFive(5);
-	 * a.setReview(review); a.getReview().addReview();
-	 * 
-	 * }
-	 * 
-	 */
 
 }

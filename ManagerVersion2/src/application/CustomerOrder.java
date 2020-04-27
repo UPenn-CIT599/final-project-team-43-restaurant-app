@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * This class keeps track of the orders for the customers
+ * This class is associated with the orders for our customers
  * 
  * @author yangliu
  *
@@ -18,62 +18,31 @@ import java.util.Scanner;
 
 public class CustomerOrder {
 
-	// an instance of the order class is associated with only one customer
 	private Customer customer;
-	private int orderID;
+
 	private double totalPrice;
 
 	private boolean delivery;
-	private String estimatedTimeOfDelivery;
-
-	/*
-	private HashMap<Taco, Integer> tacoItemToOrderQuantity;
-	private HashMap<Drink, Integer> drinkItemToOrderQuantity;
-	private HashMap<SideDish, Integer> sideDishItemToOrderQuantity;
-
-	private HashMap<Customer, Taco> customerToTacoOrdersForDineIn;
-	private HashMap<Customer, Drink> customerToDrinkOrdersForDineIn;
-	private HashMap<Customer, SideDish> customerToSideDishOrdersForDineIn;
-
-	private HashMap<Customer, Taco> customerToTacoOrdersForDelivery;
-	private HashMap<Customer, Drink> customerToDrinkOrdersForDelivery;
-	private HashMap<Customer, SideDish> customerToSideDishOrdersForDelivery;
-
-
-	public CustomerOrder(Customer customer, boolean delivery) {
-
-		// order object contains the customer and boolean value for delivery
-		this.setCustomer(customer);
-		this.setDelivery(delivery);
-
-		// order items for delivery are in a separate hashmap from dine in
-		if (delivery == true) {
-			for (Taco taco : customer.getTacoOrders()) {
-				customerToTacoOrdersForDelivery.put(customer, taco);
-			}
-			for (Drink drink : customer.getDrinkOrders()) {
-				customerToDrinkOrdersForDelivery.put(customer, drink);
-			}
-			for (SideDish sideDish : customer.getSideDishOrders()) {
-				customerToSideDishOrdersForDelivery.put(customer, sideDish);
-			}
-		} else if (delivery == false) {
-			for (Taco taco : customer.getTacoOrders()) {
-				customerToTacoOrdersForDineIn.put(customer, taco);
-			}
-			for (Drink drink : customer.getDrinkOrders()) {
-				customerToDrinkOrdersForDineIn.put(customer, drink);
-			}
-			for (SideDish sideDish : customer.getSideDishOrders()) {
-				customerToSideDishOrdersForDineIn.put(customer, sideDish);
-			}
-		}
-	}
-	*/
 
 	/**
 	 * This method writes the customer order to CustomerOrders.csv for dine-in
 	 * orders
+	 * 
+	 * @param customerID the ID of the customer
+	 * @param serviceType serviceType of the order (Dine-in or Delivery)
+	 * @param orderDate Date of the order
+	 * @param orderTime Time the order was placed (local time)
+	 * @param beefTQty Quantity of beef tacos ordered
+	 * @param chickenTQty Quantity of chicken tacos ordered
+	 * @param veggieTQty Quantity of veggie tacos ordered
+	 * @param nachosQty Quantity of nachos ordered
+	 * @param tortillaQty Quantity of tortilas ordered
+	 * @param riceBeansQty Quantity of rice and beans ordered
+	 * @param drPepperQty Quantity of drPeppers ordered
+	 * @param spkWaterQty Quantity of sparkling waters ordered
+	 * @param pepsiQty Quantity of pepsis ordered
+	 * @param pacificoQty Quantity of pacificos ordered
+	 * @param totalCost Total cost of the order
 	 */
 	public static void writeOrderDineIn(String customerID, String serviceType, String orderDate, String orderTime,
 			int beefTQty, int chickenTQty, int veggieTQty, int nachosQty, int tortillaQty, int riceBeansQty,
@@ -108,9 +77,26 @@ public class CustomerOrder {
 
 	}
 
+
 	/**
 	 * This method writes the customer order to CustomerOrders.csv for delivery
 	 * orders
+	 * @param customerID the ID of the customer
+	 * @param serviceType serviceType of the order (Dine-in or Delivery)
+	 * @param orderDate Date of the order
+	 * @param orderTime Time the order was placed (local time)
+	 * @param beefTQty Quantity of beef tacos ordered
+	 * @param chickenTQty Quantity of chicken tacos ordered
+	 * @param veggieTQty Quantity of veggie tacos ordered
+	 * @param nachosQty Quantity of nachos ordered
+	 * @param tortillaQty Quantity of tortilas ordered
+	 * @param riceBeansQty Quantity of rice and beans ordered
+	 * @param drPepperQty Quantity of drPeppers ordered
+	 * @param spkWaterQty Quantity of sparkling waters ordered
+	 * @param pepsiQty Quantity of pepsis ordered
+	 * @param pacificoQty Quantity of pacificos ordered
+	 * @param totalCost Total cost of the order
+	 * @param deliveryAddress The delivery address entered for the order
 	 */
 	public static void writeOrderDelivery(String customerID, String serviceType, String orderDate, String orderTime,
 			int beefTQty, int chickenTQty, int veggieTQty, int nachosQty, int tortillaQty, int riceBeansQty,
@@ -143,7 +129,7 @@ public class CustomerOrder {
 	}
 
 	/**
-	 * This method calculates the total price of all orders for a given customer
+	 * This method calculates the total price of all orders for the customer
 	 * 
 	 * @return the total value of all food items the customer ordered
 	 */
@@ -151,7 +137,7 @@ public class CustomerOrder {
 			int tortillaQty, int riceBeansQty, int drPepperQty, int spkWaterQty, int pepsiQty, int pacificoQty) {
 		Inventory inv = new Inventory();
 		inv.populateInventory("Inventory.csv");
-		
+
 		Menu menu = new Menu();
 		menu.populateMenu("MenuList.csv", inv);
 
@@ -165,14 +151,11 @@ public class CustomerOrder {
 
 		return totalCost;
 	}
-	
-
-	
 
 	/**
 	 * Getter for customer
 	 * 
-	 * @return
+	 * @return customer object
 	 */
 	public Customer getCustomer() {
 		return customer;
@@ -181,7 +164,7 @@ public class CustomerOrder {
 	/**
 	 * Setter for customer
 	 * 
-	 * @param customer
+	 * @param customer to set
 	 */
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
@@ -190,7 +173,7 @@ public class CustomerOrder {
 	/**
 	 * Getter for total price
 	 * 
-	 * @return
+	 * @return the total price of the order
 	 */
 	public double getTotalPrice() {
 		return totalPrice;
@@ -199,30 +182,11 @@ public class CustomerOrder {
 	/**
 	 * Setter for total price
 	 * 
-	 * @param totalPrice
+	 * @param totalPrice the total price to set
 	 */
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-
-	/**
-	 * Getter for estimated time of delivery
-	 * 
-	 * @return
-	 */
-	public String getEstimatedTimeOfDelivery() {
-		return estimatedTimeOfDelivery;
-	}
-
-	/**
-	 * Setter for estimated time of delivery
-	 * 
-	 * @param estimatedTimeOfDelivery
-	 */
-	public void setEstimatedTimeOfDelivery(String estimatedTimeOfDelivery) {
-		this.estimatedTimeOfDelivery = estimatedTimeOfDelivery;
-	}
-
 
 	/**
 	 * Getter for isDelivery
@@ -236,7 +200,7 @@ public class CustomerOrder {
 	/**
 	 * Setter for isDelivery
 	 * 
-	 * @param delivery true for delivery; false for dine in
+	 * @param delivery set true for delivery; false for dine in
 	 */
 	public void setDelivery(boolean delivery) {
 		this.delivery = delivery;

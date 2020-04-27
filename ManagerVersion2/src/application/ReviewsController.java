@@ -5,7 +5,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -54,6 +53,13 @@ public class ReviewsController {
 
 	ObservableList<CustomerReviews> reviewListObs;
 
+	/**
+	 * This method is called when the customer click the "Back" button and brings
+	 * the customer back to customer home page
+	 * 
+	 * @param event The event of clicking on the "Back" button
+	 * @throws Exception
+	 */
 	@FXML
 	public void handleButtonAction(ActionEvent event) throws Exception {
 		Stage stage = (Stage) btnBack.getScene().getWindow();
@@ -70,31 +76,43 @@ public class ReviewsController {
 		stage.show();
 
 	}
-	
+
+	/**
+	 * This method is called when the customer clicks on the "Write Review" button.
+	 * 
+	 * @param event The event of clickong on the "Write Review" button
+	 * @throws Exception
+	 */
 	@FXML
 	public void writeReviewClicked(ActionEvent event) throws Exception {
 		Stage stage = (Stage) btnWriteReview.getScene().getWindow();
 
 		Parent root = FXMLLoader.load(getClass().getResource("Reviews.fxml"));
 
-		if (event.getSource() == btnWriteReview && !starsBox.getSelectionModel().isEmpty() && !msgReview.getText().isEmpty()) {
-			
+		// this block of code only runs when the customer selects a star rating and
+		// inputs a non-empty string into the review textfield
+		if (event.getSource() == btnWriteReview && !starsBox.getSelectionModel().isEmpty()
+				&& !msgReview.getText().isEmpty()) {
+
 			CustomerReviews newReview = new CustomerReviews();
 			newReview.setScoreOutOfFive(Integer.parseInt(starsBox.getValue()));
-			
-			//ignores newlines for review entry
+
+			// ignores newlines for review entry
 			newReview.setMessageReview(msgReview.getText().replaceAll("\n", " "));
-			
-			//writes the new review to the restaurantreviews.csv file
+
+			// writes the new review to the restaurantreviews.csv file
 			newReview.addReview();
-			
-			//sets the review to the Customer
+
+			// sets the review to the Customer
 			Customer.getCustomer().setReview(newReview);
 
-			
 			stage = (Stage) btnWriteReview.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Reviews.fxml"));
-		} else {
+		}
+
+		// if the customer does not put in a review message, the review page is simply
+		// reloaded without entering the review
+		else {
 			stage = (Stage) btnWriteReview.getScene().getWindow();
 			root = FXMLLoader.load(getClass().getResource("Reviews.fxml"));
 		}
@@ -104,9 +122,14 @@ public class ReviewsController {
 		stage.show();
 
 	}
-	
-	
 
+	/**
+	 * 
+	 * This method is called whenever the Reviews.FXML file is loaded successfully
+	 *
+	 * 
+	 * @throws IOException
+	 */
 	@FXML
 	public void initialize() throws IOException {
 
@@ -114,6 +137,8 @@ public class ReviewsController {
 
 		FileReader fr = new FileReader("restaurantreviews.csv");
 		BufferedReader br = new BufferedReader(fr);
+		
+		//skips the title line of the csv file
 		br.readLine();
 
 		// Adds all of the reviews in restaurantreviews.csv file to the reviewListObs so
@@ -141,7 +166,7 @@ public class ReviewsController {
 		// sets observable data into the table
 		tblReviews.setItems(reviewListObs);
 
-		//sets star options (1-5) for the starsBox Choice Box
+		// sets star options (1-5) for the starsBox Choice Box
 		starsBox.setItems(starOptions);
 
 	}
