@@ -64,9 +64,15 @@ Inventory:
 
 This interface help manager monitors inventory status for the stock in the restaurant in a real-time manner. It’ll extract and select useful data from our database about inventory and show them on the page.
 
+BankAccount:
+
+This window shows the restauarant's current bank account balance. It is updated with a deposit each time a customer places an order, and a withdrawal is made each time a purchase order (or batch of orders) is filled. 
+
 Initialization and activity behind the interface: 
 
-When the program starts, the menu is populated by reading lines containing menu items, their component ingredients, and the amount of each ingredient contained in a typical serving. Using this data and information from the inventory database, the cost, sale price, and calorie content of each menu item is calculated for display on the menu and order page.
+When the program starts, the menu is populated by reading lines containing menu items, their component ingredients, and the amount of each ingredient contained in a typical serving. Using this data and information from the inventory database, the cost, sale price, and calorie content of each menu item is calculated for display on the menu and order page and the inventory levels are set to those from the Inventory.csv files, reflecting the levels remaining after the last program run.
+
+In addition, the restaurant's bank account is initialized. This resets to the default value with each run of the program. The current balance appears in the bank account window in the Manager interface.
 
 Each time an order is placed, a new line is appended to the TransactionRecord.csv file. It captures information from the order, and it also records an order completion time, successful completion of the order and the name of the employee associated with the order.
 Some of this data can be conveniently viewed in the Transactions window.
@@ -94,7 +100,7 @@ PurchaseOrders.csv - this file maintains records of every product purchase made 
 
 There are several JUnit test classes: 
 
-They are CustomerTest.java, CustomerOrderTest.java, EmployeeListTest.java, InventoryTest.java, InventoryReaderTest.java, MenuItemTester.java, OrderProcessorTest.java and TransactionRecordTest.java. 
+They are CustomerTest.java, CustomerOrderTest.java, EmployeeListTest.java, InventoryTest.java, InventoryReaderTest.java, MenuItemTester.java, OrderProcessorTest.java, PurchaseOrderTest.java and TransactionRecordTest.java. Since Eclipse does not support Test Suites for JUnit 5, the tests will need to be accessed individually.
 
 Each test class implements a few tests.
 
