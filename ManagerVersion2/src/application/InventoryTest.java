@@ -17,7 +17,7 @@ class InventoryTest {
 	
 	static void setUpBeforeClass() throws Exception {
 		inventory = new Inventory();
-		inventory.populateInventory("Inventory.csv");
+		inventory.populateInventory("InventoryTestFile.csv");
 		}
 
 

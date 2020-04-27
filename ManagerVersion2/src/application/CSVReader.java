@@ -16,6 +16,7 @@ import java.util.Scanner;
  */
 public abstract class CSVReader {
 
+	// default constructor
 	public CSVReader() {
 	}
 
@@ -51,13 +52,13 @@ public abstract class CSVReader {
 		}
 
 	}
-/**
- * ReadLine method creates BufferedReader to read last line of 
- * text, will also skip lines that consist of reservations without 
- * associated orders, if encountered
- * @param fileName
- * @throws FileNotFoundException
- */
+
+	/**
+	 * ReadLine method creates BufferedReader to read last line of text in a file
+	 * 
+	 * @param fileName
+	 * @throws FileNotFoundException
+	 */
 	public void readOneLine(String fileName) throws FileNotFoundException {
 		BufferedReader rdr;
 
@@ -66,26 +67,17 @@ public abstract class CSVReader {
 
 			ArrayList<String> lines = new ArrayList<String>();
 			String itemRow = rdr.readLine();
-			//if row has contents split into fields
+			// checking for first empty line, adding each line to ArrayList
 			while (itemRow != null) {
 				itemRow = rdr.readLine();
 				lines.add(itemRow);
-				//System.out.println(lines.size());
 			}
-				//int i = 2; 
-				itemRow = lines.get(lines.size() - 2);
-				String[] columnInfo = itemRow.split(",");
-				/*
-				String testForData = columnInfo[2];
-				while(testForData.contentEquals("") && i < (lines.size()- 1)){
-					i++;
-					itemRow = lines.get(lines.size() - i);
-					columnInfo = itemRow.split(",");
-					testForData = columnInfo[2];
-				}
-				*/
-				putData(columnInfo);
-				rdr.close();
+			// Read last line in ArrayList with data, split data into fields
+			itemRow = lines.get(lines.size() - 2);
+			String[] columnInfo = itemRow.split(",");
+			// abstract method for populating objects with data fields
+			putData(columnInfo);
+			rdr.close();
 		}
 
 		catch (IOException e) {
@@ -95,7 +87,7 @@ public abstract class CSVReader {
 		}
 
 	}
-	
+
 	/**
 	 * Reads file and counts the number of non-empty lines.
 	 * 

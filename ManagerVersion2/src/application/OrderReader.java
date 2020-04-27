@@ -4,19 +4,26 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 
-
+/**
+ * Class to read CustomerOrder.csv to fill a new KitchenOrder object
+ * with data from the file
+ * @author porth
+ *
+ */
 public class OrderReader extends CSVReader {
 	KitchenOrder order;
 	Menu menu;
 
-	
+	/*
+	 * Constructor takes Menu as argument and creates a new KitchenOrder object
+	 */
 	public OrderReader(Menu currentMenu) {
 		order = new KitchenOrder();
 		menu = new Menu();
 		menu = currentMenu;
 	}
 	
-
+	//abstract method to populate KitchenOrder with data read from .csv
 	@Override
 	public void putData(String[] columnInfo) {
 		// TODO Auto-generated method stub
@@ -94,6 +101,7 @@ public class OrderReader extends CSVReader {
 			
 		}
 		order.setTotalBill(ttlPrice);
+		
 		//puts order items and quantities in hashMap for writing to transaction record
 		order.quantitiesAsString.put("bfTacoQty", columnInfo[8]);
 		order.quantitiesAsString.put("chkTacoQty", columnInfo[9]);
@@ -107,7 +115,7 @@ public class OrderReader extends CSVReader {
 		order.quantitiesAsString.put("beerQty", columnInfo[17]);
 		
 	}
-	
+	//Retrieves HashMap for writing to TransactionRecord.csv
 	public HashMap<String, String> getOrderQuantitiesAsStrings(String[] columnInfo){
 		HashMap<String, String> quantities = new HashMap<String, String>();
 		order.quantitiesAsString.put("bfTacoQty", columnInfo[8]);
@@ -122,7 +130,7 @@ public class OrderReader extends CSVReader {
 		order.quantitiesAsString.put("beerQty", columnInfo[17]);
 		return quantities;
 	}
-	
+	//getter for KitchenOrder object
 	public KitchenOrder getOrder() {
 		return order;
 	}

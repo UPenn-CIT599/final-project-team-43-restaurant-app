@@ -1,23 +1,18 @@
 package application;
 
-import java.util.ArrayList;
 /**
- * Class for preparation of a single taco.
+ * Class for creation of Taco objects. Extends MenuItem
  *
- * @author porth
- *g
+ * @author porth g
  */
-public class Taco extends MenuItem{
+public class Taco extends MenuItem {
 
 	/**
-	 * Constructor to build taco object from InventoryItems and set price.
-	 * @param shell
-	 * @param filling
-	 * @param garnish
-	 * @param sauce
+	 * Constructor to build taco object from InventoryItems and set price via the
+	 * MenuItem class
 	 */
-	public Taco (){
-	
+	public Taco() {
+
 	}
-	
+
 }

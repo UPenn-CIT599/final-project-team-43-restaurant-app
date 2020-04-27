@@ -10,7 +10,17 @@ import java.util.Random;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Class to operate on a KitchenOrder item generated from a Customer order The
+ * methosd of this class are called when an order is placed in the
+ * OrderPageController
+ * 
+ * @author porth
+ *
+ */
+
 public class OrderProcessor {
+
 	KitchenOrder order;
 	Inventory inventory;
 	// private EmployeeList empList = new EmployeeList("Employee List.csv");
@@ -26,7 +36,7 @@ public class OrderProcessor {
 		// this.employee = empList.assignEmployeeToCustomer();
 		// this.empList = empList;
 		this.inventory = inventory;
-		this.order = order;		
+		this.order = order;
 		this.isComplete = false;
 		this.paymentMethod = "";
 	}
@@ -46,10 +56,10 @@ public class OrderProcessor {
 		// String employeeName = this.employee.getName();
 		String[] banks = { "Visa", "Amex", "Discovery", "MasterCard", "Cash" };
 		Random rd = new Random();
-		//formatter for time
+		// formatter for time
 		DateTimeFormatter time = DateTimeFormatter.ofPattern("HH:mm");
 		LocalTime orderTime = this.order.getOrderTime();
-		//variable to hold random amount of time to simulate order preparation
+		// variable to hold random amount of time to simulate order preparation
 		long secondsToAdd = 0;
 		// iterates through taco types and quantities reducing associated inventoryItems
 		for (Taco tacoType : this.order.getTacoOrder().keySet()) {
@@ -83,7 +93,7 @@ public class OrderProcessor {
 		// assigns random paymentMethod to transaction
 		this.paymentMethod = banks[rd.nextInt(5)];
 		this.isComplete = true;
-		//Created a string with transaction details and writes it to file
+		// Created a string with transaction details and writes it to file
 		String transRecord;
 		transRecord = createTransactionRecord();
 		writeTransactionRecord(transRecord);
@@ -112,7 +122,7 @@ public class OrderProcessor {
 				+ this.order.getQuantitiesAsString().get("beerQty") + "," + this.order.getTotalBill() + ","
 				+ this.isComplete + "," + this.completedTime + "," + "employeeName goes here" + ","
 				+ this.paymentMethod);
-		// System.out.println(record);
+
 		return record;
 	}
 
@@ -120,7 +130,7 @@ public class OrderProcessor {
 	 * Method to generate an ArrayList of inventory updates to remove product sold
 	 * from inventory
 	 * 
-	 * @param inv
+	 * @param inv Inventory
 	 * @return
 	 */
 	public ArrayList<String> createInventoryUpdate(Inventory inv) {
@@ -133,7 +143,6 @@ public class OrderProcessor {
 					+ product.getVendorName() + "," + Double.toString(product.getPackPrice()) + ","
 					+ Double.toString(product.getOnHand()) + "," + Double.toString(product.getCalorie()));
 			inventoryUpdates.add(inventoryRecord);
-			System.out.println(inventoryRecord);
 		}
 		return inventoryUpdates;
 	}

@@ -129,6 +129,16 @@ public class OrderPageController {
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost);
 			
+			//creates new KitchenOrder object to hold the order and new Order Processor
+			KitchenOrder currentOrder = new KitchenOrder();	
+			OrderProcessor processor = new OrderProcessor(currentOrder);
+			//reads order from .csv file
+			currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
+			//invokes processor methods to complete order and write output to TransactionRecord.csv
+			processor.fillOrder();
+			//writes updated inventory to Inventory.csv
+			processor.writeInventory(processor.createInventoryUpdate(inv));
+			
 			BankAccount.getBankAccount().makeDeposit(totalCost);
 			
 			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(availableFunds, totalCost));
@@ -156,6 +166,16 @@ public class OrderPageController {
 			CustomerOrder.writeOrderDelivery(customerID, serviceType, currentDate, currentTime, beefTQty, chickenTQty,
 					veggieTQty, nachosQty, tortillaQty, riceBeansQty, drPepperQty, spkWaterQty, pepsiQty, pacificoQty,
 					totalCost, address);
+			
+			//creates new KitchenOrder object to hold the order and new Order Processor
+			KitchenOrder currentOrder = new KitchenOrder();	
+			OrderProcessor processor = new OrderProcessor(currentOrder);
+			//reads order from .csv file
+			currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
+			//invokes processor methods to complete order and write output to TransactionRecord.csv
+			processor.fillOrder();
+			//writes updated inventory to Inventory.csv
+			processor.writeInventory(processor.createInventoryUpdate(inv));
 			
 			BankAccount.getBankAccount().makeDeposit(totalCost);
 			

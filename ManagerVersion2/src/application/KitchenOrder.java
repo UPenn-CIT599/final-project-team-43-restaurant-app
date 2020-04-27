@@ -4,7 +4,11 @@ import java.io.FileNotFoundException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+/**
+ * Class to create an order consisting of various MenuItems be reading a .csv file
+ * @author porth
+ *
+ */
 public class KitchenOrder {
 
 	HashMap<Drink, Integer> drinkOrder;
@@ -22,6 +26,9 @@ public class KitchenOrder {
 	private String deliveryAddress;
 	private double totalBill;
 
+	/*
+	 * Constructor initializes MenuItem HashMaps and other variables
+	 */
 	public KitchenOrder() {
 		HashMap<Drink, Integer> drinkOrder = new HashMap<Drink, Integer>();
 		HashMap<Taco, Integer> tacoOrder = new HashMap<Taco, Integer>();
@@ -171,18 +178,5 @@ public class KitchenOrder {
 
 	}
 
-	public static void main(String[] args) throws FileNotFoundException {
-		KitchenOrder currentOrder = new KitchenOrder();
-		Inventory inventory = new Inventory();
-		Menu menu = new Menu();
-		inventory.populateInventory("Inventory.csv");
-		menu.populateMenu("MenuList.csv", inventory);		
-		currentOrder = currentOrder.fetchOrder("CustomerOrdersTest.csv", menu);
-		OrderProcessor processor = new OrderProcessor(currentOrder);
-		processor.fillOrder();
-		processor.writeInventory(processor.createInventoryUpdate(inventory));
-
-	}
-	
 }
 
