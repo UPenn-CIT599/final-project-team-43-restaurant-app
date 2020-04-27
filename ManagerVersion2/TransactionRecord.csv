@@ -60,5 +60,7 @@
 10038,9412621,Dine in,2020/04/25,13:12,1,0,0,0,0,0,0,0,0,0,3.5,true,13:19,employeeName goes here,Visa
 10038,9412621,Dine in,2020/04/25,13:12,1,0,0,0,0,0,0,0,0,0,3.5,true,13:16,employeeName goes here,Discovery
 10038,9412621,Dine in,2020/04/25,13:12,1,0,0,0,0,0,0,0,0,0,3.5,true,13:19,employeeName goes here,Cash
-10039,9022609,Dine in,2020/04/25,21:51,1,0,0,0,0,0,0,0,0,0,3.5,true,21:54,employeeName goes here,Visa
-test,1000001,Dine in,5/1/20,12:00,1,1,3,1,1,1,0,0,2,2,43.45,true,12:06,employeeName goes here,Cash
+10038,9412621,Dine in,2020/04/25,13:12,1,0,0,0,0,0,0,0,0,0,3.5,true,13:17,employeeName goes here,Cash
+10043,2843176,Dine in,2020/04/26,22:14,2,0,0,0,0,0,0,0,0,4,22.0,true,22:20,employeeName,MasterCard
+10043,2843176,Dine in,2020/04/26,22:14,2,0,0,0,0,0,0,0,0,4,22.0,true,22:17,employeeName,Visa
+10044,4269112,Dine in,2020/04/26,23:43,2,0,0,0,2,0,0,0,0,4,26.5,true,23:47,employeeName,MasterCard

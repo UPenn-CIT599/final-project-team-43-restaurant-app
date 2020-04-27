@@ -50,7 +50,8 @@ public class OrderProcessor {
 	 * @return
 	 * @throws FileNotFoundException
 	 */
-	public void fillOrder() throws FileNotFoundException {
+	public void fillOrder(KitchenOrder order) throws FileNotFoundException {
+		this.order = order;
 		double quantity = 0;
 		double inventoryOut = 0;
 		// String employeeName = this.employee.getName();
@@ -120,9 +121,8 @@ public class OrderProcessor {
 				+ this.order.getQuantitiesAsString().get("spklWtrQty") + ","
 				+ this.order.getQuantitiesAsString().get("pepsiQty") + ","
 				+ this.order.getQuantitiesAsString().get("beerQty") + "," + this.order.getTotalBill() + ","
-				+ this.isComplete + "," + this.completedTime + "," + "employeeName goes here" + ","
+				+ this.isComplete + "," + this.completedTime + "," + "employeeName" + ","
 				+ this.paymentMethod);
-
 		return record;
 	}
 

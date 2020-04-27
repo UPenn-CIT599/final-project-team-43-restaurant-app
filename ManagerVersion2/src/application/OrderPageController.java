@@ -152,7 +152,7 @@ public class OrderPageController {
 			currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
 			// invokes processor methods to complete order and write output to
 			// TransactionRecord.csv
-			processor.fillOrder();
+			processor.fillOrder(currentOrder);
 			// writes updated inventory to Inventory.csv
 			processor.writeInventory(processor.createInventoryUpdate(inv));
 
@@ -181,7 +181,7 @@ public class OrderPageController {
 			currentOrder = currentOrder.fetchOrder("CustomerOrders.csv", menu);
 			// invokes processor methods to complete order and write output to
 			// TransactionRecord.csv
-			processor.fillOrder();
+			processor.fillOrder(currentOrder);
 			// writes updated inventory to Inventory.csv
 			processor.writeInventory(processor.createInventoryUpdate(inv));
 

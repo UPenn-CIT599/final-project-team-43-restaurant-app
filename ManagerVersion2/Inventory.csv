@@ -1,28 +1,28 @@
-ItemId,Description,Pack Size,Units,Vendor,Price,On Hand Qty,Calories/Unit
-F2341,Flour Tortillas,100.0,ea,Guererro,11.95,15.0,95.0
-8878,Mild salsa,64.0,oz,Renfro,8.44,30.0,18.0
-S4568,Refried Beans,128.0,oz,Sysco,12.25,35.0,27.0
-F2344,Corn Tortillas,100.0,ea,Guererro,10.75,106.0,80.0
-6623-6,Pepsi,24.0,12oz.,Pepsi Bottling,13.5,26.0,150.0
-6241-6,LaCroix water,24.0,12 oz.,Pepsi Bottling,12.45,4.0,0.0
-S8825,Beef taco filling,160.0,oz,Sysco,30.9,33.0,52.0
-S3256,Cheese - queso,60.0,oz,Sysco,14.45,33.84,92.0
-S8356,Chicken taco filling,160.0,oz,Sysco,31.95,175.0,35.0
-8964R,Lettuce,10.0,ea,Bix Produce,12.63,4.1000000000000005,53.0
-7345R,Tomato,80.0,oz,Bix Produce,13.75,76.32499999999997,7.0
-6745-2,Sprite,24.0,12 oz.,Pepsi Bottling,13.5,11.0,145.0
-S6572,Crema,16.0,oz,Sysco,3.76,2.63,80.0
-S7746,Tortilla Chips,96.0,oz,Sysco,14.5,15.5,140.0
-3321R,Cilantro,5.0,bunch,Bix Produce,3.65,1.15,20.0
-2166R,Onion,5.0,lb.,Bix Produce,4.85,2.170000000000001,181.0
-S8175,Grilled Chicken Slices,80.0,oz,Sysco,14.89,44.25,44.0
-8872,Tomatilo salsa,64.0,oz,Renfro,9.5,12.88,22.0
-S8836,Vegggie Taco Filling,160.0,oz,Sysco,32.76,25.0,38.0
-7210R,Avocado,12.0,ea,Bix Produce,15.5,5.05,250.0
-8734,Pico di Gallo,32.0,oz,Renfro,7.85,19.7,19.0
-6649-6,Dr.Pepper,24.0,12 oz.,Pepsi Bottling,13.5,19.0,145.0
-B4424,Pacifico,24.0,12 oz.,Cardinal Distributing,19.5,28.0,140.0
-S3577,Naco cheese,80.0,oz,Sysco,13.75,40.3,39.0
-8811,HotSauce,16.0,oz,Renfro,5.25,6.909999999999999,15.0
-S0176,Rice,80.0,oz,Sysco,4.85,71.875,110.0
-S9002,Rice Seasoning,8.0,oz.,Sysco,4.3,3.62,12.0
+﻿itemID,Description,Pack Size,Units,Vendor,Price,Qty on Hand,Calories/unit
+F2341,Flour Tortillas,100,ea,Guererro,11.95,16,95
+8878,Mild salsa,64,oz,Renfro,8.44,32,18
+S4568,Refried Beans,128,oz,Sysco,12.25,40,27
+F2344,Corn Tortillas,100,ea,Guererro,10.75,112,80
+6623-6,Pepsi,24,12oz.,Pepsi Bottling,13.5,28,150
+6241-6,LaCroix water,24,12 oz.,Pepsi Bottling,12.45,4,0
+S8825,Beef taco filling,160,oz,Sysco,30.9,42,52
+S3256,Cheese - queso,60,oz,Sysco,14.45,34,92
+S8356,Chicken taco filling,160,oz,Sysco,31.95,175,35
+8964R,Lettuce,10,ea,Bix Produce,12.63,4.4,53
+7345R,Tomato,80,oz,Bix Produce,13.75,76.5,7
+6745-2,Sprite,24,12 oz.,Pepsi Bottling,13.5,11,145
+S6572,Crema,16,oz,Sysco,3.76,2.75,80
+S7746,Tortilla Chips,96,oz,Sysco,14.5,22,140
+3321R,Cilantro,5,bunch,Bix Produce,3.65,1.2,20
+2166R,Onion,5,lb.,Bix Produce,4.85,2.2,181
+S8175,Grilled Chicken Slices,80,oz,Sysco,14.89,47.5,44
+8872,Tomatilo salsa,64,oz,Renfro,9.5,13,22
+S8836,Vegggie Taco Filling,160,oz,Sysco,32.76,34,38
+7210R,Avocado,12,ea,Bix Produce,15.5,5.5,250
+8734,Pico di Gallo,32,oz,Renfro,7.85,20,19
+6649-6,Dr.Pepper,24,12 oz.,Pepsi Bottling,13.5,19,145
+B4424,Pacifico,24,12 oz.,Cardinal Distributing,19.5,30,140
+S3577,Naco cheese,80,oz,Sysco,13.75,42,39
+8811,HotSauce,16,oz,Renfro,5.25,7,15
+S0176,Rice,80,oz,Sysco,4.85,72,110
+S9002,Rice Seasoning,8,oz.,Sysco,4.3,3.65,12
