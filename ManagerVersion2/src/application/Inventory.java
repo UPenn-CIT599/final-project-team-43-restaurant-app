@@ -51,41 +51,55 @@ public class Inventory {
 	 * 
 	 * @return ArrayList itemsToOrder
 	 */
-	public ArrayList<InventoryItem> createProductOrder() {
+	public ArrayList<PurchaseOrder> createProductOrder() {
 
-		List<InventoryItem> itemsToOrder = new ArrayList<InventoryItem>();
+		List<PurchaseOrder> itemsToOrder = new ArrayList<PurchaseOrder>();
+
 		for (InventoryItem product : inventory) {
 			if (product.getReorderPoint() > product.getOnHand()) {
-				itemsToOrder.add(product);
+				PurchaseOrder purchOrder = new PurchaseOrder(product, 1);
+				itemsToOrder.add(purchOrder);
 			}
 		}
-		Collections.sort(itemsToOrder, (item1, item2) -> item1.getVendorName().compareTo(item2.getVendorName()));
+		Collections.sort(itemsToOrder,
+				(item1, item2) -> item1.getItemToBuy().getVendorName().compareTo(item2.getItemToBuy().getVendorName()));
 
-		return (ArrayList<InventoryItem>) itemsToOrder;
+		return (ArrayList<PurchaseOrder>) itemsToOrder;
 	}
 
 	/**
-	 * Method to replenish depleted products
+	 * Helper method to update onHand quantity depleted products as they are replenished
 	 * 
-	 * @param product
-	 * @param units
+	 * @param product the InventoryItem on the associated PurchseOrder
+	 * @param units  the number of packs of product being purchased (set to 1 by default)
 	 * @return
 	 */
-	public double buyProduct(InventoryItem product, int units) {
-		double cost = product.getPackPrice() * units;
+	public double buyProduct(InventoryItem product, double unitsToBuy) {
+		double orderQty = unitsToBuy;
 		double available = product.getOnHand();
-		available += (product.getPackSize() * units);
+		available += orderQty;
 		product.setOnHand(available);
-		return cost;
+		return available;
 	}
-
-	public ArrayList<PurchaseOrder> replenishInventory() {
-		double cost;
+	/**
+	 * This method iterates over an ArrayList of PurchaseOrders and updates
+	 * inventory levels to reflect the purchase. It also write the Purchase Orders
+	 * to the PurchaseOrders.csv file and returns the total cost 
+	 * of the list of PurchaseOrders
+	 * @param itemsToOrder
+	 * @return
+	 */
+	public double replenishInventory(ArrayList<PurchaseOrder> itemsToOrder) {
+		double totalCost = 0;
 		ArrayList<PurchaseOrder> orders = new ArrayList<PurchaseOrder>();
-		for (InventoryItem product : createProductOrder()) {
-			buyProduct(product, 1);
+		orders = itemsToOrder;
+		for (PurchaseOrder order : orders) {
+			buyProduct(order.getItemToBuy(), order.getOrderQty());
+			order.writePurchaseOrder(order.createOrderRecord());
+			totalCost += order.getCost();
 		}
-		return orders;
+		totalCost = Math.round(totalCost * 100.0) / 100.0;
+		return totalCost;
 	}
 
 	/**
@@ -105,5 +119,4 @@ public class Inventory {
 	public void deleteItem(InventoryItem item) {
 		inventory.remove(item);
 	}
-
 }

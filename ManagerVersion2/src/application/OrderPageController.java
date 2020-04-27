@@ -153,9 +153,17 @@ public class OrderPageController {
 			// invokes processor methods to complete order and write output to
 			// TransactionRecord.csv
 			processor.fillOrder(currentOrder);
+			/*
+			 * replenishInventory method generates orders 
+			 * for depleted inventory and executes them, returning
+			 * the total cost of the orders. Also writes orders to PurchaseOrders.csv file
+			 */
+			double orderCost = inv.replenishInventory(inv.createProductOrder());
 			// writes updated inventory to Inventory.csv
 			processor.writeInventory(processor.createInventoryUpdate(inv));
-
+			//subtracts cost of purchase orders from bank account
+			BankAccount.getBankAccount().makePayment(orderCost);
+			//adds cost of food order to bank account			
 			BankAccount.getBankAccount().makeDeposit(totalCost);
 
 			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(availableFunds, totalCost));
@@ -182,10 +190,19 @@ public class OrderPageController {
 			// invokes processor methods to complete order and write output to
 			// TransactionRecord.csv
 			processor.fillOrder(currentOrder);
+			/*
+			 * replenishInventory method generates orders 
+			 * for depleted inventory and executes them, returning
+			 * the total cost of the orders. Also writes orders to PurchaseOrders.csv file
+			 */
+			double orderCost = inv.replenishInventory(inv.createProductOrder());
 			// writes updated inventory to Inventory.csv
 			processor.writeInventory(processor.createInventoryUpdate(inv));
-
+			//subtracts cost of purchase orders from bank account
+			BankAccount.getBankAccount().makePayment(orderCost);
+			//adds cost of food order to bank account
 			BankAccount.getBankAccount().makeDeposit(totalCost);
+			
 
 			Customer.getCustomer().setAvailableFunds(Customer.deductFunds(availableFunds, totalCost));
 
