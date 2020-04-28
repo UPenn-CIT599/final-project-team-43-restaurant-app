@@ -120,6 +120,8 @@ public class CustomerOrder {
 					+ "," + riceBeansQty + "," + drPepperQty + "," + spkWaterQty + "," + pepsiQty + "," + pacificoQty
 					+ "," + totalCost + "," + deliveryAddress);
 			bw.flush();
+			bw.close();
+			in.close();
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

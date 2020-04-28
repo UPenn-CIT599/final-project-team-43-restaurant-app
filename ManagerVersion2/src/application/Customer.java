@@ -177,6 +177,8 @@ public class Customer {
 			bw.write(lineNumber + "," + customerID + "," + "Dine in" + "," + "," + "," + reservationID + "," + date
 					+ "," + time + "," + "," + "," + "," + "," + "," + "," + "," + "," + "," + "," + ",");
 			bw.flush();
+			in.close();
+			bw.close();
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

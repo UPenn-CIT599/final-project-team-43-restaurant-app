@@ -81,6 +81,8 @@ public class CustomerReviews {
 			}
 			bw.write(Integer.toString(scoreOutOfFive) + "," + messageReview);
 			bw.flush();
+			in.close();
+			bw.close();
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
