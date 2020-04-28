@@ -40,7 +40,7 @@ class TransactionRecordTest {
 			e.printStackTrace();
 		}
 
-		assertEquals(arraySize, csvLength - 4);
+		assertEquals(arraySize, csvLength - 2);
 
 	}
 

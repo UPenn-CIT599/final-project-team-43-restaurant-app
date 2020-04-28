@@ -20,7 +20,7 @@ class InventoryReaderTest {
 	@BeforeAll
 
 	static void setUpBeforeClass() throws Exception {
-		inventoryReader = new InventoryReader("InventoryTest.csv");
+		inventoryReader = new InventoryReader("Inventory.csv");
 
 	}
 
@@ -34,7 +34,7 @@ class InventoryReaderTest {
 		int csvLength = 0;
 
 		try {
-			csvLength = CSVReader.readNumberOfLines("InventoryTest.csv");
+			csvLength = CSVReader.readNumberOfLines("Inventory.csv");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
