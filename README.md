@@ -12,11 +12,8 @@ Find Main.java class and  select run.
 
 ### Prerequisites
 
-PC with java IDE and Java SE.........
+PC/MAC with java IDE and Java SE 8
 
-### Installing
-
-TBD
 
 
 ### How to Run
