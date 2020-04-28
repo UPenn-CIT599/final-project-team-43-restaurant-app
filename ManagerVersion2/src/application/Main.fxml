@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MainController">
+<BorderPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <top>
       <Label text="Welcome to the Manager System!" textFill="#066879" translateY="35.0" BorderPane.alignment="CENTER">
          <font>
@@ -66,7 +66,7 @@
                   <Image url="@../../waiter.png" />
                </image>
             </ImageView>
-            <TextField fx:id="bankAmount" layoutX="339.0" layoutY="413.0" prefHeight="27.0" prefWidth="135.0" />
+            <TextField fx:id="bankAmount" editable="false" layoutX="339.0" layoutY="413.0" prefHeight="27.0" prefWidth="135.0" />
             <Label layoutX="338.0" layoutY="388.0" prefHeight="25.0" prefWidth="145.0" text="BankAccount Balance:" textAlignment="CENTER">
                <font>
                   <Font name="Copperplate" size="12.0" />

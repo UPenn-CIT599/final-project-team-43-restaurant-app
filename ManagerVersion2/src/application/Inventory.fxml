@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="515.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryController">
+<BorderPane prefHeight="515.0" prefWidth="561.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InventoryController">
    <top>
       <Label text="Inventory" textAlignment="CENTER" textFill="#c77d20" BorderPane.alignment="CENTER">
          <font>
